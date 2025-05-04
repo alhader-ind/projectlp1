@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Nest - Capture Magic in the Everyday</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Quicksand:wght@400;600&family=Patrick+Hand&display=swap">
+    <style>
+        /* Base Styles */
+        :root {
+            --sky-blue: #D6ECF3;
+            --forest-moss: #9BA78D;
+            --soft-peach: #FFE6C7;
+            --foggy-gray: #B1B1B1;
+            --cream: #FDF9F0;
+            --gold: #F9C86A;
+            --midnight-blue: #2A3342;
+            --rose: #FFB3AB;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--sky-blue);
+            background-image: url('data:image/svg+xml;utf8,<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg"><path d="M0,300 Q150,350 300,300 T600,300" fill="none" stroke="%23D6ECF3" stroke-width="2" opacity="0.2"/><path d="M0,200 Q150,250 300,200 T600,200" fill="none" stroke="%23D6ECF3" stroke-width="2" opacity="0.2"/><path d="M0,400 Q150,450 300,400 T600,400" fill="none" stroke="%23D6ECF3" stroke-width="2" opacity="0.2"/></svg>');
+            margin: 0;
+            padding: 0;
+            color: var(--midnight-blue);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Watercolor Texture */
+        .watercolor-texture {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg"><path d="M100,100 Q300,50 500,100 T700,100 Q800,300 700,500 T700,700 Q500,750 300,700 T100,700 Q0,500 100,300 Z" fill="%23FDF9F0" opacity="0.05"/></svg>');
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        /* Floating Elements */
+        .floating-leaf {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 Q70,30 80,50 Q90,70 70,80 Q50,90 30,80 Q10,70 20,50 Q30,30 50,10" fill="%239BA78D" opacity="0.6"/></svg>');
+            animation: float 15s infinite ease-in-out;
+            z-index: -1;
+        }
+        
+        .floating-dandelion {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="15" fill="%23FDF9F0" opacity="0.7"/></svg>');
+            animation: float 20s infinite ease-in-out;
+            z-index: -1;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(253,249,240,0.8);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(155,167,141,0.3);
+            position: relative;
+            backdrop-filter: blur(3px);
+        }
+        
+        .branch-nav {
+            background-color: rgba(253,249,240,0.9);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-top: 2px solid var(--forest-moss);
+            border-bottom: 2px solid var(--forest-moss);
+        }
+        
+        .branch-nav:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="200" height="20" viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,5 100,10 T200,10" fill="none" stroke="%239BA78D" stroke-width="1" opacity="0.2"/></svg>');
+            opacity: 0.3;
+        }
+        
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--cream);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1;
+            border-radius: 5px;
+            border: 1px solid rgba(155,167,141,0.3);
+            transform-origin: top;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+            padding: 10px;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%239BA78D" stroke-width="0.5" opacity="0.1"/></svg>');
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+            transform: scaleY(1);
+        }
+        
+        .dropdown-content a {
+            color: var(--midnight-blue);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid rgba(155,167,141,0.1);
+            font-family: 'Patrick Hand', cursive;
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: rgba(155,167,141,0.1);
+            padding-left: 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,30 Q50,20 70,30 T90,50 Q80,70 70,60 T50,70 Q20,80 30,50 Z" fill="%23F9C86A" opacity="0.05"/></svg>');
+            background-size: 300px 300px;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-family: 'Caveat Brush', cursive;
+            font-size: 5rem;
+            margin: 0;
+            color: var(--midnight-blue);
+            position: relative;
+            display: inline-block;
+            opacity: 0;
+            animation: sketchIn 2s ease-out forwards;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 20px auto;
+            color: var(--midnight-blue);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1s forwards;
+        }
+        
+        /* Leaf Button */
+        .leaf-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--forest-moss);
+            color: white;
+            text-decoration: none;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 18px;
+            border-radius: 30px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s forwards;
+            transform: translateY(20px);
+        }
+        
+        .leaf-btn:before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 40px;
+            height: 40px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 Q70,30 80,50 Q90,70 70,80 Q50,90 30,80 Q10,70 20,50 Q30,30 50,10" fill="%23FDF9F0" opacity="0.3"/></svg>');
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+        
+        .leaf-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .leaf-btn:hover:before {
+            transform: rotate(90deg) translateX(20px);
+        }
+        
+        /* Content Grid */
+        .content-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 40px 0;
+            background-color: rgba(253,249,240,0.5);
+            position: relative;
+        }
+        
+        .content-grid:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10,10 L90,10 L90,90 L10,90 Z" fill="none" stroke="%239BA78D" stroke-width="0.5" opacity="0.1"/></svg>');
+            z-index: -1;
+        }
+        
+        .content-card {
+            margin: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .journal-card {
+            background-color: var(--cream);
+            width: 250px;
+            min-height: 300px;
+            padding: 25px;
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.1);
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
+            transform: rotate(var(--rotate));
+            border: 1px solid rgba(155,167,141,0.2);
+        }
+        
+        .journal-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%239BA78D" stroke-width="0.5" opacity="0.1"/></svg>');
+            z-index: -1;
+        }
+        
+        .journal-card:hover {
+            transform: rotate(0deg) scale(1.03);
+            box-shadow: 12px 12px 25px rgba(0,0,0,0.15);
+        }
+        
+        .ghibli-detail {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            opacity: 0.7;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 60px 20px;
+            background-color: rgba(155,167,141,0.1);
+            position: relative;
+        }
+        
+        .testimonials:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10,50 Q25,30 40,50 T70,50 T100,50" fill="none" stroke="%239BA78D" stroke-width="1" opacity="0.05"/></svg>');
+            background-size: 200px 200px;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .testimonial-card {
+            background-color: var(--cream);
+            padding: 30px;
+            margin: 20px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            max-width: 300px;
+            transform: rotate(-2deg);
+            z-index: 1;
+            border: 1px solid rgba(155,167,141,0.2);
+        }
+        
+        .testimonial-card:nth-child(even) {
+            transform: rotate(2deg);
+        }
+        
+        .polaroid {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            padding: 10px 10px 30px 10px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            transform: rotate(5deg);
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .polaroid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .polaroid:after {
+            content: "";
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: calc(100% - 20px);
+            height: 10px;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="10" viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 Q25,0 50,5 T100,5" fill="none" stroke="%239BA78D" stroke-width="0.5" opacity="0.3"/></svg>');
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: rgba(255,230,199,0.3);
+        }
+        
+        .pricing-plan {
+            display: inline-block;
+            vertical-align: top;
+            width: 280px;
+            margin: 0 20px;
+            background-color: var(--cream);
+            padding: 40px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(155,167,141,0.2);
+            z-index: 1;
+        }
+        
+        .pricing-plan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .plan-badge {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        
+        .plan-badge svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+        
+        .storyteller-ribbon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+        }
+        
+        .storyteller-ribbon:before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            right: -25px;
+            width: 100px;
+            height: 20px;
+            background-color: var(--rose);
+            transform: rotate(45deg);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background-color: var(--cream);
+            padding: 20px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(155,167,141,0.2);
+            border-radius: 50px 5px 5px 5px;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .faq-mushroom {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="30" r="25" fill="%23FFB3AB"/><path d="M40,30 L60,30 L55,70 Q50,80 45,70 Z" fill="%23FDF9F0"/></svg>');
+            z-index: 2;
+        }
+        
+        /* Footer CTA */
+        .footer-cta {
+            background-color: var(--midnight-blue);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .footer-cta:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q50,20 80,50 T80,50 Q50,80 20,50" fill="none" stroke="%23F9C86A" stroke-width="1" opacity="0.1"/></svg>');
+            background-size: 200px 200px;
+            opacity: 0.2;
+        }
+        
+        .falling-leaves {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background-color: var(--cream);
+            padding: 40px;
+            max-width: 600px;
+            margin: 60px auto;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            border: 1px solid rgba(155,167,141,0.2);
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%239BA78D" stroke-width="0.5" opacity="0.1"/></svg>');
+        }
+        
+        .contact-form:before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(155,167,141,0.2);
+            pointer-events: none;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 2px solid rgba(155,167,141,0.3);
+            font-family: 'Patrick Hand', cursive;
+            font-size: 18px;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-bottom-color: var(--forest-moss);
+            outline: none;
+        }
+        
+        .contact-form button {
+            background-color: var(--forest-moss);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .contact-form button:after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(30deg);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .contact-form button:hover:after {
+            left: 100%;
+        }
+        
+        /* Soot Sprite Chat */
+        .soot-sprite {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            background-color: var(--midnight-blue);
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            animation: bounce 2s infinite;
+        }
+        
+        .soot-sprite:before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 25px 0 0 white;
+        }
+        
+        .soot-sprite:after {
+            content: "";
+            position: absolute;
+            bottom: 15px;
+            left: 30px;
+            width: 20px;
+            height: 10px;
+            background-color: white;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .soot-scroll {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 30px;
+            height: 50px;
+            background-color: var(--cream);
+            border-radius: 5px;
+            transform: rotate(-15deg);
+            animation: float 3s infinite ease-in-out;
+        }
+        
+        /* Animations */
+        @keyframes sketchIn {
+            0% { 
+                opacity: 0;
+                background-size: 0% 100%;
+                background-position: left center;
+                letter-spacing: -10px;
+            }
+            100% { 
+                opacity: 1;
+                background-size: 100% 100%;
+                background-position: right center;
+                letter-spacing: normal;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        @keyframes floatX {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+        
+        @keyframes leavesFall {
+            0% { transform: translateY(-100px) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mt-20 { margin-top: 20px; }
+        .mb-20 { margin-bottom: 20px; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .pricing-plan {
+                display: block;
+                width: 80%;
+                margin: 20px auto;
+            }
+            
+            .dropdown-content {
+                position: static;
+                transform: none;
+                display: none;
+                width: 100%;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="watercolor-texture"></div>
+    
+    <!-- Floating elements -->
+    <div class="floating-leaf" style="top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="floating-leaf" style="top: 30%; left: 80%; animation-delay: 2s;"></div>
+    <div class="floating-dandelion" style="top: 20%; left: 70%; animation-delay: 1s;"></div>
+    <div class="floating-dandelion" style="top: 50%; left: 10%; animation-delay: 3s;"></div>
+    
+    <header class="text-center">
+        <h1>Dream Nest</h1>
+        <p>Capture Magic in the Everyday</p>
+    </header>
+    
+    <nav class="branch-nav">
+        <div class="container text-center">
+            <div class="dropdown">
+                <a href="#stories" class="leaf-btn">Stories</a>
+                <div class="dropdown-content">
+                    <a href="#journals">Journals</a>
+                    <a href="#audio-tales">Audio Tales</a>
+                    <a href="#illustrations">Illustrations</a>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <a href="#create" class="leaf-btn">Create</a>
+                <div class="dropdown-content">
+                    <a href="#templates">Templates</a>
+                    <a href="#guides">Guides</a>
+                    <a href="#resources">Resources</a>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <a href="#about" class="leaf-btn">About</a>
+                <div class="dropdown-content">
+                    <a href="#philosophy">Our Philosophy</a>
+                    <a href="#inspiration">Inspiration</a>
+                    <a href="#team">The Team</a>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <a href="#contact" class="leaf-btn">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <h1>Where Imagination Grows</h1>
+        <p>A cozy corner for storytellers, dreamers, and creators</p>
+        
+        <a href="#stories" class="leaf-btn">Start Your Journey</a>
+    </section>
+    
+    <section id="stories" class="content-grid">
+        <div class="content-card" style="--rotate: -2deg;">
+            <div class="journal-card">
+                <div class="ghibli-detail" style="top: 10px; right: 10px; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="5" fill="%232A3342"/><circle cx="30" cy="40" r="3" fill="%232A3342"/><circle cx="70" cy="40" r="3" fill="%232A3342"/></svg>');"></div>
+                <h3>Whispering Woods Journal</h3>
+                <p>A guided journal with prompts inspired by forest spirits and hidden paths</p>
+                <p><small>PDF, 120 pages</small></p>
+            </div>
+        </div>
+        
+        <div class="content-card" style="--rotate: 3deg;">
+            <div class="journal-card">
+                <div class="ghibli-detail" style="bottom: 10px; left: 10px; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,70 Q50,50 70,70 Q50,90 30,70" fill="%23FFB3AB"/></svg>');"></div>
+                <h3>Flying Fish Audio Tales</h3>
+                <p>Collection of 10 short stories about magical sea creatures</p>
+                <p><small>MP3, 3 hours</small></p>
+            </div>
+        </div>
+        
+        <div class="content-card" style="--rotate: -1deg;">
+            <div class="journal-card">
+                <div class="ghibli-detail" style="top: 50%; left: 20px; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,50 Q50,30 70,50 Q50,70 30,50" fill="%23F9C86A"/></svg>');"></div>
+                <h3>Studio Sketch Templates</h3>
+                <p>50+ hand-drawn frames and layouts for your creative projects</p>
+                <p><small>PNG, SVG</small></p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="testimonials" class="testimonials">
+        <h2 class="text-center">From Our Dreamers</h2>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+            <div class="testimonial-card">
+                <div class="polaroid">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f1c40f'/><circle cx='50' cy='40' r='20' fill='%23349'/><path d='M30,70 Q50,90 70,70' fill='none' stroke='%23349' stroke-width='3'/></svg>" alt="User">
+                </div>
+                <p>"The journals helped me rediscover my childhood wonder. Now I notice magic everywhere!"</p>
+                <p><strong>- Emma, Writer</strong></p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="polaroid">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23e74c3c'/><circle cx='40' cy='40' r='15' fill='%23349'/><circle cx='60' cy='40' r='15' fill='%23349'/><path d='M30,70 Q50,90 70,70' fill='none' stroke='%23349' stroke-width='3'/></svg>" alt="User">
+                </div>
+                <p>"My students adore the audio tales. They've sparked so many creative writing projects!"</p>
+                <p><strong>- Mr. Tanaka, Teacher</strong></p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="polaroid">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%232ecc71'/><circle cx='50' cy='40' r='20' fill='%23e74c3c'/><path d='M30,70 Q50,50 70,70' fill='none' stroke='%23e74c3c' stroke-width='3'/></svg>" alt="User">
+                </div>
+                <p>"As an artist, the templates have become my go-to for adding whimsy to my work."</p>
+                <p><strong>- Lila, Illustrator</strong></p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="pricing" class="pricing">
+        <h2 class="text-center">Join the Nest</h2>
+        
+        <div class="pricing-plan">
+            <div class="plan-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M15.5,8C16.3,8 17,8.7 17,9.5C17,10.3 16.3,11 15.5,11C14.7,11 14,10.3 14,9.5C14,8.7 14.7,8 15.5,8M8.5,8C9.3,8 10,8.7 10,9.5C10,10.3 9.3,11 8.5,11C7.7,11 7,10.3 7,9.5C7,8.7 7.7,8 8.5,8M12,11.5C14.5,11.5 19,13 19,15.5V20H5V15.5C5,13 9.5,11.5 12,11.5Z"/></svg>
+            </div>
+            <h3>Sprout</h3>
+            <p class="price">$5/month</p>
+            <ul>
+                <li>3 downloads/month</li>
+                <li>Basic journals</li>
+                <li>Community access</li>
+            </ul>
+            <a href="#" class="leaf-btn">Begin</a>
+        </div>
+        
+        <div class="pricing-plan">
+            <div class="plan-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10,2H14A2,2 0 0,1 16,4V6H20A2,2 0 0,1 22,8V19A2,2 0 0,1 20,21H4C2.89,21 2,20.1 2,19V8C2,6.89 2.89,6 4,6H8V4C8,2.89 8.89,2 10,2M14,6V4H10V6H14Z"/></svg>
+            </div>
+            <h3>Explorer</h3>
+            <p class="price">$10/month</p>
+            <ul>
+                <li>10 downloads/month</li>
+                <li>All journals + templates</li>
+                <li>Audio tales included</li>
+            </ul>
+            <a href="#" class="leaf-btn">Discover</a>
+        </div>
+        
+        <div class="pricing-plan">
+            <div class="plan-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,3L2,12H5V20H19V12H22L12,3Z"/></svg>
+            </div>
+            <div class="storyteller-ribbon"></div>
+            <h3>Storyteller</h3>
+            <p class="price">$20/month</p>
+            <ul>
+                <li>Unlimited downloads</li>
+                <li>All content + exclusives</li>
+                <li>Early access + discounts</li>
+            </ul>
+            <a href="#" class="leaf-btn">Create</a>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <h2 class="text-center">Curious Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-mushroom"></div>
+            <h3>Can I cancel anytime?</h3>
+            <p>Absolutely! You can cancel your subscription anytime with no hidden fees or penalties.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-mushroom"></div>
+            <h3>Are the files printable?</h3>
+            <p>Yes, all our PDFs are designed to look beautiful both on screens and when printed.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-mushroom"></div>
+            <h3>Do you offer student discounts?</h3>
+            <p>We offer 20% off for students with valid ID. Contact us for details!</p>
+        </div>
+    </section>
+    
+    <section class="footer-cta">
+        <div class="falling-leaves" id="fallingLeaves"></div>
+        <h2>Bring Your Stories to Life</h2>
+        <a href="#signup" class="leaf-btn">Begin Your Adventure</a>
+    </section>
+    
+    <section id="contact" class="contact-form">
+        <h2 class="text-center">Send Us a Message</h2>
+        
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send a Letter</button>
+        </form>
+    </section>
+    
+    <div class="soot-sprite">
+        <div class="soot-scroll"></div>
+    </div>
+    
+    <footer class="text-center" style="padding: 30px; background-color: var(--midnight-blue); color: white;">
+        <p>© 2023 Dream Nest. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Simple animations and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make FAQ items collapsible
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const answer = item.querySelector('p');
+                answer.style.display = 'none';
+                
+                item.addEventListener('click', function() {
+                    if (answer.style.display === 'none') {
+                        answer.style.display = 'block';
+                    } else {
+                        answer.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Soot sprite interaction
+            const sootSprite = document.querySelector('.soot-sprite');
+            sootSprite.addEventListener('click', function() {
+                alert("Konichiwa! How can we help you today?");
+            });
+            
+            // Create falling leaves
+            const fallingLeaves = document.getElementById('fallingLeaves');
+            for (let i = 0; i < 15; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = 'floating-leaf';
+                leaf.style.left = Math.random() * 100 + '%';
+                leaf.style.top = -50 + 'px';
+                leaf.style.animation = 'leavesFall ' + (10 + Math.random() * 10) + 's linear infinite';
+                leaf.style.animationDelay = Math.random() * 5 + 's';
+                leaf.style.opacity = 0.5 + Math.random() * 0.5;
+                leaf.style.transform = 'scale(' + (0.5 + Math.random() * 0.5) + ')';
+                fallingLeaves.appendChild(leaf);
+            }
+            
+            // Add Ghibli details to cards on hover
+            const cards = document.querySelectorAll('.journal-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const detail = this.querySelector('.ghibli-detail');
+                    detail.style.animation = 'floatX 2s infinite ease-in-out';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const detail = this.querySelector('.ghibli-detail');
+                    detail.style.animation = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
