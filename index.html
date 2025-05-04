@@ -1,7 +1,1239 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Nest - Capture Magic in the Everyday</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Indie+Flower&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Custom Colors */
+        :root {
+            --color-sky-blue: #D6ECF3;
+            --color-forest-moss: #9BA78D;
+            --color-soft-peach: #FFE6C7;
+            --color-foggy-gray: #B1B1B1;
+            --color-cream: #FDF9F0;
+            --color-gold: #F9C86A;
+            --color-midnight-blue: #2A3342;
+            --color-rose: #FFB3AB;
+        }
+
+        /* Apply custom colors to Tailwind */
+        .bg-sky { background-color: var(--color-sky-blue); }
+        .bg-moss { background-color: var(--color-moss); }
+        .bg-peach { background-color: var(--color-soft-peach); }
+        .bg-foggy { background-color: var(--color-foggy-gray); }
+        .bg-cream { background-color: var(--color-cream); }
+        .bg-gold { background-color: var(--color-gold); }
+        .bg-midnight { background-color: var(--color-midnight-blue); }
+        .bg-rose { background-color: var(--color-rose); }
+
+        .text-sky { color: var(--color-sky-blue); }
+        .text-moss { color: var(--color-forest-moss); }
+        .text-peach { color: var(--color-soft-peach); }
+        .text-foggy { color: var(--color-foggy-gray); }
+        .text-cream { color: var(--color-cream); }
+        .text-gold { color: var(--color-gold); }
+        .text-midnight { color: var(--color-midnight-blue); }
+        .text-rose { color: var(--color-rose); }
+
+
+        body {
+            font-family: 'Quicksand', sans-serif; /* Default body font */
+            background-color: var(--color-cream);
+            background-image: url('https://www.transparenttextures.com/patterns/watercolor.png'); /* Watercolor texture placeholder */
+            color: var(--color-midnight-blue);
+            overflow-x: hidden;
+            padding: 1rem; /* Base padding for mobile */
+        }
+
+         /* Responsive Padding for larger screens */
+         @media (min-width: 768px) { /* Medium screens and up */
+             body {
+                 padding: 2rem 4rem; /* Increased horizontal padding */
+             }
+         }
+
+         @media (min-width: 1024px) { /* Large screens and up */
+             body {
+                 padding: 2rem 8rem; /* More padding on desktop */
+             }
+         }
+
+
+        /* Sketchbook Handwriting Font */
+        .font-sketch {
+            font-family: 'Indie Flower', cursive;
+        }
+
+         /* General Handwriting Font */
+        .font-handwriting {
+            font-family: 'Caveat', cursive;
+        }
+
+
+        /* Floating Elements Animation */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .floating-element {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+            z-index: 0; /* Ensure background elements are behind content */
+        }
+
+        .floating-element:nth-child(odd) { animation-delay: -3s; }
+        .floating-element:nth-child(even) { animation-delay: -1.5s; transform: rotate(5deg); }
+
+
+        /* Hero Headline Animation (Sketchbook) */
+        .sketch-animation span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(10px) rotate(-5deg);
+            animation: sketchIn 0.4s forwards;
+            transform-origin: bottom left;
+        }
+
+        @keyframes sketchIn {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        /* Apply delays to individual spans via JS */
+
+
+        /* CTA Button (Floating Leaf/Forest Spirit Tag) */
+        .cta-leaf-tag {
+            position: relative;
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--color-forest-moss);
+            color: var(--color-cream);
+            font-family: 'Indie Flower', cursive;
+            font-size: 1.4rem;
+            text-decoration: none;
+            border-radius: 25px; /* Rounded shape */
+            box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            overflow: hidden;
+        }
+
+        .cta-leaf-tag:hover {
+            transform: translateY(-5px) scale(1.05); /* Bouncy effect */
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+            background-color: rgba(155, 167, 141, 0.9);
+        }
+
+        /* Navigation (Wooden Branch) */
+        .nav-branch {
+            background-color: rgba(42, 51, 66, 0.9); /* Semi-transparent Midnight Blue */
+            padding: 0.75rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 50;
+            width: 100%;
+            /* Make non-sticky on mobile */
+            position: relative;
+        }
+
+         /* Mobile Navigation Toggle */
+         .nav-toggle {
+             display: block; /* Show on mobile */
+             position: absolute;
+             top: 0.75rem; /* Align with nav padding */
+             right: 1rem; /* Position on the right */
+             font-size: 1.5rem;
+             color: var(--color-cream);
+             cursor: pointer;
+             z-index: 60; /* Ensure it's above the menu */
+         }
+
+         /* Hide toggle on larger screens */
+         @media (min-width: 768px) {
+             .nav-toggle {
+                 display: none;
+             }
+         }
+
+
+         /* Mobile Navigation Menu */
+         .nav-menu {
+             display: none; /* Hidden by default on mobile */
+             flex-direction: column; /* Stack links vertically */
+             align-items: center; /* Center links */
+             gap: 0.5rem; /* Add vertical gap */
+             padding-top: 3rem; /* Add space for the toggle */
+         }
+
+         /* Show menu when toggle is active */
+         .nav-menu.active {
+             display: flex;
+         }
+
+
+         .nav-branch a {
+             font-family: 'Quicksand', sans-serif;
+             font-weight: 600;
+             color: var(--color-cream);
+             padding: 0.5rem 1rem;
+             transition: color 0.3s ease, text-shadow 0.3s ease;
+             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+         }
+
+         .nav-branch a:hover {
+             color: var(--color-gold);
+             text-shadow: 1px 1px 4px rgba(249, 200, 106, 0.8);
+         }
+
+         /* Desktop Navigation */
+         @media (min-width: 768px) {
+             .nav-branch {
+                 position: sticky; /* Make sticky on desktop */
+                 top: 0;
+             }
+             .nav-menu {
+                 display: flex !important; /* Always show on desktop */
+                 flex-direction: row;
+                 justify-content: center;
+                 gap: 2rem; /* Restore horizontal gap */
+                 padding-top: 0; /* Remove mobile padding */
+             }
+         }
+
+
+        /* Dropdown Menu (Storybook/Sketch Note) */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: var(--color-cream);
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            z-index: 40;
+            border: 1px dashed var(--color-foggy-gray); /* Pencil border */
+            /* Adjust positioning for mobile if nav stacks */
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 0.5rem;
+        }
+
+         @media (min-width: 768px) {
+             .dropdown-menu {
+                 left: 0;
+                 transform: translateX(0);
+                 margin-top: 2px; /* Tailwind mt-2 */
+             }
+         }
+
+
+        .dropdown-menu a {
+            font-family: 'Indie Flower', cursive;
+            color: var(--color-midnight-blue);
+            padding: 0.75rem 1.5rem;
+            display: block;
+            white-space: nowrap;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--color-sky-blue);
+            color: var(--color-midnight-blue);
+        }
+
+        /* Content Grid (Patchwork/Stamps) */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Smaller min width for mobile */
+            gap: 2rem; /* Smaller gap for mobile */
+            padding: 1rem; /* Smaller padding for mobile */
+        }
+         @media (min-width: 768px) {
+              .content-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Restore original min width */
+                gap: 3rem; /* Restore original gap */
+                padding: 2rem; /* Restore original padding */
+             }
+         }
+
+
+        .content-card {
+            position: relative;
+            background-color: var(--color-peach);
+            border-radius: 8px;
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
+            overflow: hidden;
+            border: 2px solid var(--color-forest-moss); /* Moss border accent */
+            transform: rotate(calc((random() - 0.5) * 6deg)); /* Random rotation */
+        }
+
+        .content-card:hover {
+            transform: rotate(calc((random() - 0.5) * 6deg)) translateY(-5px) scale(1.03); /* Lift, slight tilt, and scale */
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.2);
+        }
+
+         /* Soft Glow Effect on Hover */
+         .content-card::after {
+             content: '';
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             background: radial-gradient(circle at center, rgba(249, 200, 106, 0.3) 0%, rgba(249, 200, 106, 0) 70%);
+             opacity: 0;
+             transition: opacity 0.3s ease;
+         }
+
+         .content-card:hover::after {
+             opacity: 1;
+         }
+
+
+        .content-card-content {
+            position: relative;
+            z-index: 1; /* Ensure content is above glow */
+            padding: 1.5rem; /* Adjust padding */
+        }
+         @media (min-width: 768px) {
+             .content-card-content {
+                 padding: 2rem; /* Restore padding */
+             }
+         }
+
+
+        .content-card h3 {
+            font-family: 'Indie Flower', cursive;
+            font-size: 1.5rem; /* Adjust font size */
+            margin-bottom: 0.5rem; /* Adjust margin */
+            color: var(--color-midnight-blue);
+        }
+         @media (min-width: 768px) {
+             .content-card h3 {
+                 font-size: 1.6rem; /* Restore font size */
+             }
+         }
+
+
+        .content-card p {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem; /* Adjust font size */
+            margin-bottom: 0.75rem; /* Adjust margin */
+            color: var(--color-shadow-gray);
+        }
+         @media (min-width: 768px) {
+             .content-card p {
+                 font-size: 1.1rem; /* Restore font size */
+             }
+         }
+
+
+        /* Ghibli Detail Placeholder */
+        .ghibli-detail {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+
+        /* Community & Testimonials (Message Board Collage) */
+        .collage-section {
+            background-color: var(--color-cream);
+            background-image: url('https://www.transparenttextures.com/patterns/fabric-of-crows.png'); /* Fabric texture placeholder */
+            padding: 3rem 1rem; /* Adjust padding */
+            position: relative;
+            overflow: hidden;
+        }
+         @media (min-width: 768px) {
+             .collage-section {
+                 padding: 4rem 2rem; /* Restore padding */
+             }
+         }
+
+
+        .testimonial-collage {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem; /* Adjust gap */
+            position: relative;
+        }
+         @media (min-width: 768px) {
+             .testimonial-collage {
+                 gap: 3rem; /* Restore gap */
+             }
+         }
+
+
+        .testimonial-note {
+            position: relative;
+            background-color: var(--color-peach);
+            padding: 1.2rem; /* Adjust padding */
+            border-radius: 6px;
+            box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+            max-width: 280px; /* Adjust max width */
+            transform: rotate(calc((random() - 0.5) * 8deg)); /* Random rotation */
+            margin: 0.5rem; /* Adjust margin */
+            border: 1px dashed var(--color-foggy-gray); /* Pencil-style border */
+        }
+         @media (min-width: 768px) {
+             .testimonial-note {
+                  padding: 1.5rem; /* Restore padding */
+                  max-width: 300px; /* Restore max width */
+                  margin: 1rem; /* Restore margin */
+             }
+         }
+
+
+         .doodle-arrow {
+             position: absolute;
+             width: 30px; /* Adjust size */
+             height: 30px; /* Adjust size */
+             /* Placeholder for doodled arrow SVG or character */
+             font-size: 1.5rem; /* Adjust font size */
+             color: var(--color-forest-moss);
+             transform: rotate(calc((random() - 0.5) * 30deg));
+             pointer-events: none;
+             z-index: 10;
+         }
+         .doodle-arrow.top-right { top: -15px; right: -15px; } /* Adjust position */
+         .doodle-arrow.bottom-left { bottom: -15px; left: -15px; } /* Adjust position */
+
+
+        .sepia-polaroid {
+            background-color: white;
+            padding: 0.5rem; /* Adjust padding */
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+            transform: rotate(calc((random() - 0.5) * 10deg)); /* Random rotation */
+            margin-bottom: 0.75rem; /* Adjust margin */
+            border: 3px solid var(--color-sky-blue); /* Sky blue border */
+            filter: sepia(0.6); /* Sepia effect */
+        }
+         @media (min-width: 768px) {
+             .sepia-polaroid {
+                 padding: 0.75rem; /* Restore padding */
+                 margin-bottom: 1rem; /* Restore margin */
+                 border-width: 5px; /* Restore border width */
+             }
+         }
+
+
+        .sepia-polaroid img {
+            display: block;
+            width: 100px; /* Adjust size */
+            height: 100px; /* Adjust size */
+            object-fit: cover;
+        }
+         @media (min-width: 768px) {
+             .sepia-polaroid img {
+                 width: 120px; /* Restore size */
+                 height: 120px; /* Restore size */
+             }
+         }
+
+
+        .polaroid-caption {
+            font-family: 'Architects Daughter', cursive;
+            text-align: center;
+            margin-top: 0.5rem;
+            color: var(--color-shadow-gray);
+        }
+
+        /* Plans & Pricing (Aged Parchment Cards) */
+        .pricing-tiers {
+            background-color: var(--color-cream);
+             background-image: url('https://www.transparenttextures.com/patterns/parchment.png'); /* Parchment texture placeholder */
+            padding: 3rem 1rem; /* Adjust padding */
+        }
+         @media (min-width: 768px) {
+             .pricing-tiers {
+                 padding: 4rem 2rem; /* Restore padding */
+             }
+         }
+
+
+        .pricing-card {
+            position: relative;
+            background-color: var(--color-parchment);
+            padding: 2rem 1.5rem; /* Adjust padding */
+            border-radius: 8px;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+            margin: 1rem; /* Adjust margin */
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            transform: rotate(calc((random() - 0.5) * 4deg)); /* Slight random rotation */
+            border: 2px solid var(--color-gold); /* Gold border */
+            overflow: hidden;
+            max-width: 300px; /* Max width */
+        }
+         @media (min-width: 768px) {
+             .pricing-card {
+                 padding: 3rem 2rem; /* Restore padding */
+                  margin: 2rem; /* Restore margin */
+                  max-width: none; /* Remove max width */
+             }
+         }
+
+
+        .pricing-card:hover {
+             transform: translateY(-8px) rotate(calc((random() - 0.5) * 4deg)); /* Lift and maintain rotation */
+             box-shadow: 8px 8px 16px rgba(0,0,0,0.3);
+        }
+
+         /* Soft Curling Edge Placeholder */
+         .pricing-card::before {
+             content: '';
+             position: absolute;
+             bottom: 0;
+             left: 0;
+             width: 100%;
+             height: 20px; /* Height of the 'curl' */
+             background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+             transform: skewX(2deg); /* Slight skew for curl effect */
+             transform-origin: bottom left;
+         }
+
+
+         .pricing-card h3 {
+             font-family: 'Indie Flower', cursive;
+             font-size: 1.8rem; /* Adjust font size */
+             margin-bottom: 0.75rem; /* Adjust margin */
+             color: var(--color-midnight-blue);
+             position: relative;
+             z-index: 1;
+         }
+          @media (min-width: 768px) {
+              .pricing-card h3 {
+                  font-size: 2rem; /* Restore font size */
+                  margin-bottom: 1rem; /* Restore margin */
+              }
+          }
+
+
+         .pricing-card .price {
+             font-family: 'Indie Flower', cursive;
+             font-size: 2.5rem; /* Adjust font size */
+             margin-bottom: 1rem; /* Adjust margin */
+             color: var(--color-forest-moss);
+             position: relative;
+             z-index: 1;
+         }
+          @media (min-width: 768px) {
+              .pricing-card .price {
+                  font-size: 3rem; /* Restore font size */
+                  margin-bottom: 1.5rem; /* Restore margin */
+              }
+          }
+
+
+         .pricing-card ul {
+             list-style: none;
+             padding: 0;
+             margin-bottom: 1.5rem; /* Adjust margin */
+             position: relative;
+             z-index: 1;
+         }
+          @media (min-width: 768px) {
+              .pricing-card ul {
+                  margin-bottom: 2rem; /* Restore margin */
+              }
+          }
+
+
+         .pricing-card ul li {
+             font-family: 'Quicksand', sans-serif;
+             margin-bottom: 0.5rem;
+             font-size: 1rem; /* Adjust font size */
+         }
+          @media (min-width: 768px) {
+              .pricing-card ul li {
+                  font-size: 1.1rem; /* Restore font size */
+              }
+          }
+
+
+        /* Placeholder for illustrated badges */
+        .pricing-badge {
+            font-size: 2rem; /* Adjust size */
+            color: var(--color-gold);
+            margin-bottom: 0.75rem; /* Adjust margin */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+         @media (min-width: 768px) {
+             .pricing-badge {
+                 font-size: 2.5rem; /* Restore size */
+                 margin-bottom: 1rem; /* Restore margin */
+             }
+         }
+
+
+         .pricing-card .cta-button {
+             display: inline-block;
+             padding: 0.8rem 1.8rem; /* Adjust padding */
+             background-color: var(--color-midnight-blue);
+             color: var(--color-cream);
+             font-family: 'Indie Flower', cursive;
+             font-size: 1.2rem; /* Adjust font size */
+             text-decoration: none;
+             border-radius: 4px;
+             transition: background-color 0.3s ease;
+             position: relative;
+             z-index: 1;
+         }
+          @media (min-width: 768px) {
+              .pricing-card .cta-button {
+                  padding: 1rem 2rem; /* Restore padding */
+                  font-size: 1.2rem; /* Keep size consistent */
+              }
+          }
+
+
+         .pricing-card .cta-button:hover {
+             background-color: rgba(42, 51, 66, 0.8);
+         }
+
+        /* Ribbon for Storyteller Tier Placeholder */
+         .storyteller-ribbon {
+             position: absolute;
+             top: 0;
+             right: 0;
+             width: 80px; /* Width of the ribbon */
+             height: 80px; /* Height of the ribbon */
+             background-color: var(--color-rose);
+             transform: rotate(45deg) translate(20px, -20px);
+             box-shadow: -2px 2px 4px rgba(0,0,0,0.2);
+             z-index: 2;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             color: var(--color-cream);
+             font-size: 0.8rem;
+             font-weight: bold;
+             text-transform: uppercase;
+             transform-origin: top right;
+         }
+
+          .storyteller-ribbon::before {
+              content: 'Best!';
+              position: absolute;
+              transform: rotate(-45deg);
+              white-space: nowrap;
+          }
+
+
+        /* FAQs (Floating Bubbles/Mushrooms) */
+        .faq-section {
+            background-color: var(--color-sky-blue);
+             background-image: url('https://www.transparenttextures.com/patterns/clean-gray-paper.png'); /* Paper texture placeholder */
+            padding: 3rem 1rem; /* Adjust padding */
+            position: relative;
+            overflow: hidden;
+        }
+         @media (min-width: 768px) {
+             .faq-section {
+                 padding: 4rem 2rem; /* Restore padding */
+             }
+         }
+
+
+        .faq-item {
+            background-color: var(--color-cream);
+            margin-bottom: 1.5rem;
+            border-radius: 25px; /* Rounded shape like a bubble/mushroom cap */
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transform: rotate(calc((random() - 0.5) * 3deg)); /* Slight random rotation */
+            border: 1px solid var(--color-foggy-gray);
+            position: relative;
+            max-width: 95%; /* Max width for mobile */
+            margin-left: auto;
+            margin-right: auto;
+        }
+         @media (min-width: 768px) {
+             .faq-item {
+                  max-width: 700px; /* Restore max width */
+             }
+         }
+
+
+        .faq-question {
+            font-family: 'Indie Flower', cursive;
+            padding: 1.2rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-midnight-blue);
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem; /* Adjust font size */
+        }
+         @media (min-width: 768px) {
+             .faq-question {
+                 font-size: 1.25rem; /* Restore font size */
+             }
+         }
+
+
+        .faq-answer {
+            font-family: 'Quicksand', sans-serif;
+            padding: 0 2rem 1.5rem 2rem;
+            display: none; /* Hidden by default */
+            color: var(--color-shadow-gray);
+            position: relative;
+            z-index: 1;
+            font-size: 1rem; /* Adjust font size */
+        }
+         @media (min-width: 768px) {
+             .faq-answer {
+                 font-size: 1.125rem; /* Restore font size */
+             }
+         }
+
+
+        .faq-item.active .faq-answer {
+            display: block; /* Show when active */
+        }
+
+         /* Placeholder for natural motifs / peeking animals */
+         .faq-motif {
+             position: absolute;
+             bottom: -10px;
+             left: 10px;
+             font-size: 2rem;
+             opacity: 0.6;
+             pointer-events: none;
+             transform: rotate(-5deg);
+         }
+
+
+        /* Final CTA Section (Forest Scene) */
+        .final-cta-forest {
+            background-color: var(--color-forest-moss);
+            background-image: url('https://via.placeholder.com/1200x400?text=Forest+Scene'); /* Forest scene placeholder */
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 1rem; /* Adjust padding */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: var(--color-cream);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+         @media (min-width: 768px) {
+             .final-cta-forest {
+                 padding: 6rem 2rem; /* Restore padding */
+             }
+         }
+
+
+        .final-cta-forest h2 {
+            font-family: 'Indie Flower', cursive;
+            font-size: 2.5rem; /* Adjust font size */
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+         @media (min-width: 768px) {
+             .final-cta-forest h2 {
+                 font-size: 3rem; /* Restore font size */
+             }
+         }
+
+
+        /* CTA Button (Travel Tag/Paper Plane) */
+        .cta-adventure-tag {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--color-gold);
+            color: var(--color-midnight-blue);
+            font-family: 'Indie Flower', cursive;
+            font-size: 1.5rem; /* Adjust font size */
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+         @media (min-width: 768px) {
+             .cta-adventure-tag {
+                 font-size: 1.6rem; /* Restore font size */
+             }
+         }
+
+
+        .cta-adventure-tag:hover {
+            transform: translateY(-5px) rotate(2deg);
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.4);
+        }
+
+        /* Contact Form (Parchment Scroll) */
+        .contact-form-section {
+            background-color: var(--color-cream);
+             background-image: url('https://www.transparenttextures.com/patterns/parchment.png'); /* Parchment texture placeholder */
+            padding: 3rem 1rem; /* Adjust padding */
+        }
+         @media (min-width: 768px) {
+             .contact-form-section {
+                 padding: 4rem 2rem; /* Restore padding */
+             }
+         }
+
+
+        .contact-form {
+            max-width: 95%; /* Max width for mobile */
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+            padding: 2rem 1.5rem; /* Adjust padding */
+            border-radius: 8px;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+            border: 2px solid var(--color-rose); /* Rose border */
+            position: relative;
+        }
+         @media (min-width: 768px) {
+             .contact-form {
+                 max-width: 700px; /* Restore max width */
+                 padding: 3rem; /* Restore padding */
+             }
+         }
+
+
+         /* Floral Corners Placeholder */
+         .floral-corner {
+             position: absolute;
+             width: 30px; /* Adjust size */
+             height: 30px; /* Adjust size */
+             font-size: 1.5rem; /* Adjust font size */
+             color: var(--color-forest-moss);
+             opacity: 0.8;
+             pointer-events: none;
+         }
+         .floral-corner.top-left { top: 10px; left: 10px; transform: rotate(0deg); }
+         .floral-corner.top-right { top: 10px; right: 10px; transform: rotate(90deg); }
+         .floral-corner.bottom-left { bottom: 10px; left: 10px; transform: rotate(270deg); }
+         .floral-corner.bottom-right { bottom: 10px; right: 10px; transform: rotate(180deg); }
+
+
+        .contact-form label {
+            display: block;
+            font-family: 'Indie Flower', cursive;
+            margin-bottom: 0.5rem;
+            color: var(--color-midnight-blue);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--color-rose); /* Rose border */
+            border-radius: 4px;
+            font-family: 'Quicksand', sans-serif;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent input */
+            color: var(--color-shadow-gray);
+        }
+
+        .contact-form button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--color-forest-moss);
+            color: var(--color-cream);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Indie Flower', cursive;
+            font-size: 1.2rem; /* Adjust font size */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Subtle stamp shadow */
+        }
+         @media (min-width: 768px) {
+             .contact-form button {
+                 font-size: 1.4rem; /* Restore font size */
+             }
+         }
+
+
+        .contact-form button:hover {
+            background-color: rgba(155, 167, 141, 0.8);
+            box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+
+        /* Floating Live Chat (Soot Sprite Icon) */
+        .live-chat-soot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--color-midnight-blue);
+            color: var(--color-cream);
+            padding: 0.8rem; /* Adjust padding */
+            border-radius: 50%; /* Circular icon */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            font-size: 1.5rem; /* Adjust icon size */
+            cursor: pointer;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            animation: bounce 2s infinite ease-in-out; /* Gentle bounce animation */
+        }
+         @media (min-width: 768px) {
+             .live-chat-soot {
+                 padding: 1rem; /* Restore padding */
+                 font-size: 2rem; /* Restore icon size */
+             }
+         }
+
+
+         @keyframes bounce {
+             0%, 100% { transform: translateY(0); }
+             50% { transform: translateY(-5px); }
+         }
+
+         .live-chat-soot:hover {
+             transform: scale(1.1); /* Enlarge on hover */
+         }
+
+
+        /* Utility for random rotation (applied via JS) */
+        .js-rotate {
+            transform: rotate(var(--rotation, 0deg));
+        }
+
+    </style>
+</head>
+<body class="text-midnight">
+
+    <div class="floating-element" style="top: 10%; left: 5%; font-size: 3rem; color: var(--color-forest-moss);">🍃</div>
+    <div class="floating-element" style="top: 25%; right: 10%; font-size: 2.5rem; color: var(--color-gold);">✨</div>
+    <div class="floating-element" style="bottom: 15%; left: 15%; font-size: 2rem; color: var(--color-rose);">🌸</div>
+    <div class="floating-element" style="top: 40%; left: 50%; font-size: 3.5rem; color: var(--color-sky-blue);">☁️</div>
+     <div class="floating-element" style="bottom: 5%; right: 5%; font-size: 2.2rem; color: var(--color-foggy-gray);">🐦</div>
+
+
+    <nav class="nav-branch sticky top-0 w-full z-50">
+        <div class="container mx-auto flex justify-center">
+            <button class="nav-toggle" id="nav-toggle" aria-label="toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#hero" class="hover:underline">Beranda</a>
+                <div class="dropdown relative">
+                    <a href="#" class="hover:underline">Koleksi <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-menu absolute top-full">
+                        <a href="#products">Jurnal Digital</a>
+                        <a href="#products">Template Kreatif</a>
+                        <a href="#products">Audio Meditasi</a>
+                        <a href="#products">Ilustrasi</a>
+                    </div>
+                </div>
+                <a href="#community" class="hover:underline">Komunitas</a>
+                <a href="#pricing" class="hover:underline">Dukung Kami</a>
+                <a href="#faq" class="hover:underline">FAQ</a>
+                <a href="#contact" class="hover:underline">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative h-screen flex flex-col items-center justify-center text-center p-8 overflow-hidden bg-sky text-midnight">
+        <div class="absolute inset-0 bg-cover bg-center opacity-50" style="background-image: url('https://via.placeholder.com/1200x800?text=Peaceful+Countryside');">
+             <div class="absolute inset-0" style="background: radial-gradient(circle at top left, rgba(255, 230, 199, 0.4) 0%, rgba(255, 230, 199, 0) 50%), radial-gradient(circle at bottom right, rgba(249, 200, 106, 0.3) 0%, rgba(249, 200, 106, 0) 60%);"></div>
+        </div>
+
+
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-sketch mb-8 sketch-animation relative z-10"> <span>W</span><span>h</span><span>e</span><span>r</span><span>e</span>
+            <span> </span> <span>I</span><span>m</span><span>a</span><span>g</span><span>i</span><span>n</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span>
+            <span> </span> <span>G</span><span>r</span><span>o</span><span>w</span><span>s</span>
+        </h1>
+
+        <a href="#products" class="cta-leaf-tag relative z-10">
+            Start Your Journey
+        </a>
+
+    </section>
+
+    <section id="products" class="py-12 md:py-16 bg-cream"> <div class="container mx-auto px-2 md:px-4"> <h2 class="text-3xl md:text-4xl font-sketch text-center mb-10 md:mb-12 text-midnight">Treasures for Your Inner World</h2> <div class="content-grid">
+                <div class="content-card js-rotate">
+                    <div class="content-card-content">
+                        <h3 class="font-sketch">Digital Dream Journal</h3>
+                        <p class="font-handwriting">Capture your thoughts and dreams in this beautifully illustrated journal.</p>
+                        <div class="flex items-center text-sm text-foggy mt-4">
+                            <i class="fas fa-book-open mr-2"></i> PDF, PNG
+                        </div>
+                         <span class="ghibli-detail">🐾</span> </div>
+                </div>
+
+                 <div class="content-card js-rotate">
+                     <div class="content-card-content">
+                         <h3 class="font-sketch">Creative Template Pack</h3>
+                         <p class="font-handwriting">Boost your projects with whimsical templates for social media & more.</p>
+                         <div class="flex items-center text-sm text-foggy mt-4">
+                             <i class="fas fa-palette mr-2"></i> JPG, PSD
+                         </div>
+                          <span class="ghibli-detail">✨</span> </div>
+                 </div>
+
+                 <div class="content-card js-rotate">
+                     <div class="content-card-content">
+                         <h3 class="font-sketch">Forest Meditation Audio</h3>
+                         <p class="font-handwriting">Relax and find peace with guided meditations inspired by nature sounds.</p>
+                         <div class="flex items-center text-sm text-foggy mt-4">
+                             <i class="fas fa-volume-up mr-2"></i> MP3
+                         </div>
+                          <span class="ghibli-detail">🌬️</span> </div>
+                 </div>
+
+                 <div class="content-card js-rotate">
+                     <div class="content-card-content">
+                         <h3 class="font-sketch">Whimsical Character Art</h3>
+                         <p class="font-handwriting">Hand-painted character illustrations for your stories and designs.</p>
+                         <div class="flex items-center text-sm text-foggy mt-4">
+                             <i class="fas fa-image mr-2"></i> PNG
+                         </div>
+                          <span class="ghibli-detail">🧚</span> </div>
+                 </div>
+
+                </div>
+        </div>
+    </section>
+
+    <section id="community" class="collage-section">
+        <div class="container mx-auto px-2 md:px-4"> <h2 class="text-3xl md:text-4xl font-sketch text-center mb-12 text-midnight">Our Dreamers' Corner</h2> <div class="testimonial-collage">
+
+                <div class="testimonial-note js-rotate">
+                    <span class="doodle-arrow top-right">↗️</span> <div class="sepia-polaroid mx-auto js-rotate">
+                        <img src="https://placehold.co/120x120/9BA78D/FDF9F0?text=Dreamer" alt="User Photo">
+                        <div class="polaroid-caption">Creative Soul</div>
+                    </div>
+                    <p class="font-handwriting text-lg text-center mt-4">"Dream Nest feels like a warm hug! The journal templates are pure magic."</p>
+                     </div>
+
+                <div class="testimonial-note js-rotate">
+                     <span class="doodle-arrow bottom-left">↙️</span> <div class="sepia-polaroid mx-auto js-rotate">
+                        <img src="https://placehold.co/120x120/FFE6C7/2A3342?text=Storyteller" alt="Storyteller Photo">
+                        <div class="polaroid-caption">Aspiring Author</div>
+                    </div>
+                    <p class="font-handwriting text-lg text-center mt-4">"The illustrations sparked so many story ideas. Love the Ghibli vibe!"</p>
+                </div>
+
+                 <div class="testimonial-note js-rotate">
+                      <span class="doodle-arrow top-right">↗️</span> <div class="sepia-polaroid mx-auto js-rotate">
+                         <img src="https://placehold.co/120x120/D6ECF3/9BA78D?text=Artist" alt="Artist Photo">
+                         <div class="polaroid-caption">Digital Artist</div>
+                     </div>
+                     <p class="font-handwriting text-lg text-center mt-4">"Finally, a place with resources that truly inspire creativity and calm."</p>
+                 </div>
+
+                </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-tiers">
+        <div class="container mx-auto px-2 md:px-4"> <h2 class="text-3xl md:text-4xl font-sketch text-center mb-10 md:mb-12 text-midnight">Find Your Path</h2> <div class="flex flex-wrap justify-center gap-8 md:gap-12"> <div class="pricing-card bg-cream js-rotate">
+                    <div class="pricing-badge text-center">🌱</div> <h3 class="text-center">Sprout</h3>
+                    <div class="price text-center">$0<span class="text-lg">/month</span></div>
+                    <ul>
+                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Basic Journal Templates</li>
+                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Free Illustrations</li>
+                        <li><i class="fas fa-times mr-2 text-rose"></i> Premium Content</li>
+                        <li><i class="fas fa-times mr-2 text-rose"></i> Commercial Use</li>
+                    </ul>
+                    <a href="#" class="cta-button text-center block">Start Free</a>
+                </div>
+
+                <div class="pricing-card bg-cream js-rotate">
+                     <div class="pricing-badge text-center">🎒</div> <h3 class="text-center">Explorer</h3>
+                    <div class="price text-center">$12<span class="text-lg">/month</span></div>
+                    <ul>
+                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> All Templates</li>
+                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> All Illustrations</li>
+                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Select Audio</li>
+                        <li><i class="fas fa-times mr-2 text-rose"></i> Commercial Use</li>
+                    </ul>
+                    <a href="#" class="cta-button text-center block">Become an Explorer</a>
+                </div>
+
+                <div class="pricing-card bg-cream js-rotate">
+                     <div class="storyteller-ribbon"></div> <div class="pricing-badge text-center">🏮</div> <h3 class="text-center">Storyteller</h3>
+                    <div class="price text-center">$25<span class="text-lg">/month</span></div>
+                    <ul>
+                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Everything Included</li>
+                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Full Audio Library</li>
+                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Early Access</li>
+                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Commercial License</li>
+                    </ul>
+                    <a href="#" class="cta-button text-center block">Join Storytellers</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container mx-auto px-2 md:px-4"> <h2 class="text-3xl md:text-4xl font-sketch text-center mb-10 md:mb-12 text-midnight">Whispers from the Woods (FAQ)</h2> <div class="max-w-4xl mx-auto">
+
+                <div class="faq-item js-rotate">
+                     <span class="faq-motif">🐿️</span> <div class="faq-question">
+                        What kind of digital content is available?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        We offer digital journals, creative templates, meditation audio, and unique illustrations inspired by nature and magic!
+                    </div>
+                </div>
+
+                 <div class="faq-item js-rotate">
+                      <span class="faq-motif">🦋</span> <div class="faq-question">
+                         Can I sell things I create using your templates/illustrations?
+                         <span class="arrow">▼</span>
+                     </div>
+                     <div class="faq-answer">
+                         Yes, our Storyteller plan includes a commercial license. The Sprout and Explorer plans are for personal use.
+                     </div>
+                 </div>
+
+                 <div class="faq-item js-rotate">
+                      <span class="faq-motif">🍄</span> <div class="faq-question">
+                         How do I access my purchased content?
+                         <span class="arrow">▼</span>
+                     </div>
+                     <div class="faq-answer">
+                         After purchasing, you'll receive download links via email and access to your personal library on the site.
+                     </div>
+                 </div>
+
+                </div>
+        </div>
+    </section>
+
+    <section id="final-cta" class="final-cta-forest">
+        <h2 class="text-cream">Bring Your Stories to Life</h2>
+        <a href="#contact" class="cta-adventure-tag">
+            Begin Your Adventure
+        </a>
+         </section>
+
+    <section id="contact" class="contact-form-section">
+        <div class="container mx-auto px-2 md:px-4"> <h2 class="text-3xl md:text-4xl font-sketch text-center mb-8 text-midnight">Send Us a Message</h2> <form class="contact-form">
+                 <span class="floral-corner top-left">🌿</span>
+                 <span class="floral-corner top-right">🌿</span>
+                 <span class="floral-corner bottom-left">🌿</span>
+                 <span class="floral-corner bottom-right">🌿</span>
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit">Send a Letter</button>
+                 <span class="absolute bottom-4 right-4 text-3xl text-rose">✉️</span>
+            </form>
+        </div>
+    </section>
+
+    <div class="live-chat-soot">
+        煤
+    </div>
+
+
+    <script>
+        // JavaScript for interactivity
+
+        // Hero Headline Animation (Sketchbook)
+        document.addEventListener('DOMContentLoaded', () => {
+            const headline = document.querySelector('.sketch-animation');
+            const text = headline.textContent.trim(); // Get text content, remove leading/trailing space
+            headline.innerHTML = ''; // Clear original content
+
+            let delay = 0.1; // Starting delay
+
+            text.split('').forEach((char, index) => {
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '\u00A0' : char; // Use non-breaking space for spaces
+                span.style.animationDelay = `${delay}s`;
+                headline.appendChild(span);
+
+                // Increase delay more for spaces to create pauses
+                if (char === ' ') {
+                    delay += 0.2; // Longer delay for space
+                } else {
+                    delay += 0.05; // Shorter delay for letters
+                }
+            });
+        });
+
+
+        // Apply random rotation to elements with .js-rotate class on load
+        document.querySelectorAll('.js-rotate').forEach(element => {
+            const randomRotate = Math.random() * 6 - 3; // -3 to 3 degrees
+            element.style.setProperty('--rotation', `${randomRotate}deg`);
+        });
+
+
+        // FAQ Accordion (Simple Expand/Collapse)
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = question.nextElementSibling;
+
+                // Toggle the active class
+                faqItem.classList.toggle('active');
+
+                // Toggle the display of the answer
+                if (faqItem.classList.contains('active')) {
+                    answer.style.display = 'block';
+                } else {
+                    answer.style.display = 'none';
+                }
+            });
+        });
+
+         // Basic smooth scrolling for navigation links
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+             anchor.addEventListener('click', function (e) {
+                 e.preventDefault();
+
+                 document.querySelector(this.getAttribute('href')).scrollIntoView({
+                     behavior: 'smooth'
+                 });
+             });
+         });
+
+         // Mobile Navigation Toggle
+         document.getElementById('nav-toggle').addEventListener('click', () => {
+             const navMenu = document.getElementById('nav-menu');
+             navMenu.classList.toggle('active');
+         });
+
+
+    </script>
+
 </body>
 </html>
