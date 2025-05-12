@@ -1,1239 +1,2490 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dream Nest - Capture Magic in the Everyday</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Indie+Flower&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <title>Langkah Sukses Affiliate - Raih Penghasilan Online Anda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
-        /* Custom Colors */
         :root {
-            --color-sky-blue: #D6ECF3;
-            --color-forest-moss: #9BA78D;
-            --color-soft-peach: #FFE6C7;
-            --color-foggy-gray: #B1B1B1;
-            --color-cream: #FDF9F0;
-            --color-gold: #F9C86A;
-            --color-midnight-blue: #2A3342;
-            --color-rose: #FFB3AB;
+            --primary-gold: #DAA520; /* GoldenRod */
+            --secondary-gold: #FFD700; /* Gold */
+            --accent-gold: #B8860B; /* DarkGoldenRod */
+            --shiny-highlight: #FFFACD; /* LemonChiffon - for highlights */
+            --dark-text: #2c1e00; /* Darker, rich brown for text */
+            --light-bg: #FFF8E1; /* Light cream, almost white gold */
+            --muted-gray: #7f704e; /* Muted gold/brown for less important text */
+            --white: #FFFFFF;
+            --black: #1a1100; /* Very dark brown/black */
+            --success-green: #28a745; /* Keep for success indicators */
         }
 
-        /* Apply custom colors to Tailwind */
-        .bg-sky { background-color: var(--color-sky-blue); }
-        .bg-moss { background-color: var(--color-moss); }
-        .bg-peach { background-color: var(--color-soft-peach); }
-        .bg-foggy { background-color: var(--color-foggy-gray); }
-        .bg-cream { background-color: var(--color-cream); }
-        .bg-gold { background-color: var(--color-gold); }
-        .bg-midnight { background-color: var(--color-midnight-blue); }
-        .bg-rose { background-color: var(--color-rose); }
-
-        .text-sky { color: var(--color-sky-blue); }
-        .text-moss { color: var(--color-forest-moss); }
-        .text-peach { color: var(--color-soft-peach); }
-        .text-foggy { color: var(--color-foggy-gray); }
-        .text-cream { color: var(--color-cream); }
-        .text-gold { color: var(--color-gold); }
-        .text-midnight { color: var(--color-midnight-blue); }
-        .text-rose { color: var(--color-rose); }
-
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            font-family: 'Quicksand', sans-serif; /* Default body font */
-            background-color: var(--color-cream);
-            background-image: url('https://www.transparenttextures.com/patterns/watercolor.png'); /* Watercolor texture placeholder */
-            color: var(--color-midnight-blue);
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            line-height: 1.6;
             overflow-x: hidden;
-            padding: 1rem; /* Base padding for mobile */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE10+/Edge */
+            user-select: none; /* Standard */
         }
 
-         /* Responsive Padding for larger screens */
-         @media (min-width: 768px) { /* Medium screens and up */
-             body {
-                 padding: 2rem 4rem; /* Increased horizontal padding */
-             }
-         }
-
-         @media (min-width: 1024px) { /* Large screens and up */
-             body {
-                 padding: 2rem 8rem; /* More padding on desktop */
-             }
-         }
-
-
-        /* Sketchbook Handwriting Font */
-        .font-sketch {
-            font-family: 'Indie Flower', cursive;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--accent-gold);
         }
 
-         /* General Handwriting Font */
-        .font-handwriting {
-            font-family: 'Caveat', cursive;
-        }
-
-
-        /* Floating Elements Animation */
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(1deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
-        }
-
-        .floating-element {
-            position: absolute;
-            pointer-events: none;
-            opacity: 0.6;
-            animation: float 6s ease-in-out infinite;
-            z-index: 0; /* Ensure background elements are behind content */
-        }
-
-        .floating-element:nth-child(odd) { animation-delay: -3s; }
-        .floating-element:nth-child(even) { animation-delay: -1.5s; transform: rotate(5deg); }
-
-
-        /* Hero Headline Animation (Sketchbook) */
-        .sketch-animation span {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(10px) rotate(-5deg);
-            animation: sketchIn 0.4s forwards;
-            transform-origin: bottom left;
-        }
-
-        @keyframes sketchIn {
-            to {
-                opacity: 1;
-                transform: translateY(0) rotate(0deg);
-            }
-        }
-
-        /* Apply delays to individual spans via JS */
-
-
-        /* CTA Button (Floating Leaf/Forest Spirit Tag) */
-        .cta-leaf-tag {
-            position: relative;
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background-color: var(--color-forest-moss);
-            color: var(--color-cream);
-            font-family: 'Indie Flower', cursive;
-            font-size: 1.4rem;
+        a {
             text-decoration: none;
-            border-radius: 25px; /* Rounded shape */
-            box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            overflow: hidden;
+            color: inherit;
         }
 
-        .cta-leaf-tag:hover {
-            transform: translateY(-5px) scale(1.05); /* Bouncy effect */
-            box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
-            background-color: rgba(155, 167, 141, 0.9);
-        }
-
-        /* Navigation (Wooden Branch) */
-        .nav-branch {
-            background-color: rgba(42, 51, 66, 0.9); /* Semi-transparent Midnight Blue */
-            padding: 0.75rem 0;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            z-index: 50;
+        .container {
             width: 100%;
-            /* Make non-sticky on mobile */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px; /* Slightly more padding */
+            border-radius: 50px; /* Pill shape */
+            font-weight: 700; /* Bolder */
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+            border: none;
+            font-size: 16px;
             position: relative;
-        }
-
-         /* Mobile Navigation Toggle */
-         .nav-toggle {
-             display: block; /* Show on mobile */
-             position: absolute;
-             top: 0.75rem; /* Align with nav padding */
-             right: 1rem; /* Position on the right */
-             font-size: 1.5rem;
-             color: var(--color-cream);
-             cursor: pointer;
-             z-index: 60; /* Ensure it's above the menu */
-         }
-
-         /* Hide toggle on larger screens */
-         @media (min-width: 768px) {
-             .nav-toggle {
-                 display: none;
-             }
-         }
-
-
-         /* Mobile Navigation Menu */
-         .nav-menu {
-             display: none; /* Hidden by default on mobile */
-             flex-direction: column; /* Stack links vertically */
-             align-items: center; /* Center links */
-             gap: 0.5rem; /* Add vertical gap */
-             padding-top: 3rem; /* Add space for the toggle */
-         }
-
-         /* Show menu when toggle is active */
-         .nav-menu.active {
-             display: flex;
-         }
-
-
-         .nav-branch a {
-             font-family: 'Quicksand', sans-serif;
-             font-weight: 600;
-             color: var(--color-cream);
-             padding: 0.5rem 1rem;
-             transition: color 0.3s ease, text-shadow 0.3s ease;
-             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-         }
-
-         .nav-branch a:hover {
-             color: var(--color-gold);
-             text-shadow: 1px 1px 4px rgba(249, 200, 106, 0.8);
-         }
-
-         /* Desktop Navigation */
-         @media (min-width: 768px) {
-             .nav-branch {
-                 position: sticky; /* Make sticky on desktop */
-                 top: 0;
-             }
-             .nav-menu {
-                 display: flex !important; /* Always show on desktop */
-                 flex-direction: row;
-                 justify-content: center;
-                 gap: 2rem; /* Restore horizontal gap */
-                 padding-top: 0; /* Remove mobile padding */
-             }
-         }
-
-
-        /* Dropdown Menu (Storybook/Sketch Note) */
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            background-color: var(--color-cream);
-            box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
-            border-radius: 4px;
             overflow: hidden;
-            z-index: 40;
-            border: 1px dashed var(--color-foggy-gray); /* Pencil border */
-            /* Adjust positioning for mobile if nav stacks */
+            text-transform: uppercase; /* Uppercase for more impact */
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(145deg, var(--secondary-gold), var(--primary-gold));
+            color: var(--black);
+            box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4); /* Gold shadow */
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(145deg, var(--primary-gold), var(--accent-gold));
+            transform: translateY(-3px) scale(1.03); /* More noticeable hover */
+            box-shadow: 0 10px 25px rgba(184, 134, 11, 0.5);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-gold);
+            color: var(--white);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 20px rgba(218, 165, 32, 0.3);
+        }
+        
+        .btn-outline { /* Kept for consistency if used, but secondary is preferred for gold theme */
+            background-color: transparent;
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-gold);
+            color: white;
+        }
+
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px; /* Increased margin */
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem; /* Larger title */
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            color: var(--accent-gold);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px; /* Wider underline */
+            height: 5px; /* Thicker underline */
+            background: linear-gradient(90deg, var(--secondary-gold), var(--primary-gold)); /* Gradient underline */
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
-            margin-top: 0.5rem;
+            border-radius: 3px;
         }
 
-         @media (min-width: 768px) {
-             .dropdown-menu {
-                 left: 0;
-                 transform: translateX(0);
-                 margin-top: 2px; /* Tailwind mt-2 */
-             }
-         }
-
-
-        .dropdown-menu a {
-            font-family: 'Indie Flower', cursive;
-            color: var(--color-midnight-blue);
-            padding: 0.75rem 1.5rem;
-            display: block;
-            white-space: nowrap;
-            transition: background-color 0.2s ease, color 0.2s ease;
+        .section-title p {
+            color: var(--muted-gray);
+            max-width: 750px;
+            margin: 0 auto;
+            font-size: 1.15rem; /* Slightly larger paragraph */
         }
 
-        .dropdown-menu a:hover {
-            background-color: var(--color-sky-blue);
-            color: var(--color-midnight-blue);
-        }
-
-        /* Content Grid (Patchwork/Stamps) */
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Smaller min width for mobile */
-            gap: 2rem; /* Smaller gap for mobile */
-            padding: 1rem; /* Smaller padding for mobile */
-        }
-         @media (min-width: 768px) {
-              .content-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Restore original min width */
-                gap: 3rem; /* Restore original gap */
-                padding: 2rem; /* Restore original padding */
-             }
-         }
-
-
-        .content-card {
-            position: relative;
-            background-color: var(--color-peach);
-            border-radius: 8px;
-            box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            will-change: transform;
-            overflow: hidden;
-            border: 2px solid var(--color-forest-moss); /* Moss border accent */
-            transform: rotate(calc((random() - 0.5) * 6deg)); /* Random rotation */
-        }
-
-        .content-card:hover {
-            transform: rotate(calc((random() - 0.5) * 6deg)) translateY(-5px) scale(1.03); /* Lift, slight tilt, and scale */
-            box-shadow: 6px 6px 12px rgba(0,0,0,0.2);
-        }
-
-         /* Soft Glow Effect on Hover */
-         .content-card::after {
-             content: '';
-             position: absolute;
-             top: 0;
-             left: 0;
-             width: 100%;
-             height: 100%;
-             background: radial-gradient(circle at center, rgba(249, 200, 106, 0.3) 0%, rgba(249, 200, 106, 0) 70%);
-             opacity: 0;
-             transition: opacity 0.3s ease;
-         }
-
-         .content-card:hover::after {
-             opacity: 1;
-         }
-
-
-        .content-card-content {
-            position: relative;
-            z-index: 1; /* Ensure content is above glow */
-            padding: 1.5rem; /* Adjust padding */
-        }
-         @media (min-width: 768px) {
-             .content-card-content {
-                 padding: 2rem; /* Restore padding */
-             }
-         }
-
-
-        .content-card h3 {
-            font-family: 'Indie Flower', cursive;
-            font-size: 1.5rem; /* Adjust font size */
-            margin-bottom: 0.5rem; /* Adjust margin */
-            color: var(--color-midnight-blue);
-        }
-         @media (min-width: 768px) {
-             .content-card h3 {
-                 font-size: 1.6rem; /* Restore font size */
-             }
-         }
-
-
-        .content-card p {
-            font-family: 'Quicksand', sans-serif;
-            font-size: 1rem; /* Adjust font size */
-            margin-bottom: 0.75rem; /* Adjust margin */
-            color: var(--color-shadow-gray);
-        }
-         @media (min-width: 768px) {
-             .content-card p {
-                 font-size: 1.1rem; /* Restore font size */
-             }
-         }
-
-
-        /* Ghibli Detail Placeholder */
-        .ghibli-detail {
+        /* Gold/Shiny Background Patterns */
+        .gold-pattern {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 1.5rem;
-            opacity: 0.7;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08; /* Subtle */
             pointer-events: none;
+            z-index: -1;
         }
 
-
-        /* Community & Testimonials (Message Board Collage) */
-        .collage-section {
-            background-color: var(--color-cream);
-            background-image: url('https://www.transparenttextures.com/patterns/fabric-of-crows.png'); /* Fabric texture placeholder */
-            padding: 3rem 1rem; /* Adjust padding */
-            position: relative;
-            overflow: hidden;
-        }
-         @media (min-width: 768px) {
-             .collage-section {
-                 padding: 4rem 2rem; /* Restore padding */
-             }
-         }
-
-
-        .testimonial-collage {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem; /* Adjust gap */
-            position: relative;
-        }
-         @media (min-width: 768px) {
-             .testimonial-collage {
-                 gap: 3rem; /* Restore gap */
-             }
-         }
-
-
-        .testimonial-note {
-            position: relative;
-            background-color: var(--color-peach);
-            padding: 1.2rem; /* Adjust padding */
-            border-radius: 6px;
-            box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
-            max-width: 280px; /* Adjust max width */
-            transform: rotate(calc((random() - 0.5) * 8deg)); /* Random rotation */
-            margin: 0.5rem; /* Adjust margin */
-            border: 1px dashed var(--color-foggy-gray); /* Pencil-style border */
-        }
-         @media (min-width: 768px) {
-             .testimonial-note {
-                  padding: 1.5rem; /* Restore padding */
-                  max-width: 300px; /* Restore max width */
-                  margin: 1rem; /* Restore margin */
-             }
-         }
-
-
-         .doodle-arrow {
-             position: absolute;
-             width: 30px; /* Adjust size */
-             height: 30px; /* Adjust size */
-             /* Placeholder for doodled arrow SVG or character */
-             font-size: 1.5rem; /* Adjust font size */
-             color: var(--color-forest-moss);
-             transform: rotate(calc((random() - 0.5) * 30deg));
-             pointer-events: none;
-             z-index: 10;
-         }
-         .doodle-arrow.top-right { top: -15px; right: -15px; } /* Adjust position */
-         .doodle-arrow.bottom-left { bottom: -15px; left: -15px; } /* Adjust position */
-
-
-        .sepia-polaroid {
-            background-color: white;
-            padding: 0.5rem; /* Adjust padding */
-            box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-            transform: rotate(calc((random() - 0.5) * 10deg)); /* Random rotation */
-            margin-bottom: 0.75rem; /* Adjust margin */
-            border: 3px solid var(--color-sky-blue); /* Sky blue border */
-            filter: sepia(0.6); /* Sepia effect */
-        }
-         @media (min-width: 768px) {
-             .sepia-polaroid {
-                 padding: 0.75rem; /* Restore padding */
-                 margin-bottom: 1rem; /* Restore margin */
-                 border-width: 5px; /* Restore border width */
-             }
-         }
-
-
-        .sepia-polaroid img {
-            display: block;
-            width: 100px; /* Adjust size */
-            height: 100px; /* Adjust size */
-            object-fit: cover;
-        }
-         @media (min-width: 768px) {
-             .sepia-polaroid img {
-                 width: 120px; /* Restore size */
-                 height: 120px; /* Restore size */
-             }
-         }
-
-
-        .polaroid-caption {
-            font-family: 'Architects Daughter', cursive;
-            text-align: center;
-            margin-top: 0.5rem;
-            color: var(--color-shadow-gray);
+        .gold-pattern-1 {
+            background-image:
+                linear-gradient(45deg, var(--primary-gold) 1px, transparent 1px),
+                linear-gradient(-45deg, var(--primary-gold) 1px, transparent 1px);
+            background-size: 50px 50px; /* Larger pattern */
         }
 
-        /* Plans & Pricing (Aged Parchment Cards) */
-        .pricing-tiers {
-            background-color: var(--color-cream);
-             background-image: url('https://www.transparenttextures.com/patterns/parchment.png'); /* Parchment texture placeholder */
-            padding: 3rem 1rem; /* Adjust padding */
-        }
-         @media (min-width: 768px) {
-             .pricing-tiers {
-                 padding: 4rem 2rem; /* Restore padding */
-             }
-         }
-
-
-        .pricing-card {
-            position: relative;
-            background-color: var(--color-parchment);
-            padding: 2rem 1.5rem; /* Adjust padding */
-            border-radius: 8px;
-            box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
-            margin: 1rem; /* Adjust margin */
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            transform: rotate(calc((random() - 0.5) * 4deg)); /* Slight random rotation */
-            border: 2px solid var(--color-gold); /* Gold border */
-            overflow: hidden;
-            max-width: 300px; /* Max width */
-        }
-         @media (min-width: 768px) {
-             .pricing-card {
-                 padding: 3rem 2rem; /* Restore padding */
-                  margin: 2rem; /* Restore margin */
-                  max-width: none; /* Remove max width */
-             }
-         }
-
-
-        .pricing-card:hover {
-             transform: translateY(-8px) rotate(calc((random() - 0.5) * 4deg)); /* Lift and maintain rotation */
-             box-shadow: 8px 8px 16px rgba(0,0,0,0.3);
+        .gold-pattern-2 {
+            background-image:
+                radial-gradient(circle, var(--accent-gold) 1px, transparent 1px);
+            background-size: 40px 40px; /* Larger pattern */
         }
 
-         /* Soft Curling Edge Placeholder */
-         .pricing-card::before {
-             content: '';
-             position: absolute;
-             bottom: 0;
-             left: 0;
-             width: 100%;
-             height: 20px; /* Height of the 'curl' */
-             background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
-             transform: skewX(2deg); /* Slight skew for curl effect */
-             transform-origin: bottom left;
-         }
-
-
-         .pricing-card h3 {
-             font-family: 'Indie Flower', cursive;
-             font-size: 1.8rem; /* Adjust font size */
-             margin-bottom: 0.75rem; /* Adjust margin */
-             color: var(--color-midnight-blue);
-             position: relative;
-             z-index: 1;
-         }
-          @media (min-width: 768px) {
-              .pricing-card h3 {
-                  font-size: 2rem; /* Restore font size */
-                  margin-bottom: 1rem; /* Restore margin */
-              }
-          }
-
-
-         .pricing-card .price {
-             font-family: 'Indie Flower', cursive;
-             font-size: 2.5rem; /* Adjust font size */
-             margin-bottom: 1rem; /* Adjust margin */
-             color: var(--color-forest-moss);
-             position: relative;
-             z-index: 1;
-         }
-          @media (min-width: 768px) {
-              .pricing-card .price {
-                  font-size: 3rem; /* Restore font size */
-                  margin-bottom: 1.5rem; /* Restore margin */
-              }
-          }
-
-
-         .pricing-card ul {
-             list-style: none;
-             padding: 0;
-             margin-bottom: 1.5rem; /* Adjust margin */
-             position: relative;
-             z-index: 1;
-         }
-          @media (min-width: 768px) {
-              .pricing-card ul {
-                  margin-bottom: 2rem; /* Restore margin */
-              }
-          }
-
-
-         .pricing-card ul li {
-             font-family: 'Quicksand', sans-serif;
-             margin-bottom: 0.5rem;
-             font-size: 1rem; /* Adjust font size */
-         }
-          @media (min-width: 768px) {
-              .pricing-card ul li {
-                  font-size: 1.1rem; /* Restore font size */
-              }
-          }
-
-
-        /* Placeholder for illustrated badges */
-        .pricing-badge {
-            font-size: 2rem; /* Adjust size */
-            color: var(--color-gold);
-            margin-bottom: 0.75rem; /* Adjust margin */
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 1;
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 248, 225, 0.9); /* Light cream with transparency */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            box-shadow: 0 2px 20px rgba(184, 134, 11, 0.15); /* Softer gold shadow */
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
-         @media (min-width: 768px) {
-             .pricing-badge {
-                 font-size: 2.5rem; /* Restore size */
-                 margin-bottom: 1rem; /* Restore margin */
-             }
-         }
 
-
-         .pricing-card .cta-button {
-             display: inline-block;
-             padding: 0.8rem 1.8rem; /* Adjust padding */
-             background-color: var(--color-midnight-blue);
-             color: var(--color-cream);
-             font-family: 'Indie Flower', cursive;
-             font-size: 1.2rem; /* Adjust font size */
-             text-decoration: none;
-             border-radius: 4px;
-             transition: background-color 0.3s ease;
-             position: relative;
-             z-index: 1;
-         }
-          @media (min-width: 768px) {
-              .pricing-card .cta-button {
-                  padding: 1rem 2rem; /* Restore padding */
-                  font-size: 1.2rem; /* Keep size consistent */
-              }
-          }
-
-
-         .pricing-card .cta-button:hover {
-             background-color: rgba(42, 51, 66, 0.8);
-         }
-
-        /* Ribbon for Storyteller Tier Placeholder */
-         .storyteller-ribbon {
-             position: absolute;
-             top: 0;
-             right: 0;
-             width: 80px; /* Width of the ribbon */
-             height: 80px; /* Height of the ribbon */
-             background-color: var(--color-rose);
-             transform: rotate(45deg) translate(20px, -20px);
-             box-shadow: -2px 2px 4px rgba(0,0,0,0.2);
-             z-index: 2;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             color: var(--color-cream);
-             font-size: 0.8rem;
-             font-weight: bold;
-             text-transform: uppercase;
-             transform-origin: top right;
-         }
-
-          .storyteller-ribbon::before {
-              content: 'Best!';
-              position: absolute;
-              transform: rotate(-45deg);
-              white-space: nowrap;
-          }
-
-
-        /* FAQs (Floating Bubbles/Mushrooms) */
-        .faq-section {
-            background-color: var(--color-sky-blue);
-             background-image: url('https://www.transparenttextures.com/patterns/clean-gray-paper.png'); /* Paper texture placeholder */
-            padding: 3rem 1rem; /* Adjust padding */
-            position: relative;
-            overflow: hidden;
+        header.scrolled {
+            background-color: rgba(255, 248, 225, 0.95); /* More opaque on scroll */
+            box-shadow: 0 5px 25px rgba(184, 134, 11, 0.2);
         }
-         @media (min-width: 768px) {
-             .faq-section {
-                 padding: 4rem 2rem; /* Restore padding */
-             }
-         }
 
-
-        .faq-item {
-            background-color: var(--color-cream);
-            margin-bottom: 1.5rem;
-            border-radius: 25px; /* Rounded shape like a bubble/mushroom cap */
-            box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transform: rotate(calc((random() - 0.5) * 3deg)); /* Slight random rotation */
-            border: 1px solid var(--color-foggy-gray);
-            position: relative;
-            max-width: 95%; /* Max width for mobile */
-            margin-left: auto;
-            margin-right: auto;
-        }
-         @media (min-width: 768px) {
-             .faq-item {
-                  max-width: 700px; /* Restore max width */
-             }
-         }
-
-
-        .faq-question {
-            font-family: 'Indie Flower', cursive;
-            padding: 1.2rem 2rem;
-            cursor: pointer;
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: var(--color-midnight-blue);
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.9rem; /* Slightly larger logo */
+            font-weight: 800;
+            color: var(--accent-gold);
+        }
+
+        .logo i {
+            margin-right: 12px;
+            color: var(--primary-gold); /* Icon color */
+            text-shadow: 0 0 5px var(--secondary-gold); /* Subtle glow */
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            margin: 0 18px; /* Increased spacing */
+            font-weight: 600;
+            color: var(--dark-text);
             position: relative;
-            z-index: 1;
-            font-size: 1.1rem; /* Adjust font size */
+            transition: color 0.3s ease;
+            letter-spacing: 0.3px;
         }
-         @media (min-width: 768px) {
-             .faq-question {
-                 font-size: 1.25rem; /* Restore font size */
-             }
-         }
 
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--primary-gold);
+            bottom: -6px; /* Adjusted position */
+            left: 0;
+            transition: width 0.4s ease; /* Smoother transition */
+            border-radius: 2px;
+        }
 
-        .faq-answer {
-            font-family: 'Quicksand', sans-serif;
-            padding: 0 2rem 1.5rem 2rem;
-            display: none; /* Hidden by default */
-            color: var(--color-shadow-gray);
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-gold);
+        }
+
+        .nav-links a:hover:after, .nav-links a.active:after {
+            width: 100%;
+        }
+
+        .nav-links .contact-btn {
+            margin-left: 25px;
+            padding: 10px 22px;
+            background: linear-gradient(145deg, var(--secondary-gold), var(--primary-gold));
+            color: var(--black);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(218, 165, 32, 0.3);
+            font-weight: 700;
+        }
+
+        .nav-links .contact-btn:hover {
+            background: linear-gradient(145deg, var(--primary-gold), var(--accent-gold));
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 15px rgba(184, 134, 11, 0.4);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem; /* Larger hamburger */
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section with Swiper */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
             position: relative;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-swiper-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 1;
-            font-size: 1rem; /* Adjust font size */
-        }
-         @media (min-width: 768px) {
-             .faq-answer {
-                 font-size: 1.125rem; /* Restore font size */
-             }
-         }
-
-
-        .faq-item.active .faq-answer {
-            display: block; /* Show when active */
         }
 
-         /* Placeholder for natural motifs / peeking animals */
-         .faq-motif {
-             position: absolute;
-             bottom: -10px;
-             left: 10px;
-             font-size: 2rem;
-             opacity: 0.6;
-             pointer-events: none;
-             transform: rotate(-5deg);
-         }
-
-
-        /* Final CTA Section (Forest Scene) */
-        .final-cta-forest {
-            background-color: var(--color-forest-moss);
-            background-image: url('https://via.placeholder.com/1200x400?text=Forest+Scene'); /* Forest scene placeholder */
+        .hero .swiper-slide {
             background-size: cover;
             background-position: center;
-            padding: 5rem 1rem; /* Adjust padding */
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            color: var(--color-cream);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-         @media (min-width: 768px) {
-             .final-cta-forest {
-                 padding: 6rem 2rem; /* Restore padding */
-             }
-         }
-
-
-        .final-cta-forest h2 {
-            font-family: 'Indie Flower', cursive;
-            font-size: 2.5rem; /* Adjust font size */
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 10;
-        }
-         @media (min-width: 768px) {
-             .final-cta-forest h2 {
-                 font-size: 3rem; /* Restore font size */
-             }
-         }
-
-
-        /* CTA Button (Travel Tag/Paper Plane) */
-        .cta-adventure-tag {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background-color: var(--color-gold);
-            color: var(--color-midnight-blue);
-            font-family: 'Indie Flower', cursive;
-            font-size: 1.5rem; /* Adjust font size */
-            text-decoration: none;
-            border-radius: 8px;
-            box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            z-index: 10;
-        }
-         @media (min-width: 768px) {
-             .cta-adventure-tag {
-                 font-size: 1.6rem; /* Restore font size */
-             }
-         }
-
-
-        .cta-adventure-tag:hover {
-            transform: translateY(-5px) rotate(2deg);
-            box-shadow: 6px 6px 12px rgba(0,0,0,0.4);
-        }
-
-        /* Contact Form (Parchment Scroll) */
-        .contact-form-section {
-            background-color: var(--color-cream);
-             background-image: url('https://www.transparenttextures.com/patterns/parchment.png'); /* Parchment texture placeholder */
-            padding: 3rem 1rem; /* Adjust padding */
-        }
-         @media (min-width: 768px) {
-             .contact-form-section {
-                 padding: 4rem 2rem; /* Restore padding */
-             }
-         }
-
-
-        .contact-form {
-            max-width: 95%; /* Max width for mobile */
-            margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
-            padding: 2rem 1.5rem; /* Adjust padding */
-            border-radius: 8px;
-            box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
-            border: 2px solid var(--color-rose); /* Rose border */
-            position: relative;
-        }
-         @media (min-width: 768px) {
-             .contact-form {
-                 max-width: 700px; /* Restore max width */
-                 padding: 3rem; /* Restore padding */
-             }
-         }
-
-
-         /* Floral Corners Placeholder */
-         .floral-corner {
-             position: absolute;
-             width: 30px; /* Adjust size */
-             height: 30px; /* Adjust size */
-             font-size: 1.5rem; /* Adjust font size */
-             color: var(--color-forest-moss);
-             opacity: 0.8;
-             pointer-events: none;
-         }
-         .floral-corner.top-left { top: 10px; left: 10px; transform: rotate(0deg); }
-         .floral-corner.top-right { top: 10px; right: 10px; transform: rotate(90deg); }
-         .floral-corner.bottom-left { bottom: 10px; left: 10px; transform: rotate(270deg); }
-         .floral-corner.bottom-right { bottom: 10px; right: 10px; transform: rotate(180deg); }
-
-
-        .contact-form label {
-            display: block;
-            font-family: 'Indie Flower', cursive;
-            margin-bottom: 0.5rem;
-            color: var(--color-midnight-blue);
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            border: 1px solid var(--color-rose); /* Rose border */
-            border-radius: 4px;
-            font-family: 'Quicksand', sans-serif;
-            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent input */
-            color: var(--color-shadow-gray);
-        }
-
-        .contact-form button {
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            background-color: var(--color-forest-moss);
-            color: var(--color-cream);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: 'Indie Flower', cursive;
-            font-size: 1.2rem; /* Adjust font size */
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Subtle stamp shadow */
-        }
-         @media (min-width: 768px) {
-             .contact-form button {
-                 font-size: 1.4rem; /* Restore font size */
-             }
-         }
-
-
-        .contact-form button:hover {
-            background-color: rgba(155, 167, 141, 0.8);
-            box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-        }
-
-        /* Floating Live Chat (Soot Sprite Icon) */
-        .live-chat-soot {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--color-midnight-blue);
-            color: var(--color-cream);
-            padding: 0.8rem; /* Adjust padding */
-            border-radius: 50%; /* Circular icon */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            font-size: 1.5rem; /* Adjust icon size */
-            cursor: pointer;
-            z-index: 100;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.3s ease;
-            animation: bounce 2s infinite ease-in-out; /* Gentle bounce animation */
         }
-         @media (min-width: 768px) {
-             .live-chat-soot {
-                 padding: 1rem; /* Restore padding */
-                 font-size: 2rem; /* Restore icon size */
-             }
-         }
-
-
-         @keyframes bounce {
-             0%, 100% { transform: translateY(0); }
-             50% { transform: translateY(-5px); }
-         }
-
-         .live-chat-soot:hover {
-             transform: scale(1.1); /* Enlarge on hover */
-         }
-
-
-        /* Utility for random rotation (applied via JS) */
-        .js-rotate {
-            transform: rotate(var(--rotation, 0deg));
+        
+        .hero .swiper-slide::before { /* Overlay for slides */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(44, 30, 0, 0.6), rgba(44, 30, 0, 0.8)); /* Dark gold overlay */
         }
 
+        .hero-content {
+            max-width: 850px; /* Wider content */
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem; /* Larger H1 */
+            margin-bottom: 25px;
+            line-height: 1.25;
+            color: var(--white);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Stronger shadow */
+        }
+
+        .hero h1 span {
+            color: var(--secondary-gold); /* Bright gold span */
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+        }
+
+        .hero p {
+            font-size: 1.3rem; /* Larger paragraph */
+            margin-bottom: 35px;
+            color: var(--shiny-highlight); /* Lighter text for contrast */
+            font-weight: 500;
+        }
+
+        .hero .btn {
+            font-size: 1.15rem; /* Larger buttons */
+            padding: 18px 35px; /* More padding */
+            margin: 0 12px;
+        }
+
+        .hero .btn i {
+            margin-left: 10px;
+        }
+        
+        .hero .swiper-pagination-bullet {
+            background-color: var(--shiny-highlight);
+            opacity: 0.6;
+            width: 12px; height: 12px; /* Larger bullets */
+        }
+        .hero .swiper-pagination-bullet-active {
+            background-color: var(--secondary-gold);
+            opacity: 1;
+            transform: scale(1.2);
+        }
+        .hero .swiper-button-next,
+        .hero .swiper-button-prev {
+            color: var(--shiny-highlight);
+            transition: color 0.3s ease, transform 0.3s ease;
+            width: 50px; height: 50px; /* Larger nav buttons */
+        }
+        .hero .swiper-button-next:hover,
+        .hero .swiper-button-prev:hover {
+            color: var(--secondary-gold);
+            transform: scale(1.1);
+        }
+
+
+        /* Features Section */
+        .features {
+            background-color: var(--light-bg); /* Consistent light background */
+            position: relative;
+        }
+
+        .features .gold-pattern { /* Use the gold pattern defined earlier */
+             background-image:
+                linear-gradient(45deg, var(--primary-gold) 1px, transparent 1px),
+                linear-gradient(-45deg, var(--primary-gold) 1px, transparent 1px);
+            background-size: 60px 60px; /* Adjusted size */
+            opacity: 0.05;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger minmax */
+            gap: 35px; /* Increased gap */
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 20px; /* More rounded */
+            padding: 35px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.1); /* Softer gold shadow */
+            border-top: 5px solid var(--primary-gold); /* Gold top border */
+        }
+
+        .feature-card:hover {
+            transform: translateY(-12px) scale(1.02); /* More pronounced hover */
+            box-shadow: 0 18px 40px rgba(184, 134, 11, 0.2);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--secondary-gold), var(--accent-gold)); /* Gold gradient */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--black); /* Dark icon for contrast */
+            font-size: 2rem; /* Larger icon */
+            box-shadow: 0 0 15px var(--primary-gold); /* Icon glow */
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem; /* Larger heading */
+            margin-bottom: 18px;
+            color: var(--accent-gold);
+        }
+
+        .feature-card p {
+            color: var(--muted-gray);
+            font-size: 1.05rem; /* Slightly larger text */
+        }
+
+        /* Courses Section */
+        .courses {
+            position: relative;
+            background-color: var(--white); /* White background for this section */
+        }
+
+        .courses .gold-pattern {
+            background-image:
+                radial-gradient(circle, var(--accent-gold) 1px, transparent 1px);
+            background-size: 45px 45px;
+            opacity: 0.06;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .course-card {
+            background: var(--light-bg); /* Light cream background for cards */
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-top: 5px solid var(--secondary-gold); /* Lighter gold top border */
+        }
+
+        .course-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 18px 40px rgba(184, 134, 11, 0.2);
+        }
+
+        .course-img {
+            height: 220px; /* Taller image */
+            background-size: cover;
+            background-position: center;
+            filter: saturate(1.1); /* Slightly more vibrant images */
+        }
+
+        .course-content {
+            padding: 30px;
+        }
+
+        .course-content h3 {
+            font-size: 1.4rem; /* Larger course title */
+            margin-bottom: 12px;
+            color: var(--accent-gold);
+        }
+
+        .course-content p {
+            color: var(--muted-gray);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .course-content .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            background: linear-gradient(145deg, var(--primary-gold), var(--accent-gold));
+            color: var(--white);
+        }
+        .course-content .btn:hover {
+            background: linear-gradient(145deg, var(--accent-gold), var(--primary-gold));
+        }
+
+
+        /* Link-Bio Section - Swiper */
+        .link-bio-section {
+            background-color: var(--light-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-bio-section .gold-pattern {
+            background-image:
+                linear-gradient(45deg, var(--accent-gold) 1px, transparent 1px),
+                linear-gradient(-45deg, var(--accent-gold) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.07;
+        }
+        
+        .link-bio-swiper .slide { /* Renamed from .slide to avoid conflict with global .slide if any */
+            display: flex;
+            align-items: center;
+            gap: 60px; /* Increased gap */
+            padding: 0 20px;
+        }
+
+        .link-bio-swiper .slide-content { /* Renamed */
+            flex: 1;
+        }
+
+        .link-bio-swiper .slide-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            line-height: 1.3;
+            color: var(--accent-gold);
+        }
+
+        .link-bio-swiper .slide-content h2 span {
+            color: var(--primary-gold);
+            position: relative;
+            /* text-decoration: underline; 
+            text-decoration-color: var(--secondary-gold); 
+            text-decoration-thickness: 4px; */
+        }
+        .link-bio-swiper .slide-content h2 span::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--secondary-gold), var(--primary-gold));
+            bottom: 2px;
+            left: 0;
+            z-index: -1;
+            opacity: 0.6;
+            border-radius: 3px;
+        }
+
+
+        .link-bio-swiper .slide-content p {
+            color: var(--muted-gray);
+            margin-bottom: 35px;
+            font-size: 1.15rem;
+        }
+
+        .link-bio-swiper .slide-image { /* Renamed */
+            flex: 1;
+            position: relative;
+        }
+
+        .link-bio-swiper .slide-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(184, 134, 11, 0.25); /* Enhanced shadow */
+            border: 3px solid var(--secondary-gold); /* Gold border */
+        }
+
+        .link-bio-swiper .slide-image:before { /* Decorative element */
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px dashed var(--primary-gold); /* Dashed border */
+            border-radius: 20px;
+            top: -10px; /* Offset */
+            left: -10px; /* Offset */
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        .link-bio-swiper .swiper-pagination-bullet {
+            background-color: var(--muted-gray);
+            opacity: 0.7;
+        }
+        .link-bio-swiper .swiper-pagination-bullet-active {
+            background-color: var(--primary-gold);
+            opacity: 1;
+        }
+        .link-bio-swiper .swiper-button-next,
+        .link-bio-swiper .swiper-button-prev {
+            color: var(--primary-gold);
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            width: 44px; height: 44px;
+            transition: all 0.3s ease;
+        }
+        .link-bio-swiper .swiper-button-next:hover,
+        .link-bio-swiper .swiper-button-prev:hover {
+            color: var(--accent-gold);
+            background-color: var(--secondary-gold);
+        }
+
+
+        /* Creators Section - Tab Slider */
+        .creators-section {
+            background-color: var(--dark-text); /* Dark background for contrast */
+            color: var(--light-bg);
+            text-align: center;
+            position: relative;
+        }
+
+        .creators-section .gold-pattern {
+            background-image:
+                radial-gradient(circle, var(--primary-gold) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.15; /* Slightly more visible on dark bg */
+        }
+
+        .creators-section .section-title h2 {
+            color: var(--secondary-gold); /* Bright gold title */
+        }
+
+        .creators-section .section-title h2:after {
+            background: linear-gradient(90deg, var(--primary-gold), var(--accent-gold));
+        }
+
+        .creators-section .section-title p {
+            color: var(--shiny-highlight); /* Lighter text */
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            margin: 5px; /* Added margin for wrapping */
+            background: rgba(255, 215, 0, 0.1); /* Transparent gold */
+            color: var(--secondary-gold);
+            border-radius: 50px; /* Pill shape */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary-gold);
+            color: var(--black);
+            box-shadow: 0 0 15px var(--secondary-gold);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjusted size */
+            gap: 35px;
+        }
+
+        .creator-item {
+            background: rgba(255, 215, 0, 0.08); /* Very subtle gold bg */
+            border-radius: 20px;
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--accent-gold); /* Gold border */
+        }
+
+        .creator-item:hover {
+            transform: translateY(-8px) scale(1.03);
+            background: rgba(255, 215, 0, 0.15);
+            box-shadow: 0 12px 25px rgba(218, 165, 32, 0.3);
+        }
+
+        .creator-item i {
+            font-size: 3.5rem; /* Larger icon */
+            color: var(--secondary-gold);
+            margin-bottom: 18px;
+            text-shadow: 0 0 10px var(--primary-gold);
+        }
+
+        .creator-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--shiny-highlight);
+        }
+
+        .creator-item .creator-details {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            background: var(--primary-gold);
+            padding: 18px;
+            border-radius: 0 0 18px 18px; /* Match card radius */
+            transition: all 0.4s ease;
+            color: var(--black);
+        }
+        .creator-item .creator-details p {
+            font-weight: 600;
+        }
+
+        .creator-item:hover .creator-details {
+            bottom: 0;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            position: relative;
+            background-color: var(--light-bg);
+        }
+
+        .testimonials .gold-pattern {
+            background-image:
+                linear-gradient(45deg, var(--primary-gold) 1px, transparent 1px),
+                linear-gradient(-45deg, var(--primary-gold) 1px, transparent 1px);
+            background-size: 55px 55px;
+            opacity: 0.06;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.1);
+            position: relative;
+            border-top: 5px solid var(--primary-gold);
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(184, 134, 11, 0.15);
+        }
+
+        .testimonial-card i.fa-quote-right { /* Specific quote icon styling */
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 3.5rem;
+            color: rgba(218, 165, 32, 0.15); /* Subtle gold quote */
+        }
+
+        .testimonial-content {
+            margin-bottom: 25px;
+            color: var(--muted-gray);
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 60px; /* Larger avatar */
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 18px;
+            border: 3px solid var(--secondary-gold); /* Gold border for avatar */
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+            color: var(--accent-gold);
+        }
+
+        .author-info p {
+            color: var(--muted-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background-color: var(--white); /* White bg for contrast */
+            position: relative;
+        }
+
+        .pricing .gold-pattern {
+            background-image:
+                radial-gradient(circle, var(--accent-gold) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.07;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            align-items: stretch; /* Make cards same height */
+        }
+
+        .pricing-card {
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--primary-gold);
+            display: flex;
+            flex-direction: column; /* For button alignment */
+        }
+
+        .pricing-card:hover, .pricing-card.featured {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(184, 134, 11, 0.2);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--secondary-gold); /* Bright gold border for featured */
+            background: linear-gradient(180deg, var(--shiny-highlight), var(--light-bg)); /* Subtle gradient */
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -18px; /* Adjusted position */
+            right: 20px;
+            background: linear-gradient(145deg, var(--accent-gold), var(--primary-gold));
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+            color: var(--accent-gold);
+            text-align: center;
+        }
+
+        .price {
+            font-size: 3rem; /* Larger price */
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: var(--dark-text);
+            text-align: center;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--muted-gray);
+            font-weight: 500;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 35px;
+            flex-grow: 1; /* Allow features to take space */
+        }
+
+        .pricing-features li {
+            padding: 10px 0; /* Increased padding */
+            color: var(--muted-gray);
+            position: relative;
+            padding-left: 30px; /* More space for icon */
+            font-size: 1rem;
+        }
+
+        .pricing-features li:before {
+            content: '\f00c'; /* Checkmark */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-gold); /* Gold checkmark */
+            font-size: 1.1rem;
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+            margin-top: auto; /* Push button to bottom */
+        }
+
+        /* FAQ Section */
+        .faq-container { max-width: 900px; margin: 0 auto; }
+        .faq-item {
+            background-color: var(--white);
+            margin-bottom: 18px; border-radius: 15px; /* More rounded */
+            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.08); overflow: hidden;
+            border: 1px solid var(--primary-gold); /* Gold border */
+        }
+        .faq-question {
+            padding: 20px 25px; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            font-weight: 700; color: var(--accent-gold); font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        .faq-question:hover { background-color: var(--shiny-highlight); }
+        .faq-question i {
+            transition: transform 0.3s;
+            color: var(--primary-gold); font-size: 1.3rem;
+        }
+        .faq-answer {
+            background: var(--light-bg);
+            color: var(--dark-text);
+            border-top: 1px solid var(--primary-gold);
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s;
+        }
+        .faq-item.active .faq-answer {
+            padding: 22px 25px;
+            max-height: 500px;
+            opacity: 1;
+        }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer p {
+             color: var(--dark-text); background: transparent; padding: 0; border-radius: 0; font-size: 1rem;
+        }
+        #faq .section-title p { /* Style for the intro paragraph in FAQ */
+            color: var(--dark-text); font-size: 1.1rem; background: var(--white);
+            padding: 15px 20px; border-radius: 12px; box-shadow: 0 3px 10px rgba(184,134,11,0.1);
+            border: 1px solid var(--secondary-gold);
+        }
+
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-bg);
+            position: relative;
+        }
+
+        .contact .gold-pattern {
+            background-image:
+                radial-gradient(circle, var(--primary-gold) 1px, transparent 1px);
+            background-size: 45px 45px;
+            opacity: 0.08;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 22px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--accent-gold);
+            font-size: 1.05rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 14px 18px; /* Increased padding */
+            border: 1px solid var(--muted-gray);
+            border-radius: 10px; /* More rounded */
+            font-family: 'Open Sans', sans-serif;
+            transition: all 0.3s ease;
+            background-color: var(--white);
+            color: var(--dark-text);
+        }
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: var(--muted-gray);
+            opacity: 0.7;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            border-color: var(--primary-gold);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(218, 165, 32, 0.2); /* Gold focus ring */
+            background-color: var(--shiny-highlight);
+        }
+
+        .contact-form textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+        }
+
+        .contact-info {
+            background: linear-gradient(160deg, var(--white), var(--shiny-highlight)); /* Subtle gradient */
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.15);
+            border: 1px solid var(--secondary-gold);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--accent-gold);
+        }
+
+        .info-item {
+            display: flex;
+            margin-bottom: 22px;
+            align-items: flex-start; /* Align icon with first line */
+        }
+
+        .info-item i {
+            font-size: 1.4rem; /* Larger icon */
+            color: var(--primary-gold);
+            margin-right: 18px;
+            margin-top: 5px; /* Adjust alignment */
+            width: 25px; /* Ensure consistent spacing */
+            text-align: center;
+        }
+        .info-item div p {
+            color: var(--muted-gray);
+            font-size: 1rem;
+        }
+        .info-item div h4 {
+            color: var(--dark-text);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 35px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px; /* Larger social icons */
+            height: 45px;
+            background: var(--primary-gold);
+            color: var(--black);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-gold);
+            color: var(--white);
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(rgba(44, 30, 0, 0.85), rgba(44, 30, 0, 0.9)),
+                        url('https://images.unsplash.com/photo-1522125670776-3c7abb882bc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            /* Placeholder image, consider a gold/success themed one if possible */
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+            border-radius: 25px; /* More rounded */
+            margin: 80px auto;
+            max-width: 1200px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.3);
+        }
+
+        .final-cta:before { /* Shiny overlay effect */
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0) 70%);
+            animation: rotateShine 10s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotateShine {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+
+        .final-cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            position: relative;
+            color: var(--secondary-gold);
+            text-shadow: 1px 1px 3px var(--black);
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            color: var(--shiny-highlight);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 25px; /* Increased gap */
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.15); /* Slightly more visible */
+            border-radius: 15px; /* More rounded */
+            padding: 18px 22px;
+            min-width: 90px; /* Wider items */
+            border: 1px solid var(--primary-gold);
+        }
+
+        .countdown-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--secondary-gold);
+        }
+
+        .countdown-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            color: var(--shiny-highlight);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            position: relative;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+        }
+
+        .cta-buttons .btn {
+            min-width: 220px; /* Wider buttons */
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-text); /* Dark footer */
+            color: var(--light-bg);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        footer .gold-pattern {
+            background-image:
+                linear-gradient(45deg, var(--primary-gold) 1px, transparent 1px),
+                linear-gradient(-45deg, var(--primary-gold) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.1;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted minmax */
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 2rem; /* Larger footer logo */
+            font-weight: 800;
+            margin-bottom: 22px;
+            display: inline-block;
+            color: var(--secondary-gold); /* Gold logo text */
+        }
+
+        .footer-logo i {
+            color: var(--primary-gold);
+            margin-right: 12px;
+        }
+
+        .footer-about p {
+            margin-bottom: 25px;
+            color: rgba(255, 248, 225, 0.8); /* Lighter text on dark bg */
+            font-size: 0.95rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 215, 0, 0.15); /* Transparent gold */
+            color: var(--secondary-gold);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-gold);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            font-size: 1.4rem;
+            margin-bottom: 22px;
+            color: var(--primary-gold); /* Gold headings */
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            transition: all 0.3s ease;
+            color: rgba(255, 248, 225, 0.8);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-gold);
+            padding-left: 8px; /* More noticeable hover indent */
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 35px;
+            border-top: 1px solid rgba(218, 165, 32, 0.2); /* Gold border */
+            color: rgba(255, 248, 225, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .copyright i {
+            color: var(--primary-gold);
+            margin: 0 5px;
+        }
+
+        /* Floating Buttons */
+        .floating-btns {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            z-index: 999;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            font-size: 1.6rem; /* Larger icon */
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-6px) scale(1.15); /* More pronounced hover */
+            box-shadow: 0 8px 22px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366; /* Standard WhatsApp green */
+            color: var(--white);
+        }
+        .whatsapp-btn:hover {
+             background-color: #1DAE54;
+        }
+
+
+        .video-btn {
+            background: linear-gradient(145deg, var(--secondary-gold), var(--primary-gold));
+        }
+         .video-btn:hover {
+            background: linear-gradient(145deg, var(--primary-gold), var(--accent-gold));
+        }
+
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(44, 30, 0, 0.85); /* Dark gold semi-transparent bg */
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .modal-content {
+            background: var(--light-bg);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            padding: 25px; /* Increased padding */
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem; /* Larger close button */
+            cursor: pointer;
+            color: var(--muted-gray);
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--primary-gold);
+            transform: scale(1.1);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px; /* Rounded iframe */
+            border: 2px solid var(--primary-gold);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(35px); /* Slightly more travel */
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Smoother ease */
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .link-bio-swiper .slide { /* Ensure correct targeting */
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .link-bio-swiper .slide-image { /* Ensure correct targeting */
+                margin-top: 40px;
+                max-width: 450px; /* Control image size on tablet */
+            }
+
+            .link-bio-swiper .slide-image:before {
+                display: none;
+            }
+            .pricing-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                /* top: 80px; Dynamic calculation in JS is better */
+                left: -100%;
+                width: 100%;
+                /* height: calc(100vh - 80px); Dynamic calculation */
+                background: var(--light-bg); /* Match theme */
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start; /* Align to top */
+                padding-top: 30px; /* More padding */
+                transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+                box-shadow: 0 10px 20px rgba(184,134,11,0.2);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links a {
+                margin: 18px 0; /* Increased margin */
+                font-size: 1.3rem; /* Larger font */
+                color: var(--accent-gold);
+            }
+            .nav-links a:hover, .nav-links a.active {
+                color: var(--primary-gold);
+            }
+            .nav-links a:after{
+                bottom: -8px;
+            }
+
+
+            .nav-links .contact-btn {
+                margin-left: 0;
+                margin-top: 25px;
+                padding: 12px 25px;
+                font-size: 1.1rem;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem; /* Adjusted for mobile */
+            }
+             .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2.2rem;
+            }
+             .final-cta p {
+                font-size: 1.1rem;
+            }
+
+            .countdown {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .countdown-item {
+                padding: 12px 15px;
+                min-width: 70px;
+            }
+            .countdown-number{
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons .btn {
+                min-width: 180px;
+                font-size: 1rem;
+                padding: 12px 20px;
+            }
+            .link-bio-swiper .swiper-button-next,
+            .link-bio-swiper .swiper-button-prev {
+                width: 38px; height: 38px;
+            }
+            .link-bio-swiper .slide-content h2 { font-size: 2.2rem; }
+            .link-bio-swiper .slide-content p { font-size: 1rem; }
+
+            .pricing-grid {
+                grid-template-columns: 1fr; /* Stack pricing cards */
+            }
+            .pricing-card.featured {
+                transform: translateY(0) scale(1); /* Reset featured hover effect for stacking */
+            }
+             .contact-container {
+                grid-template-columns: 1fr; /* Stack contact form and info */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+             .hero .btn {
+                font-size: 1rem;
+                padding: 15px 25px;
+            }
+
+            .section-title h2 {
+                font-size: 1.9rem;
+            }
+            .section-title p {
+                font-size: 1rem;
+            }
+
+            .final-cta {
+                padding: 70px 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 1.9rem;
+            }
+             .final-cta p {
+                font-size: 1rem;
+            }
+
+            .floating-btns {
+                bottom: 20px;
+                right: 20px;
+                gap: 12px;
+            }
+
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            .creator-item {
+                padding: 25px 18px;
+            }
+
+            .creator-item i {
+                font-size: 2.5rem;
+            }
+
+            .creator-item h3 {
+                font-size: 1.1rem;
+            }
+            .course-card, .feature-card {
+                 padding: 25px;
+            }
+            .course-content h3, .feature-card h3 {
+                font-size: 1.3rem;
+            }
+            .link-bio-swiper .slide-content h2 { font-size: 1.8rem; }
+            .testimonial-card { padding: 25px; }
+            .faq-question { font-size: 1rem; padding: 15px 20px;}
+            .faq-answer { padding: 0 20px;}
+            .faq-item.active .faq-answer { padding: 18px 20px;}
+        }
     </style>
 </head>
-<body class="text-midnight">
+<body oncontextmenu="return false;">
+    <div class="gold-pattern gold-pattern-1"></div>
+    <div class="gold-pattern gold-pattern-2" style="opacity: 0.05;"></div>
 
-    <div class="floating-element" style="top: 10%; left: 5%; font-size: 3rem; color: var(--color-forest-moss);">🍃</div>
-    <div class="floating-element" style="top: 25%; right: 10%; font-size: 2.5rem; color: var(--color-gold);">✨</div>
-    <div class="floating-element" style="bottom: 15%; left: 15%; font-size: 2rem; color: var(--color-rose);">🌸</div>
-    <div class="floating-element" style="top: 40%; left: 50%; font-size: 3.5rem; color: var(--color-sky-blue);">☁️</div>
-     <div class="floating-element" style="bottom: 5%; right: 5%; font-size: 2.2rem; color: var(--color-foggy-gray);">🐦</div>
-
-
-    <nav class="nav-branch sticky top-0 w-full z-50">
-        <div class="container mx-auto flex justify-center">
-            <button class="nav-toggle" id="nav-toggle" aria-label="toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#hero" class="hover:underline">Beranda</a>
-                <div class="dropdown relative">
-                    <a href="#" class="hover:underline">Koleksi <i class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-menu absolute top-full">
-                        <a href="#products">Jurnal Digital</a>
-                        <a href="#products">Template Kreatif</a>
-                        <a href="#products">Audio Meditasi</a>
-                        <a href="#products">Ilustrasi</a>
-                    </div>
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo"><i class="fas fa-arrow-trend-up"></i>Langkah Sukses Affiliate</a>
+                <div class="nav-links" id="navLinks">
+                    <a href="#features" class="active">Mengapa Kami?</a>
+                    <a href="#courses">Kursus Unggulan</a>
+                    <a href="#pricing">Investasi Anda</a>
+                    <a href="#testimonials">Kata Mereka</a>
+                    <a href="#faq">Tanya Jawab</a>
+                    <a href="#contact" class="contact-btn">Mulai Sekarang</a>
                 </div>
-                <a href="#community" class="hover:underline">Komunitas</a>
-                <a href="#pricing" class="hover:underline">Dukung Kami</a>
-                <a href="#faq" class="hover:underline">FAQ</a>
-                <a href="#contact" class="hover:underline">Kontak</a>
-            </div>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <section id="hero" class="relative h-screen flex flex-col items-center justify-center text-center p-8 overflow-hidden bg-sky text-midnight">
-        <div class="absolute inset-0 bg-cover bg-center opacity-50" style="background-image: url('https://via.placeholder.com/1200x800?text=Peaceful+Countryside');">
-             <div class="absolute inset-0" style="background: radial-gradient(circle at top left, rgba(255, 230, 199, 0.4) 0%, rgba(255, 230, 199, 0) 50%), radial-gradient(circle at bottom right, rgba(249, 200, 106, 0.3) 0%, rgba(249, 200, 106, 0) 60%);"></div>
-        </div>
-
-
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-sketch mb-8 sketch-animation relative z-10"> <span>W</span><span>h</span><span>e</span><span>r</span><span>e</span>
-            <span> </span> <span>I</span><span>m</span><span>a</span><span>g</span><span>i</span><span>n</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span>
-            <span> </span> <span>G</span><span>r</span><span>o</span><span>w</span><span>s</span>
-        </h1>
-
-        <a href="#products" class="cta-leaf-tag relative z-10">
-            Start Your Journey
-        </a>
-
-    </section>
-
-    <section id="products" class="py-12 md:py-16 bg-cream"> <div class="container mx-auto px-2 md:px-4"> <h2 class="text-3xl md:text-4xl font-sketch text-center mb-10 md:mb-12 text-midnight">Treasures for Your Inner World</h2> <div class="content-grid">
-                <div class="content-card js-rotate">
-                    <div class="content-card-content">
-                        <h3 class="font-sketch">Digital Dream Journal</h3>
-                        <p class="font-handwriting">Capture your thoughts and dreams in this beautifully illustrated journal.</p>
-                        <div class="flex items-center text-sm text-foggy mt-4">
-                            <i class="fas fa-book-open mr-2"></i> PDF, PNG
+    <section class="hero" id="home">
+        <div class="swiper-container hero-swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url('https://images.unsplash.com/photo-1522125670776-3c7abb882bc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                    <div class="hero-content">
+                        <h1>Capek Jualan <span>Nggak Laku</span>? Saatnya Jadi Affiliate <span>Sukses!</span></h1>
+                        <p>Stop buang waktu. Strategi jitu, hasil nyata. Hasilkan uang dari mana saja.</p>
+                        <div>
+                            <a href="#pricing" class="btn btn-primary">Daftar Kursus Rp 99rb <i class="fas fa-rocket"></i></a>
+                            <a href="#features" class="btn btn-secondary">Lihat Caranya <i class="fas fa-arrow-right"></i></a>
                         </div>
-                         <span class="ghibli-detail">🐾</span> </div>
+                    </div>
                 </div>
-
-                 <div class="content-card js-rotate">
-                     <div class="content-card-content">
-                         <h3 class="font-sketch">Creative Template Pack</h3>
-                         <p class="font-handwriting">Boost your projects with whimsical templates for social media & more.</p>
-                         <div class="flex items-center text-sm text-foggy mt-4">
-                             <i class="fas fa-palette mr-2"></i> JPG, PSD
-                         </div>
-                          <span class="ghibli-detail">✨</span> </div>
-                 </div>
-
-                 <div class="content-card js-rotate">
-                     <div class="content-card-content">
-                         <h3 class="font-sketch">Forest Meditation Audio</h3>
-                         <p class="font-handwriting">Relax and find peace with guided meditations inspired by nature sounds.</p>
-                         <div class="flex items-center text-sm text-foggy mt-4">
-                             <i class="fas fa-volume-up mr-2"></i> MP3
-                         </div>
-                          <span class="ghibli-detail">🌬️</span> </div>
-                 </div>
-
-                 <div class="content-card js-rotate">
-                     <div class="content-card-content">
-                         <h3 class="font-sketch">Whimsical Character Art</h3>
-                         <p class="font-handwriting">Hand-painted character illustrations for your stories and designs.</p>
-                         <div class="flex items-center text-sm text-foggy mt-4">
-                             <i class="fas fa-image mr-2"></i> PNG
-                         </div>
-                          <span class="ghibli-detail">🧚</span> </div>
-                 </div>
-
+                <div class="swiper-slide" style="background-image:url('https://images.unsplash.com/photo-1556740714-a8395b3bf30f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                    <div class="hero-content">
+                        <h1>Bingung Mulai <span>Dari Mana</span>? Kami Punya <span>Peta Suksesnya!</span></h1>
+                        <p>Panduan langkah demi langkah. Cocok untuk pemula. Tanpa ribet, langsung praktik.</p>
+                        <div>
+                            <a href="#courses" class="btn btn-primary">Pilih Kursusmu <i class="fas fa-graduation-cap"></i></a>
+                            <a href="#contact" class="btn btn-secondary">Tanya Ahli <i class="fas fa-comments"></i></a>
+                        </div>
+                    </div>
                 </div>
+                <div class="swiper-slide" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                    <div class="hero-content">
+                        <h1>Penghasilan <span>Stagnan</span>? Waktunya <span>Naik Kelas!</span></h1>
+                        <p>Teknik affiliate terbaru. Tingkatkan konversi. Capai target finansialmu.</p>
+                        <div>
+                            <a href="#testimonials" class="btn btn-primary">Lihat Bukti Sukses <i class="fas fa-star"></i></a>
+                            <a href="#faq" class="btn btn-secondary">Cek FAQ <i class="fas fa-question-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
 
-    <section id="community" class="collage-section">
-        <div class="container mx-auto px-2 md:px-4"> <h2 class="text-3xl md:text-4xl font-sketch text-center mb-12 text-midnight">Our Dreamers' Corner</h2> <div class="testimonial-collage">
-
-                <div class="testimonial-note js-rotate">
-                    <span class="doodle-arrow top-right">↗️</span> <div class="sepia-polaroid mx-auto js-rotate">
-                        <img src="https://placehold.co/120x120/9BA78D/FDF9F0?text=Dreamer" alt="User Photo">
-                        <div class="polaroid-caption">Creative Soul</div>
-                    </div>
-                    <p class="font-handwriting text-lg text-center mt-4">"Dream Nest feels like a warm hug! The journal templates are pure magic."</p>
-                     </div>
-
-                <div class="testimonial-note js-rotate">
-                     <span class="doodle-arrow bottom-left">↙️</span> <div class="sepia-polaroid mx-auto js-rotate">
-                        <img src="https://placehold.co/120x120/FFE6C7/2A3342?text=Storyteller" alt="Storyteller Photo">
-                        <div class="polaroid-caption">Aspiring Author</div>
-                    </div>
-                    <p class="font-handwriting text-lg text-center mt-4">"The illustrations sparked so many story ideas. Love the Ghibli vibe!"</p>
+    <section class="features" id="features">
+        <div class="gold-pattern"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Kenapa Harus Pilih Kami? Ini Alasan Kuatnya!</h2>
+                <p>Anda tidak sendirian. Kami berikan semua yang Anda butuhkan untuk sukses di dunia affiliate marketing.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Strategi Anti Gagal</h3>
+                    <p>Pusing cari cara? Kami berikan strategi terbukti. Tinggal ikuti, hasil menanti.</p>
                 </div>
-
-                 <div class="testimonial-note js-rotate">
-                      <span class="doodle-arrow top-right">↗️</span> <div class="sepia-polaroid mx-auto js-rotate">
-                         <img src="https://placehold.co/120x120/D6ECF3/9BA78D?text=Artist" alt="Artist Photo">
-                         <div class="polaroid-caption">Digital Artist</div>
-                     </div>
-                     <p class="font-handwriting text-lg text-center mt-4">"Finally, a place with resources that truly inspire creativity and calm."</p>
-                 </div>
-
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3>Mentor Ahli Siap Bantu</h3>
+                    <p>Bingung tanya siapa? Mentor kami siap dampingi. Jangan takut salah langkah.</p>
                 </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="pricing-tiers">
-        <div class="container mx-auto px-2 md:px-4"> <h2 class="text-3xl md:text-4xl font-sketch text-center mb-10 md:mb-12 text-midnight">Find Your Path</h2> <div class="flex flex-wrap justify-center gap-8 md:gap-12"> <div class="pricing-card bg-cream js-rotate">
-                    <div class="pricing-badge text-center">🌱</div> <h3 class="text-center">Sprout</h3>
-                    <div class="price text-center">$0<span class="text-lg">/month</span></div>
-                    <ul>
-                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Basic Journal Templates</li>
-                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Free Illustrations</li>
-                        <li><i class="fas fa-times mr-2 text-rose"></i> Premium Content</li>
-                        <li><i class="fas fa-times mr-2 text-rose"></i> Commercial Use</li>
-                    </ul>
-                    <a href="#" class="cta-button text-center block">Start Free</a>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Materi Mudah Dipahami</h3>
+                    <p>Belajar affiliate ribet? Tidak lagi! Materi kami simpel, langsung ke inti.</p>
                 </div>
-
-                <div class="pricing-card bg-cream js-rotate">
-                     <div class="pricing-badge text-center">🎒</div> <h3 class="text-center">Explorer</h3>
-                    <div class="price text-center">$12<span class="text-lg">/month</span></div>
-                    <ul>
-                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> All Templates</li>
-                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> All Illustrations</li>
-                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Select Audio</li>
-                        <li><i class="fas fa-times mr-2 text-rose"></i> Commercial Use</li>
-                    </ul>
-                    <a href="#" class="cta-button text-center block">Become an Explorer</a>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-wallet"></i></div>
+                    <h3>Potensi Cuan Maksimal</h3>
+                    <p>Ingin hasil lebih? Teknik kami fokuskan pada konversi. Cuan lebih besar.</p>
                 </div>
-
-                <div class="pricing-card bg-cream js-rotate">
-                     <div class="storyteller-ribbon"></div> <div class="pricing-badge text-center">🏮</div> <h3 class="text-center">Storyteller</h3>
-                    <div class="price text-center">$25<span class="text-lg">/month</span></div>
-                    <ul>
-                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Everything Included</li>
-                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Full Audio Library</li>
-                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Early Access</li>
-                        <li><i class="fas fa-check mr-2 text-forest-moss"></i> Commercial License</li>
-                    </ul>
-                    <a href="#" class="cta-button text-center block">Join Storytellers</a>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Komunitas Suportif</h3>
+                    <p>Merasa sendiri? Gabung komunitas kami. Saling dukung, tumbuh bersama.</p>
                 </div>
-
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-clock-rotate-left"></i></div>
+                    <h3>Update Ilmu Terbaru</h3>
+                    <p>Dunia affiliate berubah cepat. Kami pastikan Anda selalu dapat ilmu terkini.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="faq-section">
-        <div class="container mx-auto px-2 md:px-4"> <h2 class="text-3xl md:text-4xl font-sketch text-center mb-10 md:mb-12 text-midnight">Whispers from the Woods (FAQ)</h2> <div class="max-w-4xl mx-auto">
-
-                <div class="faq-item js-rotate">
-                     <span class="faq-motif">🐿️</span> <div class="faq-question">
-                        What kind of digital content is available?
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        We offer digital journals, creative templates, meditation audio, and unique illustrations inspired by nature and magic!
+    <section class="courses" id="courses">
+        <div class="gold-pattern"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Pilih Jalur Sukses Anda di Sini!</h2>
+                <p>Kursus kami dirancang khusus untuk berbagai level. Dari pemula hingga yang ingin mahir.</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card fade-in">
+                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="course-content">
+                        <h3>Dasar Affiliate Pemula</h3>
+                        <p>Nggak ngerti affiliate sama sekali? Kursus ini untuk Anda. Dari A sampai Z.</p>
+                        <a href="#pricing" class="btn">Mulai dari Rp 99rb!</a>
                     </div>
                 </div>
-
-                 <div class="faq-item js-rotate">
-                      <span class="faq-motif">🦋</span> <div class="faq-question">
-                         Can I sell things I create using your templates/illustrations?
-                         <span class="arrow">▼</span>
-                     </div>
-                     <div class="faq-answer">
-                         Yes, our Storyteller plan includes a commercial license. The Sprout and Explorer plans are for personal use.
-                     </div>
-                 </div>
-
-                 <div class="faq-item js-rotate">
-                      <span class="faq-motif">🍄</span> <div class="faq-question">
-                         How do I access my purchased content?
-                         <span class="arrow">▼</span>
-                     </div>
-                     <div class="faq-answer">
-                         After purchasing, you'll receive download links via email and access to your personal library on the site.
-                     </div>
-                 </div>
-
+                <div class="course-card fade-in">
+                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1543286386-71314c489800?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="course-content">
+                        <h3>Strategi Konten Viral</h3>
+                        <p>Konten gitu-gitu aja? Belajar bikin konten yang menjual dan disukai pasar.</p>
+                        <a href="#pricing" class="btn">Tingkatkan Skill Anda</a>
+                    </div>
                 </div>
+                <div class="course-card fade-in">
+                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="course-content">
+                        <h3>Master Affiliate Expert</h3>
+                        <p>Sudah punya dasar? Saatnya jadi master. Teknik rahasia, cuan berlipat.</p>
+                        <a href="#pricing" class="btn">Jadi Ahli Sekarang</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="final-cta" class="final-cta-forest">
-        <h2 class="text-cream">Bring Your Stories to Life</h2>
-        <a href="#contact" class="cta-adventure-tag">
-            Begin Your Adventure
-        </a>
-         </section>
+    <section class="link-bio-section">
+        <div class="gold-pattern"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Bukan Sekedar Kursus Biasa, Ini Transformasi!</h2>
+                <p>Kami lebih dari platform belajar. Kami adalah partner kesuksesan finansial Anda.</p>
+            </div>
 
-    <section id="contact" class="contact-form-section">
-        <div class="container mx-auto px-2 md:px-4"> <h2 class="text-3xl md:text-4xl font-sketch text-center mb-8 text-midnight">Send Us a Message</h2> <form class="contact-form">
-                 <span class="floral-corner top-left">🌿</span>
-                 <span class="floral-corner top-right">🌿</span>
-                 <span class="floral-corner bottom-left">🌿</span>
-                 <span class="floral-corner bottom-right">🌿</span>
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="swiper-container link-bio-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide">
+                            <div class="slide-content">
+                                <h2>Nggak Pede Jualan? <span>Kami Ubah Mindset Anda!</span></h2>
+                                <p>Ragu kemampuan diri? Di sini, Anda belajar membangun kepercayaan diri. Menjual jadi mudah dan menyenangkan. Bukan cuma teori, tapi praktik langsung.</p>
+                                <p>Temukan potensi tersembunyi Anda. Ubah keraguan jadi keyakinan.</p>
+                                <a href="#features" class="btn btn-primary">Bangun Kepercayaan Diri</a>
+                            </div>
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Confident person or team">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide">
+                            <div class="slide-content">
+                                <h2>Takut Gagal Lagi? <span>Strategi Kami Minim Risiko!</span></h2>
+                                <p>Pernah coba dan gagal? Jangan trauma. Metode kami teruji. Fokus pada langkah kecil yang pasti. Kesalahan jadi pelajaran berharga.</p>
+                                <p>Kami bantu Anda hindari lubang yang sama. Sukses itu proses, bukan instan.</p>
+                                <a href="#courses" class="btn btn-primary">Pelajari Strategi Aman</a>
+                            </div>
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Strategic planning or chessboard">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide">
+                            <div class="slide-content">
+                                <h2>Waktu Terbatas? <span>Belajar Fleksibel Kapan Saja!</span></h2>
+                                <p>Sibuk kerja atau urus rumah? Tenang. Akses materi selamanya. Belajar sesuai ritme Anda. Tidak ada tekanan, yang penting konsisten.</p>
+                                <p>Manfaatkan waktu luang jadi produktif. Investasi leher ke atas tanpa batas waktu.</p>
+                                <a href="#pricing" class="btn btn-primary">Lihat Fleksibilitas Kami</a>
+                            </div>
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Person learning flexibly">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-                </div>
-                <button type="submit">Send a Letter</button>
-                 <span class="absolute bottom-4 right-4 text-3xl text-rose">✉️</span>
-            </form>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
     </section>
 
-    <div class="live-chat-soot">
-        煤
+
+    <section class="creators-section">
+        <div class="gold-pattern"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Mereka Sudah Membuktikan! Anda Kapan?</h2>
+                <p>Ribuan orang seperti Anda telah memulai langkah suksesnya bersama kami. Ini giliran Anda!</p>
+            </div>
+
+            <div class="tabs" id="tabs">
+                <div class="tab-btn active" data-tab="all">Semua Kisah</div>
+                <div class="tab-btn" data-tab="pemula">Pemula Jadi Jutawan</div>
+                <div class="tab-btn" data-tab="pekerja">Pekerja Kantoran</div>
+                <div class="tab-btn" data-tab="irt">Ibu Rumah Tangga</div>
+            </div>
+
+            <div class="tab-content active" id="all">
+                <div class="creator-item" data-category="pemula">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Dari Nol ke Hero</h3>
+                    <div class="creator-details"><p>Dulu gaptek, kini omzet puluhan juta!</p></div>
+                </div>
+                <div class="creator-item" data-category="irt">
+                    <i class="fas fa-child-reaching"></i>
+                    <h3>IRT Produktif</h3>
+                    <div class="creator-details"><p>Sambil urus anak, tetap bisa cuan!</p></div>
+                </div>
+                <div class="creator-item" data-category="pekerja">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Side Hustle Sukses</h3>
+                    <div class="creator-details"><p>Penghasilan tambahan ngalahin gaji kantor!</p></div>
+                </div>
+                <div class="creator-item" data-category="pemula">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Mahasiswa Mandiri</h3>
+                    <div class="creator-details"><p>Bayar kuliah sendiri dari affiliate.</p></div>
+                </div>
+                 <div class="creator-item" data-category="pekerja">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Pensiun Dini Tercapai</h3>
+                    <div class="creator-details"><p>Bebas finansial sebelum waktunya.</p></div>
+                </div>
+                <div class="creator-item" data-category="irt">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Bisnis Rumahan Maju</h3>
+                    <div class="creator-details"><p>Dari hobi jadi sumber rezeki keluarga.</p></div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="pemula">
+                 <div class="creator-item" data-category="pemula">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Dari Nol ke Hero</h3>
+                    <div class="creator-details"><p>Dulu gaptek, kini omzet puluhan juta!</p></div>
+                </div>
+                <div class="creator-item" data-category="pemula">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Mahasiswa Mandiri</h3>
+                    <div class="creator-details"><p>Bayar kuliah sendiri dari affiliate.</p></div>
+                </div>
+                 <div class="creator-item" data-category="pemula">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Ide Jadi Duit</h3>
+                    <div class="creator-details"><p>Modal nekat, kini panen komisi.</p></div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="pekerja">
+                <div class="creator-item" data-category="pekerja">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Side Hustle Sukses</h3>
+                    <div class="creator-details"><p>Penghasilan tambahan ngalahin gaji kantor!</p></div>
+                </div>
+                <div class="creator-item" data-category="pekerja">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Pensiun Dini Tercapai</h3>
+                    <div class="creator-details"><p>Bebas finansial sebelum waktunya.</p></div>
+                </div>
+                 <div class="creator-item" data-category="pekerja">
+                    <i class="fas fa-plane-departure"></i>
+                    <h3>Kerja Sambil Liburan</h3>
+                    <div class="creator-details"><p>Kantornya di mana saja, asal ada internet.</p></div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="irt">
+                <div class="creator-item" data-category="irt">
+                    <i class="fas fa-child-reaching"></i>
+                    <h3>IRT Produktif</h3>
+                    <div class="creator-details"><p>Sambil urus anak, tetap bisa cuan!</p></div>
+                </div>
+                 <div class="creator-item" data-category="irt">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Bisnis Rumahan Maju</h3>
+                    <div class="creator-details"><p>Dari hobi jadi sumber rezeki keluarga.</p></div>
+                </div>
+                 <div class="creator-item" data-category="irt">
+                    <i class="fas fa-gifts"></i>
+                    <h3>Bantu Suami, Bahagiakan Keluarga</h3>
+                    <div class="creator-details"><p>Tambah pemasukan, impian terwujud.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="gold-pattern"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Jangan Percaya Kami, Percaya Mereka!</h2>
+                <p>Testimoni jujur dari member yang hidupnya berubah setelah gabung Langkah Sukses Affiliate.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <i class="fas fa-quote-right"></i>
+                    <p class="testimonial-content">"Dulu saya bingung mau bisnis apa. Setelah ikut kursus di Langkah Sukses Affiliate, baru 1 bulan sudah dapat komisi pertama! Materinya gampang banget dipahami, mentornya sabar."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://placehold.co/60x60/FFD700/2c1e00?text=AW" alt="Andi W.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Andi W.</h4>
+                            <p>Karyawan Swasta, Surabaya</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <i class="fas fa-quote-right"></i>
+                    <p class="testimonial-content">"Sebagai IRT, saya cari penghasilan tambahan. Alhamdulillah, Langkah Sukses Affiliate jawabannya. Sekarang bisa bantu suami sambil tetap di rumah. Terima kasih ilmunya!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://placehold.co/60x60/DAA520/FFFFFF?text=SN" alt="Siti N.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Siti N.</h4>
+                            <p>Ibu Rumah Tangga, Bandung</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <i class="fas fa-quote-right"></i>
+                    <p class="testimonial-content">"Saya sudah coba berbagai cara jadi affiliate, tapi hasilnya gitu-gitu aja. Di sini beda! Strateginya jitu, komunitasnya suportif. Penghasilan saya naik 3x lipat!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://placehold.co/60x60/B8860B/FFFACD?text=RP" alt="Rian P.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rian P.</h4>
+                            <p>Mahasiswa, Yogyakarta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="gold-pattern"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Investasi Terbaik Untuk Masa Depan Anda</h2>
+                <p>Pilih paket yang paling sesuai dengan kantong dan target kesuksesan Anda. Mulai dari Rp 99rb!</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <h3>Paket CUAN KILAT</h3>
+                    <div class="price">Rp 99.000</div>
+                    <ul class="pricing-features">
+                        <li>Akses Materi Dasar Affiliate</li>
+                        <li>Grup Diskusi Pemula</li>
+                        <li>Studi Kasus Terbatas</li>
+                        <li>Update Materi Dasar</li>
+                        <li>Cocok Untuk Coba-Coba</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Pilih Paket Hemat</a>
+                </div>
+                <div class="pricing-card featured fade-in">
+                    <div class="featured-badge">Paling Laris!</div>
+                    <h3>Paket JAGO AFFILIATE</h3>
+                    <div class="price">Rp 299.000</div>
+                    <ul class="pricing-features">
+                        <li>Semua Materi Dasar & Lanjutan</li>
+                        <li>Grup VIP & Mentor Langsung</li>
+                        <li>Studi Kasus Lengkap & Update</li>
+                        <li>Tools Affiliate Gratis</li>
+                        <li>Strategi Konten Viral</li>
+                        <li>Bonus Materi Rahasia</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Ambil Paket Jagoan</a>
+                </div>
+                <div class="pricing-card fade-in">
+                    <h3>Paket SULTAN AFFILIATE</h3>
+                    <div class="price">Rp 799.000</div>
+                    <ul class="pricing-features">
+                        <li>Semua Fitur Paket Jago</li>
+                        <li>Konsultasi Privat 1-on-1</li>
+                        <li>Akses Seumur Hidup</li>
+                        <li>Review Akun Affiliate Anda</li>
+                        <li>Jaringan Eksklusif Sultan</li>
+                        <li>Prioritas Fitur Baru</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Jadi Sultan Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container faq-container">
+            <div class="section-title">
+                <h2>Masih Ragu? Ini Jawaban Pertanyaan Anda!</h2>
+                <p>Kami mengerti Anda punya banyak pertanyaan. Semoga ini membantu menjawab keraguan Anda.</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Apa itu Langkah Sukses Affiliate? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>Langkah Sukses Affiliate adalah platform kursus online dan komunitas yang bantu Anda hasilkan uang dari internet sebagai affiliate marketer. Kami sediakan panduan praktis, dari nol sampai bisa.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Saya pemula, apa bisa ikut? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>Sangat bisa! Kursus kami dirancang khusus untuk pemula. Bahasa mudah, langkah jelas. Banyak member kami mulai dari nol dan berhasil.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Berapa lama sampai bisa dapat hasil? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>Hasil tiap orang beda-beda, tergantung usaha dan konsistensi. Ada yang 1 bulan sudah pecah telur, ada yang butuh waktu lebih. Kami ajarkan cara tercepat, tapi kesuksesan ada di tangan Anda.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Apa ada jaminan pasti berhasil? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>Kami tidak bisa jamin kesuksesan finansial spesifik, karena itu ilegal dan tidak etis. Tapi kami jamin Anda dapat ilmu terbaik, strategi teruji, dan dukungan penuh dari tim kami. Sisanya, ACTION Anda yang menentukan.</p>
+                </div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question">Materinya bisa diakses kapan saja? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>Tentu! Setelah Anda bergabung, materi kursus bisa Anda akses kapan saja, di mana saja, seumur hidup (tergantung paket). Belajar jadi lebih fleksibel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="gold-pattern"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Siap Ambil Langkah Pertama Menuju Sukses?</h2>
+                <p>Jangan tunda lagi. Hubungi kami jika ada pertanyaan, atau langsung daftar dan mulai perjalanan Anda!</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-form fade-in">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap Anda</label>
+                            <input type="text" id="name" name="name" placeholder="Mis: Budi Hartono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Alamat Email Aktif</label>
+                            <input type="email" id="email" name="email" placeholder="Mis: budi.sukses@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor WhatsApp (Opsional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Mis: 081234567890">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Pilih Topik Pertanyaan</label>
+                            <select id="subject" name="subject">
+                                <option value="daftar">Info Pendaftaran</option>
+                                <option value="materi">Detail Materi Kursus</option>
+                                <option value="teknis">Kendala Teknis</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan Anda</label>
+                            <textarea id="message" name="message" placeholder="Tulis pertanyaan atau pesan Anda di sini..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Pesan Emas Anda!</button>
+                    </form>
+                </div>
+                <div class="contact-info fade-in">
+                    <h3>Info Kontak Kami</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Alamat Sukses</h4>
+                            <p>Jl. Kemenangan No. 1, Jakarta Pusat (Virtual Office)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp Support</h4>
+                            <p>+62 812-SUKSES-AF (0812-785737-23)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Bantuan</h4>
+                            <p>support@langkahsuksesaffiliate.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Jam Support</h4>
+                            <p>Senin - Jumat: 09:00 - 17:00 WIB</p>
+                            <p>Sabtu: 09:00 - 13:00 WIB (Slow Respon)</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="final-cta fade-in">
+            <h2>Tawaran Spesial Ini Akan Segera Berakhir!</h2>
+            <p>Daftar Paket JAGO AFFILIATE sekarang, dapatkan diskon 50% + Bonus Ebook "Rahasia Closing Cepat"! Hanya untuk 50 pendaftar tercepat hari ini!</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Hari</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Jam</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Menit</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Detik</div>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="#pricing" class="btn btn-primary"><i class="fas fa-tags"></i> Klaim Diskon Sekarang!</a>
+                <a href="https://wa.me/6281278573723?text=Halo%20Admin%20Langkah%20Sukses%20Affiliate,%20saya%20mau%20tanya%20tentang%20promo%20spesial." class="btn btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> Tanya Promo via WA</a>
+            </div>
+        </div>
     </div>
 
+    <footer>
+        <div class="gold-pattern"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo"><i class="fas fa-arrow-trend-up"></i>Langkah Sukses</a>
+                    <p>Platform edukasi affiliate marketing terdepan yang siap mengantar Anda menuju kebebasan finansial. Mulai langkah Anda bersama kami!</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Navigasi Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#features">Mengapa Kami?</a></li>
+                        <li><a href="#courses">Kursus</a></li>
+                        <li><a href="#pricing">Harga</a></li>
+                        <li><a href="#testimonials">Testimoni</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Sumber Daya</h3>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Blog Inspirasi</a></li>
+                        <li><a href="#">Studi Kasus</a></li>
+                        <li><a href="#">Tools Gratis</a></li>
+                        <li><a href="#contact">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal & Kebijakan</h3>
+                    <ul>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Disclaimer Pendapatan</a></li>
+                        <li><a href="#">Affiliate Agreement</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="year"></span> Langkah Sukses Affiliate. Semua Hak Dilindungi. Dibuat dengan <i class="fas fa-heart"></i> untuk Kesuksesan Anda.</p>
+            </div>
+        </div>
+    </footer>
 
+    <div class="floating-btns">
+        <a href="https://wa.me/6281278573723?text=Halo%20Admin%20Langkah%20Sukses%20Affiliate,%20saya%20mau%20bertanya..." target="_blank" class="floating-btn whatsapp-btn" aria-label="Chat WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <div class="floating-btn video-btn" id="videoBtn" aria-label="Tonton Video Perkenalan">
+            <i class="fas fa-play"></i>
+        </div>
+    </div>
+
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeVideoModal" aria-label="Tutup Modal Video">×</span>
+            <div class="video-container">
+                <iframe id="videoFrame" src="" title="Video Perkenalan Langkah Sukses Affiliate" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        // JavaScript for interactivity
+        // Initialize Hero Swiper
+        var heroSwiper = new Swiper('.hero-swiper-container', {
+            loop: true,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            autoplay: {
+                delay: 5500, // Slightly longer for readability
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.hero-swiper-container .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.hero-swiper-container .swiper-button-next',
+                prevEl: '.hero-swiper-container .swiper-button-prev',
+            },
+        });
 
-        // Hero Headline Animation (Sketchbook)
-        document.addEventListener('DOMContentLoaded', () => {
-            const headline = document.querySelector('.sketch-animation');
-            const text = headline.textContent.trim(); // Get text content, remove leading/trailing space
-            headline.innerHTML = ''; // Clear original content
+        // Initialize Link Bio Swiper
+        var linkBioSwiper = new Swiper('.link-bio-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 6500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.link-bio-swiper .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.link-bio-swiper .swiper-button-next',
+                prevEl: '.link-bio-swiper .swiper-button-prev',
+            },
+            slidesPerView: 1,
+            spaceBetween: 30,
+        });
 
-            let delay = 0.1; // Starting delay
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const headerElement = document.getElementById('header'); 
 
-            text.split('').forEach((char, index) => {
-                const span = document.createElement('span');
-                span.textContent = char === ' ' ? '\u00A0' : char; // Use non-breaking space for spaces
-                span.style.animationDelay = `${delay}s`;
-                headline.appendChild(span);
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const headerHeight = headerElement.offsetHeight;
+            navLinks.style.top = headerHeight + 'px';
+            navLinks.style.height = `calc(100vh - ${headerHeight}px)`;
 
-                // Increase delay more for spaces to create pauses
-                if (char === ' ') {
-                    delay += 0.2; // Longer delay for space
-                } else {
-                    delay += 0.05; // Shorter delay for letters
+            hamburger.innerHTML = navLinks.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
                 }
             });
         });
 
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) { // Adjusted scroll threshold
+                headerElement.classList.add('scrolled');
+            } else {
+                headerElement.classList.remove('scrolled');
+            }
+        });
 
-        // Apply random rotation to elements with .js-rotate class on load
-        document.querySelectorAll('.js-rotate').forEach(element => {
-            const randomRotate = Math.random() * 6 - 3; // -3 to 3 degrees
-            element.style.setProperty('--rotation', `${randomRotate}deg`);
+        // Active Link Highlighting
+        const sections = document.querySelectorAll('section[id]'); // Ensure sections have IDs
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const headerHeight = headerElement.offsetHeight;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - headerHeight - 70)) { // Adjusted offset
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+            
+            if (!current && window.pageYOffset < sections[0].offsetTop - headerHeight - 70) {
+                const homeLink = document.querySelector('.nav-links a[href="#home"]'); 
+                if (homeLink) homeLink.classList.add('active');
+                else if(navItems.length > 0 && navItems[0].getAttribute('href').startsWith('#')) {
+                     // Fallback to the first nav item if #home is not explicitly present
+                    const firstVisibleSectionId = navItems[0].getAttribute('href').substring(1);
+                    const firstVisibleSection = document.getElementById(firstVisibleSectionId);
+                    if(firstVisibleSection && window.pageYOffset < firstVisibleSection.offsetTop - headerHeight - 70) {
+                        navItems[0].classList.add('active');
+                    }
+                }
+            }
         });
 
 
-        // FAQ Accordion (Simple Expand/Collapse)
-        document.querySelectorAll('.faq-question').forEach(question => {
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                const answer = question.nextElementSibling;
-
-                // Toggle the active class
-                faqItem.classList.toggle('active');
-
-                // Toggle the display of the answer
-                if (faqItem.classList.contains('active')) {
-                    answer.style.display = 'block';
-                } else {
-                    answer.style.display = 'none';
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(otherItem => {
+                    if (otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                if (!isActive) {
+                    item.classList.add('active');
                 }
             });
         });
 
-         // Basic smooth scrolling for navigation links
-         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-             anchor.addEventListener('click', function (e) {
-                 e.preventDefault();
+        // Video Modal
+        const videoBtn = document.getElementById('videoBtn');
+        const videoModal = document.getElementById('videoModal');
+        const closeModalBtn = document.getElementById('closeVideoModal');
+        const videoFrame = document.getElementById('videoFrame');
+        const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ"; // Replace with your actual YouTube Video ID
 
-                 document.querySelector(this.getAttribute('href')).scrollIntoView({
-                     behavior: 'smooth'
-                 });
-             });
-         });
+        if (videoBtn && videoModal && closeModalBtn && videoFrame) {
+            videoBtn.addEventListener('click', () => {
+                videoModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                videoFrame.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`; 
+            });
 
-         // Mobile Navigation Toggle
-         document.getElementById('nav-toggle').addEventListener('click', () => {
-             const navMenu = document.getElementById('nav-menu');
-             navMenu.classList.toggle('active');
-         });
+            closeModalBtn.addEventListener('click', () => {
+                videoModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                videoFrame.src = ""; 
+            });
 
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) { 
+                    videoModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    videoFrame.src = "";
+                }
+            });
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const countdownElements = {
+                days: document.getElementById('days'),
+                hours: document.getElementById('hours'),
+                minutes: document.getElementById('minutes'),
+                seconds: document.getElementById('seconds')
+            };
+
+            // Ensure all elements exist before proceeding
+            if (!Object.values(countdownElements).every(el => el !== null)) {
+                // console.warn("One or more countdown elements not found. Timer will not run.");
+                return;
+            }
+
+            if (!window.countdownTargetDate) {
+                 // Set target to end of current day for demo, e.g., 23:59:59
+                 let target = new Date();
+                 target.setHours(23, 59, 59, 0);
+                 // If current time is past today's 23:59:59, set it for tomorrow's end.
+                 if (new Date() > target) {
+                    target.setDate(target.getDate() + 1);
+                 }
+                 window.countdownTargetDate = target;
+            }
+            const target = window.countdownTargetDate;
+            const now = new Date();
+            const diff = target - now;
+
+            if (diff <= 0) {
+                countdownElements.days.textContent = '00';
+                countdownElements.hours.textContent = '00';
+                countdownElements.minutes.textContent = '00';
+                countdownElements.seconds.textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            countdownElements.days.textContent = days.toString().padStart(2, '0');
+            countdownElements.hours.textContent = hours.toString().padStart(2, '0');
+            countdownElements.minutes.textContent = minutes.toString().padStart(2, '0');
+            countdownElements.seconds.textContent = seconds.toString().padStart(2, '0');
+        }
+        // Check if countdown elements exist before starting interval
+        if (document.getElementById('days')) {
+            setInterval(updateCountdown, 1000);
+            updateCountdown(); 
+        }
+
+
+        // Current Year in Footer
+        const yearEl = document.getElementById('year');
+        if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+        // Scroll Animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const scrollObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Optional: unobserve after animation
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% of element is visible
+
+        fadeElements.forEach(element => {
+            scrollObserver.observe(element);
+        });
+
+
+        // Tab Slider for Creators Section
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === tabId) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Disable right-click (already in body tag via oncontextmenu)
+        // document.addEventListener('contextmenu', function(e) {
+        //     e.preventDefault();
+        // }); // This is redundant if oncontextmenu="return false;" is on body
+
+        // Form submission (basic example, prevent default and log)
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                const data = {};
+                formData.forEach((value, key) => (data[key] = value));
+                console.log('Form submitted:', data);
+                // Replace alert with a more styled message box if possible
+                alert('Pesan Anda telah terkirim (simulasi). Cek console untuk data.');
+                contactForm.reset();
+            });
+        }
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    const headerOffset = document.getElementById('header').offsetHeight || 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
 
     </script>
-
 </body>
 </html>
