@@ -3,22 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Langkah Sukses Affiliate - Raih Penghasilan Online Anda</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Langkah Sukses Pintar - Transformasi Digital Pendidik Indonesia</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
     <style>
         :root {
-            --primary-gold: #DAA520; /* GoldenRod */
-            --secondary-gold: #DAA520; /* Golden Rod */
-            --accent-gold: #cab40f; /* Golden Rod */
-            --shiny-highlight: #FFFACD; /* LemonChiffon - for highlights */
-            --dark-text: #2c1e00; /* Darker, rich brown for text */
-            --light-bg: #FFF8E1; /* Light cream, almost white gold */
-            --muted-gray: #7f704e; /* Muted gold/brown for less important text */
-            --white: #c7c7c9; /* Shiny Silver */
-            --black: #1a1100; /* Very dark brown/black */
-            --success-green: #28a745; /* Keep for success indicators */
+            /* Langkah Sukses Pintar Color Palette (Adobe-inspired) */
+            --lsp-deep-navy: #0A2540; /* Primary Dark */
+            --lsp-purple-start: #6B46C1; 
+            --lsp-purple-end: #4A00E0; 
+            --lsp-light-gray: #F7FAFC; /* Background */
+            --lsp-coral-red: #FF6B6B;   /* Accent 1 */
+            --lsp-soft-cyan: #4FD1C5;   /* Accent 2 */
+            --lsp-white: #FFFFFF;
+            --lsp-text-primary: #1A202C; /* Dark Gray for text */
+            --lsp-text-secondary: #4A5568; /* Medium Gray for text */
+            --lsp-text-light: #718096; /* Light Gray for less important text */
+            --lsp-border-color: #E2E8F0; /* Subtle borders */
+            --lsp-success: #38A169;
+            --lsp-warning: #DD6B20;
+
+            /* Fonts */
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+
+            --transition-speed: 0.3s ease;
+            --border-radius-sm: 6px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
         }
 
         * {
@@ -28,258 +47,219 @@
         }
 
         body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--dark-text);
-            background-color: var(--light-bg);
-            line-height: 1.6;
+            font-family: var(--font-body);
+            color: var(--lsp-text-primary);
+            background-color: var(--lsp-light-gray);
+            line-height: 1.7; /* Increased for readability */
             overflow-x: hidden;
-            -webkit-user-select: none; /* Safari */
-            -moz-user-select: none; /* Firefox */
-            -ms-user-select: none; /* IE10+/Edge */
-            user-select: none; /* Standard */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            color: var(--accent-gold);
+            font-family: var(--font-heading);
+            font-weight: 600; /* Slightly less bold for modern feel */
+            color: var(--lsp-deep-navy);
+            line-height: 1.3;
         }
+        h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700;}
+        h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700;}
+        h3 { font-size: clamp(1.3rem, 3vw, 1.6rem); font-weight: 600;}
 
         a {
             text-decoration: none;
-            color: inherit;
+            color: var(--lsp-purple-start);
+            transition: color var(--transition-speed);
+        }
+        a:hover {
+            color: var(--lsp-purple-end);
         }
 
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1280px; /* Wider for modern feel */
             margin: 0 auto;
             padding: 0 20px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 28px; /* Slightly more padding */
-            border-radius: 50px; /* Pill shape */
-            font-weight: 700; /* Bolder */
+            padding: 12px 28px;
+            border-radius: var(--border-radius-md); 
+            font-family: var(--font-heading);
+            font-weight: 600;
             text-align: center;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+            transition: all var(--transition-speed);
             border: none;
-            font-size: 16px;
+            font-size: 1rem;
             position: relative;
             overflow: hidden;
-            text-transform: uppercase; /* Uppercase for more impact */
-            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
         }
 
         .btn-primary {
-            background: linear-gradient(145deg, var(--secondary-gold), var(--primary-gold));
-            color: var(--black);
-            box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4); /* Gold shadow */
+            background-image: linear-gradient(135deg, var(--lsp-purple-start) 0%, var(--lsp-purple-end) 100%);
+            color: var(--lsp-white);
         }
-
         .btn-primary:hover {
-            background: linear-gradient(145deg, var(--primary-gold), var(--accent-gold));
-            transform: translateY(-3px) scale(1.03); /* More noticeable hover */
-            box-shadow: 0 10px 25px rgba(184, 134, 11, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 7px 10px -3px rgba(107, 70, 193, 0.4), 0 4px 6px -2px rgba(107, 70, 193, 0.2);
         }
 
         .btn-secondary {
-            background-color: transparent;
-            color: var(--primary-gold);
-            border: 2px solid var(--primary-gold);
-            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.2);
+            background-color: var(--lsp-soft-cyan);
+            color: var(--lsp-deep-navy);
+        }
+        .btn-secondary:hover {
+            background-color: #38b2ac; /* Darker cyan */
+            transform: translateY(-2px);
+            box-shadow: 0 7px 10px -3px rgba(79, 209, 197, 0.4), 0 4px 6px -2px rgba(79, 209, 197, 0.2);
         }
 
-        .btn-secondary:hover {
-            background-color: var(--primary-gold);
-            color: var(--white);
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 8px 20px rgba(218, 165, 32, 0.3);
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--lsp-purple-start);
+            color: var(--lsp-purple-start);
+        }
+        .btn-outline:hover {
+            background-color: var(--lsp-purple-start);
+            color: var(--lsp-white);
         }
         
-        .btn-outline { /* Kept for consistency if used, but secondary is preferred for gold theme */
-            background-color: transparent;
-            border: 2px solid var(--accent-gold);
-            color: var(--accent-gold);
+        /* Subtle hover/focus effect for cards and interactive elements */
+        .interactive-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
         }
-
-        .btn-outline:hover {
-            background-color: var(--accent-gold);
-            color: white;
-        }
-
 
         section {
-            padding: 80px 0;
+            padding: 80px 0; /* Consistent padding */
+            position: relative; 
+            overflow: hidden; 
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px; /* Increased margin */
+            margin-bottom: 60px;
         }
-
         .section-title h2 {
-            font-size: 2.8rem; /* Larger title */
-            margin-bottom: 20px;
+            font-size: clamp(2rem, 4.5vw, 2.8rem);
+            margin-bottom: 15px;
             position: relative;
             display: inline-block;
-            color: var(--accent-gold);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            color: var(--lsp-deep-navy);
         }
-
-        .section-title h2:after {
+        .section-title h2:after { 
             content: '';
             position: absolute;
-            width: 80px; /* Wider underline */
-            height: 5px; /* Thicker underline */
-            background: linear-gradient(90deg, var(--secondary-gold), var(--primary-gold)); /* Gradient underline */
-            bottom: -12px;
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--lsp-purple-start) 0%, var(--lsp-soft-cyan) 100%);
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            border-radius: 3px;
+            border-radius: 2px;
         }
-
         .section-title p {
-            color: var(--muted-gray);
+            color: var(--lsp-text-secondary);
             max-width: 750px;
-            margin: 0 auto;
-            font-size: 1.15rem; /* Slightly larger paragraph */
+            margin: 10px auto 0;
+            font-size: 1.1rem;
         }
-
-        /* Gold/Shiny Background Patterns */
-        .gold-pattern {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0.08; /* Subtle */
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .gold-pattern-1 {
-            background-image:
-                linear-gradient(45deg, var(--primary-gold) 1px, transparent 1px),
-                linear-gradient(-45deg, var(--primary-gold) 1px, transparent 1px);
-            background-size: 50px 50px; /* Larger pattern */
-        }
-
-        .gold-pattern-2 {
-            background-image:
-                radial-gradient(circle, var(--accent-gold) 1px, transparent 1px);
-            background-size: 40px 40px; /* Larger pattern */
-        }
-
+        
         /* Header */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(255, 248, 225, 0.9); /* Light cream with transparency */
-            backdrop-filter: blur(10px); /* Frosted glass effect */
-            box-shadow: 0 2px 20px rgba(184, 134, 11, 0.15); /* Softer gold shadow */
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             z-index: 1000;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed);
+            border-bottom: 1px solid var(--lsp-border-color);
         }
-
         header.scrolled {
-            background-color: rgba(255, 248, 225, 0.95); /* More opaque on scroll */
-            box-shadow: 0 5px 25px rgba(184, 134, 11, 0.2);
+            background-color: var(--lsp-white);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 18px 0; /* Adjusted padding */
         }
 
         .logo {
             display: flex;
             align-items: center;
-            font-size: 1.9rem; /* Slightly larger logo */
-            font-weight: 800;
-            color: var(--accent-gold);
+            font-size: clamp(1.4rem, 3vw, 1.6rem);
+            font-weight: 700;
+            color: var(--lsp-deep-navy);
         }
-
         .logo i {
-            margin-right: 12px;
-            color: var(--primary-gold); /* Icon color */
-            text-shadow: 0 0 5px var(--secondary-gold); /* Subtle glow */
+            margin-right: 10px;
+            color: var(--lsp-purple-start); /* Icon color */
+            font-size: 1.8rem;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
         }
-
         .nav-links a {
             margin: 0 18px; /* Increased spacing */
-            font-weight: 600;
-            color: var(--dark-text);
+            font-weight: 500; 
+            font-family: var(--font-heading);
+            color: var(--lsp-text-primary);
             position: relative;
-            transition: color 0.3s ease;
-            letter-spacing: 0.3px;
+            transition: color var(--transition-speed);
+            padding-bottom: 5px;
+            font-size: 0.95rem;
         }
-
-        .nav-links a:after {
+        .nav-links a:after { 
             content: '';
             position: absolute;
             width: 0;
-            height: 3px;
-            background: var(--primary-gold);
-            bottom: -6px; /* Adjusted position */
-            left: 0;
-            transition: width 0.4s ease; /* Smoother transition */
-            border-radius: 2px;
+            height: 2px;
+            background: var(--lsp-purple-start);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width var(--transition-speed);
         }
-
         .nav-links a:hover, .nav-links a.active {
-            color: var(--primary-gold);
+            color: var(--lsp-purple-start);
         }
-
         .nav-links a:hover:after, .nav-links a.active:after {
-            width: 100%;
+            width: 60%;
         }
-
-        .nav-links .contact-btn {
+        .nav-links .contact-btn { 
             margin-left: 25px;
-            padding: 10px 22px;
-            background: linear-gradient(145deg, var(--secondary-gold), var(--primary-gold));
-            color: var(--black);
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(218, 165, 32, 0.3);
-            font-weight: 700;
-        }
-
-        .nav-links .contact-btn:hover {
-            background: linear-gradient(145deg, var(--primary-gold), var(--accent-gold));
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 8px 15px rgba(184, 134, 11, 0.4);
         }
 
         .hamburger {
             display: none;
             cursor: pointer;
-            font-size: 1.8rem; /* Larger hamburger */
-            color: var(--accent-gold);
+            font-size: 1.6rem;
+            color: var(--lsp-deep-navy);
         }
 
         /* Hero Section with Swiper */
         .hero {
-            height: 100vh;
-            min-height: 700px;
+            min-height: 90vh; /* Slightly less than full viewport for navbar visibility */
+            max-height: 700px;
             position: relative;
             display: flex;
             align-items: center;
-            text-align: center;
-            color: var(--white);
+            text-align: left; /* Modern left align */
+            color: var(--lsp-white);
             overflow: hidden;
+            padding-top: 80px; /* Account for fixed header */
         }
-
         .hero-swiper-container {
             position: absolute;
             top: 0;
@@ -288,646 +268,526 @@
             height: 100%;
             z-index: 1;
         }
-
         .hero .swiper-slide {
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
-            justify-content: center;
+            /* justify-content: center; Removed for left align */
         }
-        
-        .hero .swiper-slide::before { /* Overlay for slides */
+        .hero .swiper-slide::before { 
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(44, 30, 0, 0.6), rgba(44, 30, 0, 0.8)); /* Dark gold overlay */
+            background: linear-gradient(90deg, rgba(10, 37, 64, 0.85) 0%, rgba(10, 37, 64, 0.5) 60%, rgba(10, 37, 64, 0.1) 100%); /* Darker overlay for text contrast, stronger on left */
         }
-
         .hero-content {
-            max-width: 850px; /* Wider content */
-            margin: 0 auto;
-            padding: 0 20px;
+            max-width: 700px; /* Adjusted for left align */
+            margin: 0; /* Removed auto margin for left align */
+            padding: 0 5%; /* Padding for content */
             position: relative;
             z-index: 2;
         }
-
         .hero h1 {
-            font-size: 3.8rem; /* Larger H1 */
+            font-size: clamp(2.5rem, 5.5vw, 3.8rem);
             margin-bottom: 25px;
             line-height: 1.25;
-            color: var(--white);
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Stronger shadow */
+            color: var(--lsp-white);
+            font-weight: 700;
         }
-
-        .hero h1 span {
-            color: var(--secondary-gold); /* Bright gold span */
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+        .hero h1 span { 
+            color: var(--lsp-soft-cyan); 
+            display: block; /* For multi-line emphasis */
+            margin-top: 5px;
         }
-
         .hero p {
-            font-size: 1.3rem; /* Larger paragraph */
+            font-size: clamp(1.05rem, 2.2vw, 1.25rem);
             margin-bottom: 35px;
-            color: var(--shiny-highlight); /* Lighter text for contrast */
-            font-weight: 500;
+            color: var(--lsp-light-gray); 
+            font-weight: 400;
+            max-width: 550px;
         }
-
         .hero .btn {
-            font-size: 1.15rem; /* Larger buttons */
-            padding: 18px 35px; /* More padding */
-            margin: 0 12px;
+            font-size: 1.05rem;
+            padding: 14px 32px;
+            margin-right: 15px;
+            margin-bottom: 10px; /* For stacking on mobile */
         }
+        .hero .btn i { margin-left: 10px; }
 
-        .hero .btn i {
-            margin-left: 10px;
-        }
-        
         .hero .swiper-pagination-bullet {
-            background-color: var(--shiny-highlight);
-            opacity: 0.6;
-            width: 12px; height: 12px; /* Larger bullets */
+            background-color: var(--lsp-white);
+            opacity: 0.7;
+            width: 10px; height: 10px;
         }
         .hero .swiper-pagination-bullet-active {
-            background-color: var(--secondary-gold);
+            background-color: var(--lsp-soft-cyan);
             opacity: 1;
             transform: scale(1.2);
         }
         .hero .swiper-button-next,
         .hero .swiper-button-prev {
-            color: var(--shiny-highlight);
-            transition: color 0.3s ease, transform 0.3s ease;
-            width: 50px; height: 50px; /* Larger nav buttons */
+            color: var(--lsp-white);
+            transition: color var(--transition-speed);
+            background-color: rgba(0,0,0,0.25);
+            width: 45px; height: 45px; border-radius: 50%;
+        }
+        .hero .swiper-button-next::after, .hero .swiper-button-prev::after{
+            font-size: 1.3rem; font-weight: bold;
         }
         .hero .swiper-button-next:hover,
         .hero .swiper-button-prev:hover {
-            color: var(--secondary-gold);
-            transform: scale(1.1);
+            color: var(--lsp-soft-cyan);
+            background-color: rgba(0,0,0,0.45);
         }
-
 
         /* Features Section */
-        .features {
-            background-color: var(--light-bg); /* Consistent light background */
-            position: relative;
+        .features { 
+            background-color: var(--lsp-white); 
         }
-
-        .features .gold-pattern { /* Use the gold pattern defined earlier */
-             background-image:
-                linear-gradient(45deg, var(--primary-gold) 1px, transparent 1px),
-                linear-gradient(-45deg, var(--primary-gold) 1px, transparent 1px);
-            background-size: 60px 60px; /* Adjusted size */
-            opacity: 0.05;
-        }
-
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger minmax */
-            gap: 35px; /* Increased gap */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
-
-        .feature-card {
-            background: var(--white);
-            border-radius: 20px; /* More rounded */
-            padding: 35px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.1); /* Softer gold shadow */
-            border-top: 5px solid var(--primary-gold); /* Gold top border */
+        .feature-card { 
+            background: var(--lsp-white);
+            border-radius: var(--border-radius-lg);
+            padding: 35px 30px;
+            text-align: left; /* Align text left for professional look */
+            transition: all var(--transition-speed);
+            box-shadow: 0 5px 15px rgba(10, 37, 64, 0.05);
+            border: 1px solid var(--lsp-border-color);
         }
-
         .feature-card:hover {
-            transform: translateY(-12px) scale(1.02); /* More pronounced hover */
-            box-shadow: 0 18px 40px rgba(184, 134, 11, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(10, 37, 64, 0.08);
         }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--secondary-gold), var(--accent-gold)); /* Gold gradient */
-            border-radius: 50%;
+        .feature-icon { 
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--lsp-purple-start), var(--lsp-soft-cyan));
+            border-radius: var(--border-radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
-            color: var(--black); /* Dark icon for contrast */
-            font-size: 2rem; /* Larger icon */
-            box-shadow: 0 0 15px var(--primary-gold); /* Icon glow */
+            margin-bottom: 20px; /* Removed auto margin for left align */
+            color: var(--lsp-white);
+            font-size: 1.8rem; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-
         .feature-card h3 {
-            font-size: 1.6rem; /* Larger heading */
-            margin-bottom: 18px;
-            color: var(--accent-gold);
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: var(--lsp-deep-navy); 
         }
-
         .feature-card p {
-            color: var(--muted-gray);
-            font-size: 1.05rem; /* Slightly larger text */
+            color: var(--lsp-text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        /* Courses Section */
-        .courses {
-            position: relative;
-            background-color: var(--white); /* White background for this section */
+        /* Courses Section (Why Us / Platform Benefits) */
+        .courses { 
+           background-color: var(--lsp-deep-navy);
+           color: var(--lsp-white);
         }
+        .courses .section-title h2 { color: var(--lsp-white); }
+        .courses .section-title p { color: var(--lsp-light-gray); opacity: 0.9; }
+        .courses .section-title h2:after { background: linear-gradient(135deg, var(--lsp-soft-cyan) 0%, var(--lsp-purple-start) 100%); }
 
-        .courses .gold-pattern {
-            background-image:
-                radial-gradient(circle, var(--accent-gold) 1px, transparent 1px);
-            background-size: 45px 45px;
-            opacity: 0.06;
-        }
-
-        .courses-grid {
+        .courses-grid { 
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
+            gap: 30px;
         }
-
-        .course-card {
-            background: var(--light-bg); /* Light cream background for cards */
-            border-radius: 20px;
+        .course-card { 
+            background: var(--lsp-white); 
+            color: var(--lsp-text-primary);
+            border-radius: var(--border-radius-lg);
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border-top: 5px solid var(--secondary-gold); /* Lighter gold top border */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: all var(--transition-speed);
+            display: flex; /* For better layout control */
+            flex-direction: column;
         }
-
         .course-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 18px 40px rgba(184, 134, 11, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
         }
-
-        .course-img {
-            height: 220px; /* Taller image */
+        .course-img { 
+            height: 200px;
             background-size: cover;
             background-position: center;
-            filter: saturate(1.1); /* Slightly more vibrant images */
         }
-
-        .course-content {
-            padding: 30px;
+        .course-content { 
+            padding: 25px;
+            flex-grow: 1; /* Make content area fill space */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-
         .course-content h3 {
-            font-size: 1.4rem; /* Larger course title */
-            margin-bottom: 12px;
-            color: var(--accent-gold);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--lsp-purple-start); 
         }
-
         .course-content p {
-            color: var(--muted-gray);
-            margin-bottom: 25px;
-            font-size: 1rem;
+            color: var(--lsp-text-secondary);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            flex-grow: 1;
         }
-
         .course-content .btn {
             width: 100%;
-            padding: 12px;
-            font-size: 1rem;
-            background: linear-gradient(145deg, var(--primary-gold), var(--accent-gold));
-            color: var(--white);
-        }
-        .course-content .btn:hover {
-            background: linear-gradient(145deg, var(--accent-gold), var(--primary-gold));
+            padding: 10px;
+            font-size: 0.95rem;
+            margin-top: auto; /* Push button to bottom */
         }
 
-
-        /* Link-Bio Section - Swiper */
-        .link-bio-section {
-            background-color: var(--light-bg);
+        /* Link-Bio Section (Swiper) -> "Jelajahi Platform Kami" */
+        .platform-showcase { 
+            background-color: var(--lsp-light-gray); 
             position: relative;
             overflow: hidden;
         }
+        .platform-showcase .section-title h2:after { background: linear-gradient(135deg, var(--lsp-purple-start) 0%, var(--lsp-soft-cyan) 100%); }
 
-        .link-bio-section .gold-pattern {
-            background-image:
-                linear-gradient(45deg, var(--accent-gold) 1px, transparent 1px),
-                linear-gradient(-45deg, var(--accent-gold) 1px, transparent 1px);
-            background-size: 50px 50px;
-            opacity: 0.07;
-        }
-        
-        .link-bio-swiper .slide { /* Renamed from .slide to avoid conflict with global .slide if any */
+        .platform-showcase .swiper-slide .slide-container { 
             display: flex;
             align-items: center;
-            gap: 60px; /* Increased gap */
-            padding: 0 20px;
+            gap: 40px;
+            padding: 30px;
+            background-color: var(--lsp-white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 8px 25px rgba(10, 37, 64, 0.07);
+            border: 1px solid var(--lsp-border-color);
         }
-
-        .link-bio-swiper .slide-content { /* Renamed */
-            flex: 1;
-        }
-
-        .link-bio-swiper .slide-content h2 {
-            font-size: 2.8rem;
-            margin-bottom: 25px;
+        .platform-showcase .slide-content h3 { /* Changed to H3 for semantics */
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            margin-bottom: 20px;
             line-height: 1.3;
-            color: var(--accent-gold);
+            color: var(--lsp-deep-navy);
         }
-
-        .link-bio-swiper .slide-content h2 span {
-            color: var(--primary-gold);
+        .platform-showcase .slide-content h3 span { 
+            color: var(--lsp-purple-start);
             position: relative;
-            /* text-decoration: underline; 
-            text-decoration-color: var(--secondary-gold); 
-            text-decoration-thickness: 4px; */
+            padding-bottom: 5px;
         }
-        .link-bio-swiper .slide-content h2 span::after {
+         .platform-showcase .slide-content h3 span:after {
             content: '';
             position: absolute;
             width: 100%;
-            height: 6px;
-            background: linear-gradient(90deg, var(--secondary-gold), var(--primary-gold));
-            bottom: 2px;
+            height: 3px;
+            background: var(--lsp-soft-cyan);
+            bottom: 0px;
             left: 0;
-            z-index: -1;
-            opacity: 0.6;
-            border-radius: 3px;
-        }
-
-
-        .link-bio-swiper .slide-content p {
-            color: var(--muted-gray);
-            margin-bottom: 35px;
-            font-size: 1.15rem;
-        }
-
-        .link-bio-swiper .slide-image { /* Renamed */
-            flex: 1;
-            position: relative;
-        }
-
-        .link-bio-swiper .slide-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(184, 134, 11, 0.25); /* Enhanced shadow */
-            border: 3px solid var(--secondary-gold); /* Gold border */
-        }
-
-        .link-bio-swiper .slide-image:before { /* Decorative element */
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 3px dashed var(--primary-gold); /* Dashed border */
-            border-radius: 20px;
-            top: -10px; /* Offset */
-            left: -10px; /* Offset */
-            z-index: -1;
-            opacity: 0.7;
-        }
-        
-        .link-bio-swiper .swiper-pagination-bullet {
-            background-color: var(--muted-gray);
-            opacity: 0.7;
-        }
-        .link-bio-swiper .swiper-pagination-bullet-active {
-            background-color: var(--primary-gold);
             opacity: 1;
         }
-        .link-bio-swiper .swiper-button-next,
-        .link-bio-swiper .swiper-button-prev {
-            color: var(--primary-gold);
-            background-color: rgba(255,255,255,0.5);
-            border-radius: 50%;
-            width: 44px; height: 44px;
-            transition: all 0.3s ease;
+        .platform-showcase .slide-content p {
+            color: var(--lsp-text-secondary);
+            margin-bottom: 30px;
+            font-size: 1rem;
         }
-        .link-bio-swiper .swiper-button-next:hover,
-        .link-bio-swiper .swiper-button-prev:hover {
-            color: var(--accent-gold);
-            background-color: var(--secondary-gold);
+        .platform-showcase .slide-image img {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: var(--border-radius-md);
+            border: 1px solid var(--lsp-border-color);
+        }
+        .platform-showcase .slide-image { flex: 1; }
+        .platform-showcase .slide-content { flex: 1.2; }
+
+
+        .platform-swiper .swiper-button-next,
+        .platform-swiper .swiper-button-prev {
+            color: var(--lsp-purple-start);
+            background-color: rgba(255,255,255,0.8);
+            width: 40px; height: 40px; border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .platform-swiper .swiper-button-next::after, .platform-swiper .swiper-button-prev::after{
+            font-size: 1.1rem; font-weight: bold;
+        }
+        .platform-swiper .swiper-button-next:hover,
+        .platform-swiper .swiper-button-prev:hover {
+            background-color: var(--lsp-purple-start);
+            color: var(--lsp-white);
+        }
+        .platform-swiper .swiper-pagination-bullet-active {
+            background-color: var(--lsp-purple-start);
         }
 
 
-        /* Creators Section - Tab Slider */
-        .creators-section {
-            background-color: var(--dark-text); /* Dark background for contrast */
-            color: var(--light-bg);
+        /* Community/Experts Section (Tab Slider) */
+        .community-section { 
+            background-color: var(--lsp-white);
+            color: var(--lsp-text-primary);
             text-align: center;
             position: relative;
         }
-
-        .creators-section .gold-pattern {
-            background-image:
-                radial-gradient(circle, var(--primary-gold) 1px, transparent 1px);
-            background-size: 40px 40px;
-            opacity: 0.15; /* Slightly more visible on dark bg */
-        }
-
-        .creators-section .section-title h2 {
-            color: var(--secondary-gold); /* Bright gold title */
-        }
-
-        .creators-section .section-title h2:after {
-            background: linear-gradient(90deg, var(--primary-gold), var(--accent-gold));
-        }
-
-        .creators-section .section-title p {
-            color: var(--shiny-highlight); /* Lighter text */
-        }
+        .community-section .section-title h2 { color: var(--lsp-deep-navy); }
+        .community-section .section-title h2:after { background: linear-gradient(135deg, var(--lsp-purple-start) 0%, var(--lsp-soft-cyan) 100%); }
+        .community-section .section-title p { color: var(--lsp-text-secondary); }
 
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
+            position: relative; z-index: 1;
+            border-bottom: 1px solid var(--lsp-border-color);
         }
-
         .tab-btn {
-            padding: 12px 25px;
-            margin: 5px; /* Added margin for wrapping */
-            background: rgba(255, 215, 0, 0.1); /* Transparent gold */
-            color: var(--secondary-gold);
-            border-radius: 50px; /* Pill shape */
+            padding: 12px 28px;
+            margin: 0 5px -1px 5px; /* Overlap border */
+            background: transparent;
+            color: var(--lsp-text-secondary);
+            border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0; 
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
+            transition: all var(--transition-speed);
+            font-family: var(--font-heading);
+            font-weight: 500;
+            border: 1px solid transparent;
+            border-bottom: none;
         }
-
         .tab-btn.active, .tab-btn:hover {
-            background: var(--primary-gold);
-            color: var(--black);
-            box-shadow: 0 0 15px var(--secondary-gold);
+            background: var(--lsp-white);
+            color: var(--lsp-purple-start);
+            border-color: var(--lsp-border-color) var(--lsp-border-color) var(--lsp-white) var(--lsp-border-color);
+            border-bottom: 1px solid var(--lsp-white); /* Hide bottom border part */
         }
-
-        .tab-content {
-            display: none;
-        }
-
+        .tab-content { display: none; position: relative; z-index: 1; padding-top: 30px;}
         .tab-content.active {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjusted size */
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
-
-        .creator-item {
-            background: rgba(255, 215, 0, 0.08); /* Very subtle gold bg */
-            border-radius: 20px;
-            padding: 30px 20px;
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .community-item-card { 
+            background: var(--lsp-white); 
+            color: var(--lsp-text-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 25px; 
+            transition: all var(--transition-speed);
+            cursor: default; /* No pointer if not clickable */
             position: relative;
-            overflow: hidden;
-            border: 1px solid var(--accent-gold); /* Gold border */
+            box-shadow: 0 4px 10px rgba(10, 37, 64, 0.05);
+            border: 1px solid var(--lsp-border-color);
+        }
+        .community-item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(10, 37, 64, 0.07);
+        }
+        .community-item-card i.card-icon { /* Icon inside card */
+            font-size: 2.5rem;
+            color: var(--lsp-soft-cyan);
+            margin-bottom: 15px;
+            display: block; /* Make it block for centering */
+        }
+        .community-item-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--lsp-deep-navy);
+        }
+        .community-item-card p {
+            font-size: 0.9rem;
+            color: var(--lsp-text-secondary);
         }
 
-        .creator-item:hover {
-            transform: translateY(-8px) scale(1.03);
-            background: rgba(255, 215, 0, 0.15);
-            box-shadow: 0 12px 25px rgba(218, 165, 32, 0.3);
-        }
-
-        .creator-item i {
-            font-size: 3.5rem; /* Larger icon */
-            color: var(--secondary-gold);
-            margin-bottom: 18px;
-            text-shadow: 0 0 10px var(--primary-gold);
-        }
-
-        .creator-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-            color: var(--shiny-highlight);
-        }
-
-        .creator-item .creator-details {
-            position: absolute;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background: var(--primary-gold);
-            padding: 18px;
-            border-radius: 0 0 18px 18px; /* Match card radius */
-            transition: all 0.4s ease;
-            color: var(--black);
-        }
-        .creator-item .creator-details p {
-            font-weight: 600;
-        }
-
-        .creator-item:hover .creator-details {
-            bottom: 0;
-        }
 
         /* Testimonials Section */
         .testimonials {
-            position: relative;
-            background-color: var(--light-bg);
+           background-color: var(--lsp-light-gray); 
         }
-
-        .testimonials .gold-pattern {
-            background-image:
-                linear-gradient(45deg, var(--primary-gold) 1px, transparent 1px),
-                linear-gradient(-45deg, var(--primary-gold) 1px, transparent 1px);
-            background-size: 55px 55px;
-            opacity: 0.06;
-        }
+        .testimonials .section-title h2:after { background: linear-gradient(135deg, var(--lsp-purple-start) 0%, var(--lsp-soft-cyan) 100%); }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
         }
-
         .testimonial-card {
-            background: var(--white);
-            border-radius: 20px;
+            background: var(--lsp-white); 
+            color: var(--lsp-text-primary);
+            border-radius: var(--border-radius-lg);
             padding: 35px;
-            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.1);
+            box-shadow: 0 6px 18px rgba(10, 37, 64, 0.06);
             position: relative;
-            border-top: 5px solid var(--primary-gold);
-            transition: all 0.3s ease;
+            border-left: 5px solid var(--lsp-purple-start); 
         }
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(184, 134, 11, 0.15);
-        }
-
-        .testimonial-card i.fa-quote-right { /* Specific quote icon styling */
+        .testimonial-card .fa-quote-left { /* Quote icon */
             position: absolute;
-            top: 25px;
+            top: 20px;
             right: 25px;
-            font-size: 3.5rem;
-            color: rgba(218, 165, 32, 0.15); /* Subtle gold quote */
+            font-size: 3rem;
+            color: var(--lsp-purple-start);
+            opacity: 0.1;
         }
-
         .testimonial-content {
             margin-bottom: 25px;
-            color: var(--muted-gray);
+            color: var(--lsp-text-secondary);
             font-style: italic;
-            font-size: 1.05rem;
+            font-size: 1rem;
+            line-height: 1.7;
+            position: relative; 
+            z-index: 1;
         }
-
         .testimonial-author {
             display: flex;
             align-items: center;
+            margin-top: 20px;
         }
-
         .author-avatar {
-            width: 60px; /* Larger avatar */
-            height: 60px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 18px;
-            border: 3px solid var(--secondary-gold); /* Gold border for avatar */
+            margin-right: 15px;
+            border: 2px solid var(--lsp-soft-cyan);
         }
-
-        .author-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
+        .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .author-info h4 {
-            font-size: 1.2rem;
-            margin-bottom: 6px;
-            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+            color: var(--lsp-deep-navy);
+            font-weight: 600;
         }
-
-        .author-info p {
-            color: var(--muted-gray);
-            font-size: 0.95rem;
-        }
+        .author-info p { color: var(--lsp-text-light); font-size: 0.85rem; }
 
         /* Pricing Section */
         .pricing {
-            background-color: var(--white); /* White bg for contrast */
-            position: relative;
+            background-color: var(--lsp-white); 
         }
-
-        .pricing .gold-pattern {
-            background-image:
-                radial-gradient(circle, var(--accent-gold) 1px, transparent 1px);
-            background-size: 40px 40px;
-            opacity: 0.07;
-        }
-
+        .pricing .section-title h2:after { background: linear-gradient(135deg, var(--lsp-purple-start) 0%, var(--lsp-soft-cyan) 100%); }
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr; /* Single column for the main offer */
             gap: 30px;
             margin-top: 50px;
-            align-items: stretch; /* Make cards same height */
+            justify-items: center;
         }
-
         .pricing-card {
-            background: var(--light-bg);
-            border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.08);
+            background: var(--lsp-white);
+            border-radius: var(--border-radius-lg); 
+            padding: 40px 35px;
+            box-shadow: 0 10px 30px rgba(10, 37, 64, 0.08);
             position: relative;
-            transition: all 0.3s ease;
-            border-top: 5px solid var(--primary-gold);
-            display: flex;
-            flex-direction: column; /* For button alignment */
+            transition: all var(--transition-speed);
+            border: 1px solid var(--lsp-border-color);
+            text-align: center;
+            max-width: 500px; /* Control width of single card */
         }
-
-        .pricing-card:hover, .pricing-card.featured {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 35px rgba(184, 134, 11, 0.2);
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(10, 37, 64, 0.1);
         }
-
-        .pricing-card.featured {
-            border: 3px solid var(--secondary-gold); /* Bright gold border for featured */
-            background: linear-gradient(180deg, var(--shiny-highlight), var(--light-bg)); /* Subtle gradient */
+        .pricing-card.featured { 
+            border-top: 5px solid var(--lsp-purple-start); 
+            box-shadow: 0 15px 35px rgba(107, 70, 193, 0.15); 
         }
-
         .featured-badge {
             position: absolute;
-            top: -18px; /* Adjusted position */
-            right: 20px;
-            background: linear-gradient(145deg, var(--accent-gold), var(--primary-gold));
-            color: var(--white);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            top: -15px; 
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--lsp-coral-red) 0%, var(--lsp-purple-start) 100%);
+            color: var(--lsp-white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
         }
 
-        .pricing-card h3 {
+        .pricing-card h3 { 
             font-size: 1.6rem;
-            margin-bottom: 18px;
-            color: var(--accent-gold);
-            text-align: center;
+            margin-top: 10px; 
+            margin-bottom: 15px;
+            color: var(--lsp-deep-navy);
         }
+        .pricing-card.featured h3 { margin-top: 30px; } /* Space for badge */
 
-        .price {
-            font-size: 3rem; /* Larger price */
-            font-weight: 800;
-            margin-bottom: 25px;
-            color: var(--dark-text);
-            text-align: center;
+        .price { 
+            font-size: clamp(2.8rem, 5.5vw, 3.8rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--lsp-purple-start);
+            font-family: var(--font-heading);
         }
-
-        .price span {
+        .price span.currency {
+            font-size: 1.5rem;
+            vertical-align: super;
+            margin-right: 2px;
+        }
+        .price span.term {
             font-size: 1rem;
-            color: var(--muted-gray);
-            font-weight: 500;
+            color: var(--lsp-text-secondary);
+            font-weight: 400;
+            font-family: var(--font-body);
+            display: block; /* Term below price */
+            margin-top: -10px;
         }
-
         .pricing-features {
             list-style: none;
-            margin-bottom: 35px;
-            flex-grow: 1; /* Allow features to take space */
+            margin-bottom: 30px;
+            text-align: left;
+            padding-left: 15px;
         }
-
         .pricing-features li {
-            padding: 10px 0; /* Increased padding */
-            color: var(--muted-gray);
+            padding: 10px 0;
+            color: var(--lsp-text-secondary);
             position: relative;
-            padding-left: 30px; /* More space for icon */
-            font-size: 1rem;
+            padding-left: 35px;
+            font-size: 0.95rem;
         }
-
-        .pricing-features li:before {
-            content: '\f00c'; /* Checkmark */
+        .pricing-features li:before { 
+            content: '\f00c'; /* Font Awesome check */
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             position: absolute;
             left: 0;
-            color: var(--primary-gold); /* Gold checkmark */
+            color: var(--lsp-success); 
             font-size: 1.1rem;
+            top: 50%;
+            transform: translateY(-50%);
         }
-
-        .pricing-card .btn {
-            width: 100%;
-            margin-top: auto; /* Push button to bottom */
-        }
+        .pricing-card .btn { width: 100%; margin-top:15px; padding: 14px 0; }
 
         /* FAQ Section */
-        .faq-container { max-width: 900px; margin: 0 auto; }
+        #faq { background-color: var(--lsp-light-gray); }
+        .faq-container { max-width: 850px; margin: 0 auto; }
         .faq-item {
-            background-color: var(--white);
-            margin-bottom: 18px; border-radius: 15px; /* More rounded */
-            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.08); overflow: hidden;
-            border: 1px solid var(--primary-gold); /* Gold border */
+            background-color: var(--lsp-white);
+            margin-bottom: 15px; border-radius: var(--border-radius-md);
+            box-shadow: 0 3px 8px rgba(10, 37, 64, 0.04); overflow: hidden;
+            border: 1px solid var(--lsp-border-color);
         }
         .faq-question {
             padding: 20px 25px; cursor: pointer;
             display: flex; justify-content: space-between; align-items: center;
-            font-weight: 700; color: var(--accent-gold); font-size: 1.2rem;
-            transition: background-color 0.3s;
+            font-weight: 600; font-family: var(--font-heading);
+            color: var(--lsp-deep-navy); font-size: 1.1rem;
+            transition: background-color var(--transition-speed);
         }
-        .faq-question:hover { background-color: var(--shiny-highlight); }
-        .faq-question i {
-            transition: transform 0.3s;
-            color: var(--primary-gold); font-size: 1.3rem;
+        .faq-question:hover { background-color: #f0f4f8; } /* Lighter gray on hover */
+        .faq-question i { 
+            transition: transform var(--transition-speed);
+            color: var(--lsp-purple-start); font-size: 1.1rem;
         }
         .faq-answer {
-            background: var(--light-bg);
-            color: var(--dark-text);
-            border-top: 1px solid var(--primary-gold);
+            background: var(--lsp-white);
+            color: var(--lsp-text-secondary);
+            border-top: 1px solid var(--lsp-border-color); 
             padding: 0 25px;
             max-height: 0;
             overflow: hidden;
             opacity: 0;
-            transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s;
+            transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
         }
         .faq-item.active .faq-answer {
             padding: 22px 25px;
@@ -935,660 +795,458 @@
             opacity: 1;
         }
         .faq-item.active .faq-question i { transform: rotate(180deg); }
-        .faq-answer p {
-             color: var(--dark-text); background: transparent; padding: 0; border-radius: 0; font-size: 1rem;
+        .faq-item.active .faq-question { background-color: #f0f4f8; color: var(--lsp-purple-start); }
+        #faq .faq-answer p { color: var(--lsp-text-secondary); background: transparent; padding: 0; border-radius:0; margin-bottom:10px; font-size: 0.95rem; line-height: 1.6;}
+        
+
+        /* Pop-up Discount Modal */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 37, 64, 0.85); 
+            z-index: 10000;
+            display: none; 
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(8px);
         }
-        #faq .section-title p { /* Style for the intro paragraph in FAQ */
-            color: var(--dark-text); font-size: 1.1rem; background: var(--white);
-            padding: 15px 20px; border-radius: 12px; box-shadow: 0 3px 10px rgba(184,134,11,0.1);
-            border: 1px solid var(--secondary-gold);
+        .popup-content {
+            background-color: var(--lsp-white);
+            padding: 35px 45px 45px;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border-top: 6px solid var(--lsp-purple-start); 
+            animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
         }
+        @keyframes popIn {
+            0% { transform: scale(0.7) translateY(20px); opacity: 0; }
+            100% { transform: scale(1) translateY(0px); opacity: 1; }
+        }
+        @keyframes popOut { 
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0; }
+        }
+        .popup-content .popup-icon {
+            font-size: 4rem; color: var(--lsp-soft-cyan); margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .popup-content h2 {
+            color: var(--lsp-deep-navy);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .popup-content p {
+            margin-bottom: 1.5rem;
+            color: var(--lsp-text-secondary);
+            font-size: 1rem;
+        }
+        .popup-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            font-size: 1.8rem;
+            color: var(--lsp-text-light);
+            background: none;
+            border: none;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+        .popup-close:hover { color: var(--lsp-coral-red); transform: rotate(90deg); transition: transform 0.3s, color 0.2s; }
+        .popup-timer {
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            color: var(--lsp-coral-red);
+            margin-top: 1.5rem;
+            background-color: var(--lsp-light-gray);
+            padding: 10px 15px;
+            border-radius: var(--border-radius-sm);
+            display: inline-block;
+            border: 1px solid var(--lsp-border-color);
+        }
+        .popup-content .btn { margin-top: 1.8rem; font-size: 1.05rem; padding: 12px 30px; width: 100%;}
 
 
         /* Contact Section */
         .contact {
-            background-color: var(--light-bg);
-            position: relative;
+            background-color: var(--lsp-light-gray);
         }
-
-        .contact .gold-pattern {
-            background-image:
-                radial-gradient(circle, var(--primary-gold) 1px, transparent 1px);
-            background-size: 45px 45px;
-            opacity: 0.08;
-        }
-
+        .contact .section-title h2:after { background: linear-gradient(135deg, var(--lsp-purple-start) 0%, var(--lsp-soft-cyan) 100%); }
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: 1.3fr 1fr; /* Form takes more space */
             gap: 50px;
+            position: relative; z-index: 1;
+            background-color: var(--lsp-white);
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 8px 25px rgba(10, 37, 64, 0.07);
+            border: 1px solid var(--lsp-border-color);
         }
-
-        .contact-form .form-group {
-            margin-bottom: 22px;
+        .contact-form-wrapper h3, .contact-info-wrapper h3 {
+            font-size: 1.5rem;
+            color: var(--lsp-deep-navy);
+            margin-bottom: 25px;
         }
-
         .contact-form label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 600;
-            color: var(--accent-gold);
-            font-size: 1.05rem;
+            font-family: var(--font-body); /* Use body font for labels */
+            color: var(--lsp-text-primary);
+            font-size: 0.9rem;
         }
-
         .contact-form input,
         .contact-form textarea,
         .contact-form select {
             width: 100%;
-            padding: 14px 18px; /* Increased padding */
-            border: 1px solid var(--muted-gray);
-            border-radius: 10px; /* More rounded */
-            font-family: 'Open Sans', sans-serif;
-            transition: all 0.3s ease;
-            background-color: var(--white);
-            color: var(--dark-text);
+            padding: 12px 15px;
+            border: 1px solid var(--lsp-border-color);
+            border-radius: var(--border-radius-sm);
+            font-family: var(--font-body);
+            transition: all var(--transition-speed);
+            background-color: var(--lsp-white);
+            font-size: 0.95rem;
+            color: var(--lsp-text-primary);
         }
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: var(--muted-gray);
-            opacity: 0.7;
-        }
-
         .contact-form input:focus,
         .contact-form textarea:focus,
         .contact-form select:focus {
-            border-color: var(--primary-gold);
+            border-color: var(--lsp-purple-start);
             outline: none;
-            box-shadow: 0 0 0 4px rgba(218, 165, 32, 0.2); /* Gold focus ring */
-            background-color: var(--shiny-highlight);
+            box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.15); 
         }
+        .contact-form textarea { min-height: 120px; resize: vertical; }
+        .contact-form .btn { width: auto; padding-left: 35px; padding-right: 35px; margin-top: 10px;}
 
-        .contact-form textarea {
-            min-height: 160px;
-            resize: vertical;
-        }
-
-        .contact-form .btn {
-            width: 100%;
-        }
-
-        .contact-info {
-            background: linear-gradient(160deg, var(--white), var(--shiny-highlight)); /* Subtle gradient */
+        /* .contact-info-wrapper {
+            background: var(--lsp-light-gray);
             padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.15);
-            border: 1px solid var(--secondary-gold);
-        }
-
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: var(--accent-gold);
-        }
-
-        .info-item {
-            display: flex;
-            margin-bottom: 22px;
-            align-items: flex-start; /* Align icon with first line */
-        }
-
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 5px 15px rgba(10,37,64,0.05);
+            border-left: 3px solid var(--lsp-soft-cyan);
+        } */
+        .info-item { display: flex; margin-bottom: 22px; align-items: flex-start; }
         .info-item i {
-            font-size: 1.4rem; /* Larger icon */
-            color: var(--primary-gold);
+            font-size: 1.3rem; 
+            color: var(--lsp-purple-start);
             margin-right: 18px;
-            margin-top: 5px; /* Adjust alignment */
-            width: 25px; /* Ensure consistent spacing */
-            text-align: center;
+            margin-top: 3px;
+            width: 22px; text-align: center;
         }
-        .info-item div p {
-            color: var(--muted-gray);
-            font-size: 1rem;
-        }
-        .info-item div h4 {
-            color: var(--dark-text);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
+        .info-item div h4 { font-family: var(--font-heading); font-weight:600; color: var(--lsp-deep-navy); margin-bottom: 4px; font-size: 1rem;}
+        .info-item div p { font-size: 0.9rem; color: var(--lsp-text-secondary); line-height: 1.5; }
 
-
-        .social-links {
-            display: flex;
-            gap: 18px;
-            margin-top: 35px;
-        }
-
+        .social-links { display: flex; gap: 15px; margin-top: 25px; }
         .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px; /* Larger social icons */
-            height: 45px;
-            background: var(--primary-gold);
-            color: var(--black);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            background: var(--accent-gold);
-            color: var(--white);
-            transform: translateY(-4px) scale(1.1);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-        }
-
-        /* Final CTA Section */
-        .final-cta {
-            background: linear-gradient(rgba(44, 30, 0, 0.85), rgba(44, 30, 0, 0.9)),
-                        url('https://images.unsplash.com/photo-1522125670776-3c7abb882bc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-            /* Placeholder image, consider a gold/success themed one if possible */
-            color: var(--white);
-            text-align: center;
-            padding: 100px 20px;
-            border-radius: 25px; /* More rounded */
-            margin: 80px auto;
-            max-width: 1200px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.3);
-        }
-
-        .final-cta:before { /* Shiny overlay effect */
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0) 70%);
-            animation: rotateShine 10s linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes rotateShine {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-
-        .final-cta h2 {
-            font-size: 2.8rem;
-            margin-bottom: 25px;
-            position: relative;
-            color: var(--secondary-gold);
-            text-shadow: 1px 1px 3px var(--black);
-        }
-
-        .final-cta p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            color: var(--shiny-highlight);
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 25px; /* Increased gap */
-            margin-bottom: 45px;
-            position: relative;
-        }
-
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.15); /* Slightly more visible */
-            border-radius: 15px; /* More rounded */
-            padding: 18px 22px;
-            min-width: 90px; /* Wider items */
-            border: 1px solid var(--primary-gold);
-        }
-
-        .countdown-number {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--secondary-gold);
-        }
-
-        .countdown-label {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            color: var(--shiny-highlight);
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            position: relative;
-            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-        }
-
-        .cta-buttons .btn {
-            min-width: 220px; /* Wider buttons */
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-text); /* Dark footer */
-            color: var(--light-bg);
-            padding: 80px 0 30px;
-            position: relative;
-        }
-
-        footer .gold-pattern {
-            background-image:
-                linear-gradient(45deg, var(--primary-gold) 1px, transparent 1px),
-                linear-gradient(-45deg, var(--primary-gold) 1px, transparent 1px);
-            background-size: 50px 50px;
-            opacity: 0.1;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted minmax */
-            gap: 45px;
-            margin-bottom: 50px;
-        }
-
-        .footer-logo {
-            font-size: 2rem; /* Larger footer logo */
-            font-weight: 800;
-            margin-bottom: 22px;
-            display: inline-block;
-            color: var(--secondary-gold); /* Gold logo text */
-        }
-
-        .footer-logo i {
-            color: var(--primary-gold);
-            margin-right: 12px;
-        }
-
-        .footer-about p {
-            margin-bottom: 25px;
-            color: rgba(255, 248, 225, 0.8); /* Lighter text on dark bg */
-            font-size: 0.95rem;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 18px;
-        }
-
-        .footer-social a {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255, 215, 0, 0.15); /* Transparent gold */
-            color: var(--secondary-gold);
+            background: var(--lsp-light-gray);
+            color: var(--lsp-purple-start);
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed);
+            font-size: 1.1rem;
+            border: 1px solid var(--lsp-border-color);
         }
-
-        .footer-social a:hover {
-            background: var(--primary-gold);
-            color: var(--black);
+        .social-links a:hover {
+            background: var(--lsp-purple-start);
+            color: var(--lsp-white);
             transform: translateY(-3px);
         }
 
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--lsp-deep-navy) 0%, var(--lsp-purple-end) 100%),
+                        url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            background-blend-mode: multiply;
+            color: var(--lsp-white);
+            text-align: center;
+            padding: 70px 30px; 
+            border-radius: var(--border-radius-lg); 
+            margin: 60px auto; 
+            max-width: 1000px; 
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(10,37,64,0.15);
+        }
+        .final-cta:before { 
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/grid.png'); 
+            opacity: 0.03; 
+        }
+        .final-cta h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            margin-bottom: 20px;
+            position: relative;
+            color: var(--lsp-white);
+        }
+        .final-cta p {
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            color: var(--lsp-light-gray);
+            opacity: 0.9;
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px; 
+            margin-bottom: 35px;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-sm);
+            padding: 10px 15px;
+            min-width: 70px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .countdown-number {
+            font-size: 1.8rem;
+            font-weight: 700; 
+            font-family: var(--font-heading);
+            margin-bottom: 2px;
+        }
+        .countdown-label { font-size: 0.8rem; opacity: 0.8; text-transform: uppercase; }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .cta-buttons .btn { min-width: 200px; font-size: 1.05rem; padding: 14px 30px; }
+        .cta-buttons .btn-primary { background: var(--lsp-soft-cyan); color: var(--lsp-deep-navy); }
+        .cta-buttons .btn-primary:hover { background-color: #38b2ac; }
+        .cta-buttons .btn-secondary { background-color: transparent; color: var(--lsp-white); border: 2px solid var(--lsp-white); }
+        .cta-buttons .btn-secondary:hover { background-color: rgba(255,255,255,0.1); }
+
+
+        /* Footer */
+        footer {
+            background-color: var(--lsp-deep-navy); 
+            color: var(--lsp-light-gray); 
+            padding: 70px 0 25px;
+            position: relative;
+            border-top: 3px solid var(--lsp-purple-start); 
+        }
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative; z-index: 1;
+        }
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: inline-block;
+            color: var(--lsp-white);
+        }
+        .footer-logo i { color: var(--lsp-soft-cyan); margin-right: 10px; }
+        .footer-about p { margin-bottom: 20px; color: var(--lsp-light-gray); font-size: 0.9rem; opacity: 0.8;}
+        .footer-social { display: flex; gap: 12px; }
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px; height: 38px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--lsp-white);
+            border-radius: 50%;
+            transition: all var(--transition-speed);
+        }
+        .footer-social a:hover { background: var(--lsp-soft-cyan); color: var(--lsp-deep-navy); transform: translateY(-2px); }
         .footer-links h3 {
-            font-size: 1.4rem;
-            margin-bottom: 22px;
-            color: var(--primary-gold); /* Gold headings */
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--lsp-white); 
+            font-weight: 600;
         }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            transition: all 0.3s ease;
-            color: rgba(255, 248, 225, 0.8);
-        }
-
-        .footer-links a:hover {
-            color: var(--secondary-gold);
-            padding-left: 8px; /* More noticeable hover indent */
-        }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { transition: all var(--transition-speed); color: var(--lsp-light-gray); opacity:0.8; font-size: 0.9rem;}
+        .footer-links a:hover { color: var(--lsp-soft-cyan); padding-left: 5px; opacity:1; }
 
         .copyright {
             text-align: center;
-            padding-top: 35px;
-            border-top: 1px solid rgba(218, 165, 32, 0.2); /* Gold border */
-            color: rgba(255, 248, 225, 0.7);
-            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--lsp-light-gray);
+            font-size: 0.85rem;
+            opacity: 0.7;
+            position: relative; z-index: 1;
         }
-
-        .copyright i {
-            color: var(--primary-gold);
-            margin: 0 5px;
-        }
+        .copyright i { color: var(--lsp-coral-red); margin: 0 4px; } 
 
         /* Floating Buttons */
         .floating-btns {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 25px;
+            right: 25px;
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 15px;
             z-index: 999;
         }
-
         .floating-btn {
-            width: 60px;
-            height: 60px;
+            width: 50px; height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--black);
-            font-size: 1.6rem; /* Larger icon */
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-            transition: all 0.3s ease;
+            color: var(--lsp-white);
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(10,37,64,0.2);
+            transition: all var(--transition-speed);
             cursor: pointer;
         }
-
-        .floating-btn:hover {
-            transform: translateY(-6px) scale(1.15); /* More pronounced hover */
-            box-shadow: 0 8px 22px rgba(0,0,0,0.3);
-        }
-
-        .whatsapp-btn {
-            background-color: #25D366; /* Standard WhatsApp green */
-            color: var(--white);
-        }
-        .whatsapp-btn:hover {
-             background-color: #1DAE54;
-        }
+        .floating-btn:hover { transform: translateY(-4px) scale(1.05); }
+        .whatsapp-btn { background-color: #25D366; } 
+        .video-btn { background-image: linear-gradient(135deg, var(--lsp-purple-start) 0%, var(--lsp-purple-end) 100%);} 
 
 
-        .video-btn {
-            background: linear-gradient(145deg, var(--secondary-gold), var(--primary-gold));
-        }
-         .video-btn:hover {
-            background: linear-gradient(145deg, var(--primary-gold), var(--accent-gold));
-        }
-
-
-        /* Modal */
+        /* Modal (Video) */
         .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(44, 30, 0, 0.85); /* Dark gold semi-transparent bg */
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
+            display: none; position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(10, 37, 64, 0.85); 
+            z-index: 10000; align-items: center; justify-content: center;
+            backdrop-filter: blur(8px);
         }
-
         .modal-content {
-            background: var(--light-bg);
-            border-radius: 20px;
-            width: 90%;
-            max-width: 800px;
-            padding: 25px; /* Increased padding */
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            background: var(--lsp-white); border-radius: var(--border-radius-lg);
+            width: 90%; max-width: 800px; padding: 20px; position: relative;
+            border: 1px solid var(--lsp-border-color);
         }
-
         .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 2rem; /* Larger close button */
-            cursor: pointer;
-            color: var(--muted-gray);
-            transition: all 0.3s ease;
+            position: absolute; top: 12px; right: 15px;
+            font-size: 1.8rem; cursor: pointer; color: var(--lsp-text-light);
+            transition: all var(--transition-speed); line-height: 1;
         }
-
-        .close-modal:hover {
-            color: var(--primary-gold);
-            transform: scale(1.1);
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 15px; /* Rounded iframe */
-            border: 2px solid var(--primary-gold);
-        }
+        .close-modal:hover { color: var(--lsp-coral-red); transform: rotate(90deg); }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: var(--border-radius-sm); }
 
         /* Animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(35px); /* Slightly more travel */
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Smoother ease */
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-
-        .fade-in.active {
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible, .slide-in-left.visible, .slide-in-right.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) translateX(0);
         }
 
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .link-bio-swiper .slide { /* Ensure correct targeting */
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .link-bio-swiper .slide-image { /* Ensure correct targeting */
-                margin-top: 40px;
-                max-width: 450px; /* Control image size on tablet */
-            }
-
-            .link-bio-swiper .slide-image:before {
-                display: none;
-            }
-            .pricing-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
+            .platform-showcase .swiper-slide .slide-container { flex-direction: column; text-align:center; }
+            .platform-showcase .slide-image { margin-top: 30px; order: -1; /* Image first on mobile */ }
+            .contact-container { grid-template-columns: 1fr; }
+            .contact-info-wrapper { margin-top: 40px; }
+            .hero-content { padding: 0 8%;}
         }
 
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                /* top: 80px; Dynamic calculation in JS is better */
-                left: -100%;
-                width: 100%;
-                /* height: calc(100vh - 80px); Dynamic calculation */
-                background: var(--light-bg); /* Match theme */
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start; /* Align to top */
-                padding-top: 30px; /* More padding */
-                transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-                box-shadow: 0 10px 20px rgba(184,134,11,0.2);
+                top: 70px; /* Initial value, will be updated by JS */
+                left: -100%; width: 100%;
+                height: calc(100vh - 70px); /* Initial value */
+                background: var(--lsp-white);
+                flex-direction: column; align-items: center;
+                justify-content: flex-start; padding-top: 40px;
+                transition: all 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
+                box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+                border-top: 1px solid var(--lsp-border-color);
             }
+            .nav-links.active { left: 0; }
+            .nav-links a { margin: 18px 0; font-size: 1.1rem; }
+            .nav-links .contact-btn { margin-left: 0; margin-top: 25px; }
+            .hamburger { display: block; }
 
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links a {
-                margin: 18px 0; /* Increased margin */
-                font-size: 1.3rem; /* Larger font */
-                color: var(--accent-gold);
-            }
-            .nav-links a:hover, .nav-links a.active {
-                color: var(--primary-gold);
-            }
-            .nav-links a:after{
-                bottom: -8px;
-            }
-
-
-            .nav-links .contact-btn {
-                margin-left: 0;
-                margin-top: 25px;
-                padding: 12px 25px;
-                font-size: 1.1rem;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2.8rem; /* Adjusted for mobile */
-            }
-             .hero p {
-                font-size: 1.1rem;
-            }
-
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-
-            .final-cta h2 {
-                font-size: 2.2rem;
-            }
-             .final-cta p {
-                font-size: 1.1rem;
-            }
-
-            .countdown {
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-            .countdown-item {
-                padding: 12px 15px;
-                min-width: 70px;
-            }
-            .countdown-number{
-                font-size: 1.8rem;
-            }
-
-            .cta-buttons .btn {
-                min-width: 180px;
-                font-size: 1rem;
-                padding: 12px 20px;
-            }
-            .link-bio-swiper .swiper-button-next,
-            .link-bio-swiper .swiper-button-prev {
-                width: 38px; height: 38px;
-            }
-            .link-bio-swiper .slide-content h2 { font-size: 2.2rem; }
-            .link-bio-swiper .slide-content p { font-size: 1rem; }
-
-            .pricing-grid {
-                grid-template-columns: 1fr; /* Stack pricing cards */
-            }
-            .pricing-card.featured {
-                transform: translateY(0) scale(1); /* Reset featured hover effect for stacking */
-            }
-             .contact-container {
-                grid-template-columns: 1fr; /* Stack contact form and info */
-            }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-title h2 { font-size: 1.8rem; }
+            .final-cta h2 { font-size: 1.8rem; }
+            .countdown { gap: 10px; }
+            .countdown-item { padding: 8px 12px; min-width: 65px; }
+            .countdown-number { font-size: 1.5rem; }
+            .cta-buttons .btn { min-width: 180px; font-size: 1rem;}
+            .pricing-card.featured { transform: scale(1); } 
+            .popup-content { padding: 25px; }
+            .popup-content h2 { font-size: 1.5rem; }
+            .popup-content p { font-size: 0.95rem; }
+            .contact-container { padding: 25px; }
         }
 
         @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-             .hero .btn {
-                font-size: 1rem;
-                padding: 15px 25px;
-            }
-
-            .section-title h2 {
-                font-size: 1.9rem;
-            }
-            .section-title p {
-                font-size: 1rem;
-            }
-
-            .final-cta {
-                padding: 70px 20px;
-            }
-
-            .final-cta h2 {
-                font-size: 1.9rem;
-            }
-             .final-cta p {
-                font-size: 1rem;
-            }
-
-            .floating-btns {
-                bottom: 20px;
-                right: 20px;
-                gap: 12px;
-            }
-
-            .floating-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-            }
-
-            .creator-item {
-                padding: 25px 18px;
-            }
-
-            .creator-item i {
-                font-size: 2.5rem;
-            }
-
-            .creator-item h3 {
-                font-size: 1.1rem;
-            }
-            .course-card, .feature-card {
-                 padding: 25px;
-            }
-            .course-content h3, .feature-card h3 {
-                font-size: 1.3rem;
-            }
-            .link-bio-swiper .slide-content h2 { font-size: 1.8rem; }
-            .testimonial-card { padding: 25px; }
-            .faq-question { font-size: 1rem; padding: 15px 20px;}
-            .faq-answer { padding: 0 20px;}
-            .faq-item.active .faq-answer { padding: 18px 20px;}
+            .hero { min-height: 80vh; }
+            .hero h1 { font-size: 1.9rem; }
+            .hero p { font-size: 1rem; }
+            .hero .btn { font-size: 0.95rem; padding: 12px 25px; margin-right: 10px;}
+            .section-title h2 { font-size: 1.6rem; }
+            .section-title p { font-size: 0.95rem; }
+            .final-cta { padding: 50px 15px; }
+            .final-cta h2 { font-size: 1.7rem; }
+            .floating-btns { bottom: 15px; right: 15px; }
+            .floating-btn { width: 45px; height: 45px; font-size: 1.3rem; }
+            .community-item-card { padding: 20px 15px; }
+            .community-item-card i.card-icon { font-size: 2rem; }
+            .community-item-card h3 { font-size: 1.1rem; }
+            .footer-container { grid-template-columns: 1fr; text-align:center; }
+            .footer-social { justify-content: center; }
+            .footer-links ul { padding-left: 0; }
+            .tabs .tab-btn { padding: 10px 15px; font-size: 0.9rem;}
         }
     </style>
 </head>
-<body oncontextmenu="return false;">
-    <div class="gold-pattern gold-pattern-1"></div>
-    <div class="gold-pattern gold-pattern-2" style="opacity: 0.05;"></div>
-
+<body>
     <header id="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo"><i class="fas fa-arrow-trend-up"></i>Langkah Sukses Affiliate</a>
+                <a href="#" class="logo"><i class="fas fa-graduation-cap"></i>Langkah Sukses Pintar</a>
                 <div class="nav-links" id="navLinks">
-                    <a href="#features" class="active">Mengapa Kami?</a>
-                    <a href="#courses">Kursus Unggulan</a>
-                    <a href="#pricing">Investasi Anda</a>
-                    <a href="#testimonials">Kata Mereka</a>
-                    <a href="#faq">Tanya Jawab</a>
-                    <a href="#contact" class="contact-btn">Mulai Sekarang</a>
+                    <a href="#home" class="active">Beranda</a>
+                    <a href="#fitur">Fitur Unggulan</a>
+                    <a href="#platform">Platform Kami</a>
+                    <a href="#harga">Harga</a>
+                    <a href="#testimoni">Testimoni</a>
+                    <a href="#faq-lsp">FAQ</a>
+                    <a href="#kontak" class="btn btn-primary">Daftar Sekarang</a>
                 </div>
                 <div class="hamburger" id="hamburger">
                     <i class="fas fa-bars"></i>
@@ -1600,33 +1258,33 @@
     <section class="hero" id="home">
         <div class="swiper-container hero-swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background-image:url('https://images.unsplash.com/photo-1522125670776-3c7abb882bc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                <div class="swiper-slide" style="background-image:url('https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"> 
                     <div class="hero-content">
-                        <h1>Capek Jualan <span>Nggak Laku</span>? Saatnya Jadi Affiliate <span>Sukses!</span></h1>
-                        <p>Stop buang waktu. Strategi jitu, hasil nyata. Hasilkan uang dari mana saja.</p>
+                        <h1>Transformasi Mengajar di Era Digital, <span>Mulai Dari Sini!</span></h1>
+                        <p>Bapak/Ibu Guru & Dosen, saatnya buat kelas makin hidup dan kuasai skill digital tanpa mumet. Bergabunglah dengan Langkah Sukses Pintar!</p>
                         <div>
-                            <a href="#pricing" class="btn btn-primary">Daftar Kursus Rp 99rb <i class="fas fa-rocket"></i></a>
-                            <a href="#features" class="btn btn-secondary">Lihat Caranya <i class="fas fa-arrow-right"></i></a>
+                            <a href="#harga" class="btn btn-primary">Lihat Paket Kursus <i class="fas fa-arrow-right"></i></a>
+                            <a href="#fitur" class="btn btn-outline">Pelajari Lebih Lanjut</a>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide" style="background-image:url('https://images.unsplash.com/photo-1556740714-a8395b3bf30f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                <div class="swiper-slide" style="background-image:url('https://images.pexels.com/photos/5905700/pexels-photo-5905700.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"> 
                     <div class="hero-content">
-                        <h1>Bingung Mulai <span>Dari Mana</span>? Kami Punya <span>Peta Suksesnya!</span></h1>
-                        <p>Panduan langkah demi langkah. Cocok untuk pemula. Tanpa ribet, langsung praktik.</p>
+                        <h1>Jadi Pendidik Idola, <span>Kuasai Teknologi Pembelajaran Terkini.</span></h1>
+                        <p>Tingkatkan kualitas pengajaran Anda dengan puluhan e-course praktis yang dirancang khusus untuk pendidik zaman now.</p>
                         <div>
-                            <a href="#courses" class="btn btn-primary">Pilih Kursusmu <i class="fas fa-graduation-cap"></i></a>
-                            <a href="#contact" class="btn btn-secondary">Tanya Ahli <i class="fas fa-comments"></i></a>
+                            <a href="#platform" class="btn btn-primary">Jelajahi Platform <i class="fas fa-search"></i></a>
+                            <a href="#kontak" class="btn btn-outline">Hubungi Kami</a>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                <div class="swiper-slide" style="background-image:url('https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"> 
                     <div class="hero-content">
-                        <h1>Penghasilan <span>Stagnan</span>? Waktunya <span>Naik Kelas!</span></h1>
-                        <p>Teknik affiliate terbaru. Tingkatkan konversi. Capai target finansialmu.</p>
+                        <h1>Upgrade Skill Digital, <span>Dari NOL Sampai Mahir.</span></h1>
+                        <p>Jangan biarkan 'gaptek' menghalangi. Platform kami mudah diakses, fleksibel, dan didukung instruktur berpengalaman.</p>
                         <div>
-                            <a href="#testimonials" class="btn btn-primary">Lihat Bukti Sukses <i class="fas fa-star"></i></a>
-                            <a href="#faq" class="btn btn-secondary">Cek FAQ <i class="fas fa-question-circle"></i></a>
+                            <a href="#harga" class="btn btn-primary">Daftar Rp 99.000 <i class="fas fa-rocket"></i></a>
+                            <a href="#faq-lsp" class="btn btn-outline">Tanya Jawab <i class="fas fa-question-circle"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1637,130 +1295,127 @@
         </div>
     </section>
 
-    <section class="features" id="features">
-        <div class="gold-pattern"></div>
+    <section class="features" id="fitur"> 
         <div class="container">
             <div class="section-title">
-                <h2>Kenapa Harus Pilih Kami? Ini Alasan Kuatnya!</h2>
-                <p>Anda tidak sendirian. Kami berikan semua yang Anda butuhkan untuk sukses di dunia affiliate marketing.</p>
+                <h2>Mengapa Memilih Langkah Sukses Pintar?</h2>
+                <p>Kami hadir untuk membantu Bapak/Ibu Guru dan Dosen menghadapi tantangan mengajar di era digital dengan solusi praktis dan efektif.</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3>Strategi Anti Gagal</h3>
-                    <p>Pusing cari cara? Kami berikan strategi terbukti. Tinggal ikuti, hasil menanti.</p>
+            <div class="features-grid"> 
+                <div class="feature-card slide-in-left interactive-hover"> 
+                    <div class="feature-icon"><i class="fas fa-magic"></i></div> 
+                    <h3>Materi Ajar Super Keren</h3>
+                    <p>Buat video pembelajaran, infografis, dan kuis interaktif yang menarik dan tidak monoton.</p>
                 </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-users"></i></div>
-                    <h3>Mentor Ahli Siap Bantu</h3>
-                    <p>Bingung tanya siapa? Mentor kami siap dampingi. Jangan takut salah langkah.</p>
+                <div class="feature-card fade-in interactive-hover">
+                    <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Jadi Pendidik Kekinian</h3>
+                    <p>Pahami cara membuat konten edukasi yang "anak zaman now banget" dan dicintai peserta didik.</p>
                 </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-chart-pie"></i></div>
-                    <h3>Materi Mudah Dipahami</h3>
-                    <p>Belajar affiliate ribet? Tidak lagi! Materi kami simpel, langsung ke inti.</p>
+                <div class="feature-card slide-in-right interactive-hover">
+                    <div class="feature-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Skill Digital Praktis</h3>
+                    <p>Pelajari keterampilan yang bisa langsung diterapkan untuk mempermudah proses belajar mengajar.</p>
                 </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-wallet"></i></div>
-                    <h3>Potensi Cuan Maksimal</h3>
-                    <p>Ingin hasil lebih? Teknik kami fokuskan pada konversi. Cuan lebih besar.</p>
+                 <div class="feature-card slide-in-left interactive-hover">
+                    <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Dari NOL Sampai Mahir</h3>
+                    <p>Tidak perlu minder walau "gaptek". Semua materi diajarkan langkah demi langkah dengan bahasa mudah.</p>
                 </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
-                    <h3>Komunitas Suportif</h3>
-                    <p>Merasa sendiri? Gabung komunitas kami. Saling dukung, tumbuh bersama.</p>
+                <div class="feature-card fade-in interactive-hover">
+                    <div class="feature-icon"><i class="far fa-clock"></i></div>
+                    <h3>Belajar Fleksibel</h3>
+                    <p>Upgrade diri tanpa mengganggu jadwal mengajar yang padat. Belajar kapan saja, di mana saja.</p>
                 </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-clock-rotate-left"></i></div>
-                    <h3>Update Ilmu Terbaru</h3>
-                    <p>Dunia affiliate berubah cepat. Kami pastikan Anda selalu dapat ilmu terkini.</p>
+                <div class="feature-card slide-in-right interactive-hover">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Potensi Tak Terbatas</h3>
+                    <p>Buka peluang baru: channel edukasi, modul digital inovatif, hingga menjadi trainer profesional.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="courses" id="courses">
-        <div class="gold-pattern"></div>
+    <section class="courses" id="kursus-unggulan"> 
         <div class="container">
             <div class="section-title">
-                <h2>Pilih Jalur Sukses Anda di Sini!</h2>
-                <p>Kursus kami dirancang khusus untuk berbagai level. Dari pemula hingga yang ingin mahir.</p>
+                <h2>Platform LMS Eksklusif dengan 46+ E-Course Pilihan</h2>
+                <p>Kami percaya, memberi ilmu harus dengan tanggung jawab. Belajar dari praktisi yang mengerti dunia pendidikan dan tantangan digitalnya.</p>
             </div>
-            <div class="courses-grid">
-                <div class="course-card fade-in">
-                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+            <div class="courses-grid"> 
+                <div class="course-card fade-in interactive-hover"> 
+                    <div class="course-img" style="background-image: url('https://images.pexels.com/photos/768474/pexels-photo-768474.jpeg?auto=compress&cs=tinysrgb&w=600');"></div> 
                     <div class="course-content">
-                        <h3>Dasar Affiliate Pemula</h3>
-                        <p>Nggak ngerti affiliate sama sekali? Kursus ini untuk Anda. Dari A sampai Z.</p>
-                        <a href="#pricing" class="btn">Mulai dari Rp 99rb!</a>
+                        <h3>Video Editing Capcut (Desktop & Mobile)</h3>
+                        <p>Buat video pembelajaran menarik dan profesional dengan mudah, bahkan dari smartphone Anda.</p>
+                        <a href="#harga" class="btn btn-outline">Pelajari Selengkapnya</a>
                     </div>
                 </div>
-                <div class="course-card fade-in">
-                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1543286386-71314c489800?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                <div class="course-card fade-in interactive-hover">
+                    <div class="course-img" style="background-image: url('https://images.pexels.com/photos/5088017/pexels-photo-5088017.jpeg?auto=compress&cs=tinysrgb&w=600');"></div> 
                     <div class="course-content">
-                        <h3>Strategi Konten Viral</h3>
-                        <p>Konten gitu-gitu aja? Belajar bikin konten yang menjual dan disukai pasar.</p>
-                        <a href="#pricing" class="btn">Tingkatkan Skill Anda</a>
+                        <h3>Desain Grafis Edukatif dengan Canva</h3>
+                        <p>Rancang slide presentasi, infografis, dan materi visual lainnya yang memukau tanpa skill desain rumit.</p>
+                        <a href="#harga" class="btn btn-outline">Pelajari Selengkapnya</a>
                     </div>
                 </div>
-                <div class="course-card fade-in">
-                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                <div class="course-card fade-in interactive-hover">
+                    <div class="course-img" style="background-image: url('https://images.pexels.com/photos/6476260/pexels-photo-6476260.jpeg?auto=compress&cs=tinysrgb&w=600');"></div> 
                     <div class="course-content">
-                        <h3>Master Affiliate Expert</h3>
-                        <p>Sudah punya dasar? Saatnya jadi master. Teknik rahasia, cuan berlipat.</p>
-                        <a href="#pricing" class="btn">Jadi Ahli Sekarang</a>
+                        <h3>Optimalisasi Google Workspace for Education</h3>
+                        <p>Manfaatkan fitur-fitur Google Classroom, Meet, Drive, dan lainnya secara maksimal untuk pembelajaran efektif.</p>
+                        <a href="#harga" class="btn btn-outline">Pelajari Selengkapnya</a>
                     </div>
                 </div>
+            </div>
+             <div class="section-title" style="margin-top: 50px;">
+                <a href="#harga" class="btn btn-primary btn-lg">Lihat Semua 46+ E-Course Kami!</a>
             </div>
         </div>
     </section>
 
-    <section class="link-bio-section">
-        <div class="gold-pattern"></div>
+    <section class="platform-showcase" id="platform"> 
         <div class="container">
             <div class="section-title">
-                <h2>Bukan Sekedar Kursus Biasa, Ini Transformasi!</h2>
-                <p>Kami lebih dari platform belajar. Kami adalah partner kesuksesan finansial Anda.</p>
+                <h2>Jelajahi Platform Pembelajaran Kami</h2>
+                <p>Dirancang untuk kemudahan akses, interaksi maksimal, dan pengalaman belajar yang menyenangkan bagi para pendidik.</p>
             </div>
 
-            <div class="swiper-container link-bio-swiper">
+            <div class="swiper-container platform-swiper"> 
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="slide">
-                            <div class="slide-content">
-                                <h2>Nggak Pede Jualan? <span>Kami Ubah Mindset Anda!</span></h2>
-                                <p>Ragu kemampuan diri? Di sini, Anda belajar membangun kepercayaan diri. Menjual jadi mudah dan menyenangkan. Bukan cuma teori, tapi praktik langsung.</p>
-                                <p>Temukan potensi tersembunyi Anda. Ubah keraguan jadi keyakinan.</p>
-                                <a href="#features" class="btn btn-primary">Bangun Kepercayaan Diri</a>
+                        <div class="slide-container"> 
+                            <div class="slide-content slide-in-left">
+                                <h3><span>Antarmuka Intuitif</span> & Mudah Digunakan</h3>
+                                <p>Platform kami dirancang agar mudah dinavigasi, bahkan bagi Anda yang baru memulai. Fokus pada pembelajaran, bukan kerumitan teknis.</p>
+                                <a href="#harga" class="btn btn-primary">Mulai Belajar Sekarang</a>
                             </div>
-                            <div class="slide-image">
-                                <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Confident person or team">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide">
-                            <div class="slide-content">
-                                <h2>Takut Gagal Lagi? <span>Strategi Kami Minim Risiko!</span></h2>
-                                <p>Pernah coba dan gagal? Jangan trauma. Metode kami teruji. Fokus pada langkah kecil yang pasti. Kesalahan jadi pelajaran berharga.</p>
-                                <p>Kami bantu Anda hindari lubang yang sama. Sukses itu proses, bukan instan.</p>
-                                <a href="#courses" class="btn btn-primary">Pelajari Strategi Aman</a>
-                            </div>
-                            <div class="slide-image">
-                                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Strategic planning or chessboard">
+                            <div class="slide-image slide-in-right">
+                                <img src="https://images.pexels.com/photos/7988079/pexels-photo-7988079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Antarmuka Platform LMS">
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="slide">
+                        <div class="slide-container">
+                             <div class="slide-image"> <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Komunitas Belajar Online">
+                            </div>
                             <div class="slide-content">
-                                <h2>Waktu Terbatas? <span>Belajar Fleksibel Kapan Saja!</span></h2>
-                                <p>Sibuk kerja atau urus rumah? Tenang. Akses materi selamanya. Belajar sesuai ritme Anda. Tidak ada tekanan, yang penting konsisten.</p>
-                                <p>Manfaatkan waktu luang jadi produktif. Investasi leher ke atas tanpa batas waktu.</p>
-                                <a href="#pricing" class="btn btn-primary">Lihat Fleksibilitas Kami</a>
+                                <h3><span>Komunitas & Diskusi</span> Interaktif</h3>
+                                <p>Terhubung dengan sesama pendidik, bertukar ide, dan dapatkan dukungan dari instruktur ahli melalui forum diskusi terintegrasi.</p>
+                                <a href="#kontak" class="btn btn-primary">Gabung Komunitas</a>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-container">
+                            <div class="slide-content">
+                                <h3><span>Akses Materi</span> Kapan Saja, Di Mana Saja</h3>
+                                <p>Belajar sesuai ritme Anda. Materi kursus, video, dan e-book dapat diakses melalui berbagai perangkat, baik desktop maupun mobile.</p>
+                                <a href="#harga" class="btn btn-primary">Lihat Fleksibilitasnya</a>
                             </div>
                             <div class="slide-image">
-                                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Person learning flexibly">
+                                <img src="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Akses Multi-Perangkat">
                             </div>
                         </div>
                     </div>
@@ -1773,424 +1428,288 @@
     </section>
 
 
-    <section class="creators-section">
-        <div class="gold-pattern"></div>
+    <section class="community-section" id="komunitas"> 
         <div class="container">
             <div class="section-title">
-                <h2>Mereka Sudah Membuktikan! Anda Kapan?</h2>
-                <p>Ribuan orang seperti Anda telah memulai langkah suksesnya bersama kami. Ini giliran Anda!</p>
+                <h2>Bergabunglah dengan Pendidik Inovatif Lainnya</h2>
+                <p>Temukan inspirasi, dukungan, dan kolaborasi dalam komunitas Langkah Sukses Pintar.</p>
             </div>
 
             <div class="tabs" id="tabs">
-                <div class="tab-btn active" data-tab="all">Semua Kisah</div>
-                <div class="tab-btn" data-tab="pemula">Pemula Jadi Jutawan</div>
-                <div class="tab-btn" data-tab="pekerja">Pekerja Kantoran</div>
-                <div class="tab-btn" data-tab="irt">Ibu Rumah Tangga</div>
+                <div class="tab-btn active" data-tab="semua-pendidik">Semua Pendidik</div>
+                <div class="tab-btn" data-tab="guru-sekolah">Guru Sekolah</div>
+                <div class="tab-btn" data-tab="dosen-kampus">Dosen Kampus</div>
+                <div class="tab-btn" data-tab="trainer-profesional">Trainer Profesional</div>
             </div>
 
-            <div class="tab-content active" id="all">
-                <div class="creator-item" data-category="pemula">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Dari Nol ke Hero</h3>
-                    <div class="creator-details"><p>Dulu gaptek, kini omzet puluhan juta!</p></div>
-                </div>
-                <div class="creator-item" data-category="irt">
-                    <i class="fas fa-child-reaching"></i>
-                    <h3>IRT Produktif</h3>
-                    <div class="creator-details"><p>Sambil urus anak, tetap bisa cuan!</p></div>
-                </div>
-                <div class="creator-item" data-category="pekerja">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Side Hustle Sukses</h3>
-                    <div class="creator-details"><p>Penghasilan tambahan ngalahin gaji kantor!</p></div>
-                </div>
-                <div class="creator-item" data-category="pemula">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Mahasiswa Mandiri</h3>
-                    <div class="creator-details"><p>Bayar kuliah sendiri dari affiliate.</p></div>
-                </div>
-                 <div class="creator-item" data-category="pekerja">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Pensiun Dini Tercapai</h3>
-                    <div class="creator-details"><p>Bebas finansial sebelum waktunya.</p></div>
-                </div>
-                <div class="creator-item" data-category="irt">
-                    <i class="fas fa-seedling"></i>
-                    <h3>Bisnis Rumahan Maju</h3>
-                    <div class="creator-details"><p>Dari hobi jadi sumber rezeki keluarga.</p></div>
-                </div>
+            <div class="tab-content active" id="semua-pendidik">
+                <div class="community-item-card interactive-hover"> <i class="fas fa-users card-icon"></i> <h3>Jaringan Luas</h3> <p>Terhubung dengan ribuan pendidik dari seluruh Indonesia.</p> </div>
+                <div class="community-item-card interactive-hover"> <i class="fas fa-lightbulb card-icon"></i> <h3>Ide Kreatif</h3> <p>Dapatkan inspirasi metode mengajar inovatif setiap hari.</p> </div>
+                <div class="community-item-card interactive-hover"> <i class="fas fa-hands-helping card-icon"></i> <h3>Dukungan Penuh</h3> <p>Saling bantu dan berbagi pengalaman untuk kemajuan bersama.</p> </div>
+                <div class="community-item-card interactive-hover"> <i class="fas fa-chart-bar card-icon"></i> <h3>Pertumbuhan Karir</h3> <p>Temukan peluang kolaborasi dan pengembangan profesional.</p> </div>
             </div>
-
-            <div class="tab-content" id="pemula">
-                 <div class="creator-item" data-category="pemula">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Dari Nol ke Hero</h3>
-                    <div class="creator-details"><p>Dulu gaptek, kini omzet puluhan juta!</p></div>
-                </div>
-                <div class="creator-item" data-category="pemula">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Mahasiswa Mandiri</h3>
-                    <div class="creator-details"><p>Bayar kuliah sendiri dari affiliate.</p></div>
-                </div>
-                 <div class="creator-item" data-category="pemula">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Ide Jadi Duit</h3>
-                    <div class="creator-details"><p>Modal nekat, kini panen komisi.</p></div>
-                </div>
+            <div class="tab-content" id="guru-sekolah">
+                <div class="community-item-card interactive-hover"> <i class="fas fa-school card-icon"></i> <h3>Strategi Kelas Efektif</h3> <p>Diskusi tentang manajemen kelas dan keterlibatan siswa.</p> </div>
+                <div class="community-item-card interactive-hover"> <i class="fas fa-shapes card-icon"></i> <h3>Media Pembelajaran Kreatif</h3> <p>Berbagi contoh media ajar yang menarik untuk berbagai mata pelajaran.</p> </div>
             </div>
-
-            <div class="tab-content" id="pekerja">
-                <div class="creator-item" data-category="pekerja">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Side Hustle Sukses</h3>
-                    <div class="creator-details"><p>Penghasilan tambahan ngalahin gaji kantor!</p></div>
-                </div>
-                <div class="creator-item" data-category="pekerja">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Pensiun Dini Tercapai</h3>
-                    <div class="creator-details"><p>Bebas finansial sebelum waktunya.</p></div>
-                </div>
-                 <div class="creator-item" data-category="pekerja">
-                    <i class="fas fa-plane-departure"></i>
-                    <h3>Kerja Sambil Liburan</h3>
-                    <div class="creator-details"><p>Kantornya di mana saja, asal ada internet.</p></div>
-                </div>
+            <div class="tab-content" id="dosen-kampus">
+                <div class="community-item-card interactive-hover"> <i class="fas fa-university card-icon"></i> <h3>Riset & Publikasi</h3> <p>Tips dan trik meningkatkan produktivitas riset dan publikasi ilmiah.</p> </div>
+                <div class="community-item-card interactive-hover"> <i class="fas fa-laptop-code card-icon"></i> <h3>Teknologi Perkuliahan</h3> <p>Pemanfaatan LMS dan tools digital untuk perkuliahan hybrid/online.</p> </div>
             </div>
-
-            <div class="tab-content" id="irt">
-                <div class="creator-item" data-category="irt">
-                    <i class="fas fa-child-reaching"></i>
-                    <h3>IRT Produktif</h3>
-                    <div class="creator-details"><p>Sambil urus anak, tetap bisa cuan!</p></div>
-                </div>
-                 <div class="creator-item" data-category="irt">
-                    <i class="fas fa-seedling"></i>
-                    <h3>Bisnis Rumahan Maju</h3>
-                    <div class="creator-details"><p>Dari hobi jadi sumber rezeki keluarga.</p></div>
-                </div>
-                 <div class="creator-item" data-category="irt">
-                    <i class="fas fa-gifts"></i>
-                    <h3>Bantu Suami, Bahagiakan Keluarga</h3>
-                    <div class="creator-details"><p>Tambah pemasukan, impian terwujud.</p></div>
-                </div>
+            <div class="tab-content" id="trainer-profesional">
+                <div class="community-item-card interactive-hover"> <i class="fas fa-chalkboard card-icon"></i> <h3>Metode Pelatihan Dewasa</h3> <p>Berbagi teknik andragogi dan fasilitasi pelatihan yang efektif.</p> </div>
+                <div class="community-item-card interactive-hover"> <i class="fas fa-file-signature card-icon"></i> <h3>Pengembangan Modul</h3> <p>Tips membuat modul pelatihan yang berdampak dan mudah dipahami.</p> </div>
             </div>
         </div>
     </section>
 
-    <section class="testimonials" id="testimonials">
-        <div class="gold-pattern"></div>
+    <section class="testimonials" id="testimoni"> 
         <div class="container">
             <div class="section-title">
-                <h2>Jangan Percaya Kami, Percaya Mereka!</h2>
-                <p>Testimoni jujur dari member yang hidupnya berubah setelah gabung Langkah Sukses Affiliate.</p>
+                <h2>Apa Kata Mereka Tentang Kami?</h2>
+                <p>Pengalaman nyata para pendidik yang telah merasakan manfaat bergabung dengan Langkah Sukses Pintar.</p>
             </div>
             <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <i class="fas fa-quote-right"></i>
-                    <p class="testimonial-content">"Dulu saya bingung mau bisnis apa. Setelah ikut kursus di Langkah Sukses Affiliate, baru 1 bulan sudah dapat komisi pertama! Materinya gampang banget dipahami, mentornya sabar."</p>
+                <div class="testimonial-card slide-in-left interactive-hover">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="testimonial-content">"Luar biasa! Materi kursusnya sangat praktis dan mudah diikuti. Sekarang saya lebih percaya diri menggunakan teknologi di kelas. Murid-murid jadi lebih antusias!"</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://placehold.co/60x60/FFD700/2c1e00?text=AW" alt="Andi W.">
-                        </div>
-                        <div class="author-info">
-                            <h4>Andi W.</h4>
-                            <p>Karyawan Swasta, Surabaya</p>
-                        </div>
+                        <div class="author-avatar"> <img src="https://randomuser.me/api/portraits/women/34.jpg" alt="Ibu Anita"> </div>
+                        <div class="author-info"> <h4>Ibu Anita S.Pd.</h4> <p>Guru SMA, Jakarta</p> </div>
                     </div>
                 </div>
-                <div class="testimonial-card fade-in">
-                    <i class="fas fa-quote-right"></i>
-                    <p class="testimonial-content">"Sebagai IRT, saya cari penghasilan tambahan. Alhamdulillah, Langkah Sukses Affiliate jawabannya. Sekarang bisa bantu suami sambil tetap di rumah. Terima kasih ilmunya!"</p>
+                <div class="testimonial-card fade-in interactive-hover">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="testimonial-content">"Platform Langkah Sukses Pintar benar-benar membantu saya sebagai dosen muda. Banyak skill baru yang saya dapatkan, terutama dalam membuat konten perkuliahan yang menarik. Harganya juga sangat terjangkau!"</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://placehold.co/60x60/DAA520/FFFFFF?text=SN" alt="Siti N.">
-                        </div>
-                        <div class="author-info">
-                            <h4>Siti N.</h4>
-                            <p>Ibu Rumah Tangga, Bandung</p>
-                        </div>
+                        <div class="author-avatar"> <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Bapak Rizky"> </div>
+                        <div class="author-info"> <h4>Dr. Rizky Pratama M.Kom.</h4> <p>Dosen Universitas, Bandung</p> </div>
                     </div>
                 </div>
-                <div class="testimonial-card fade-in">
-                    <i class="fas fa-quote-right"></i>
-                    <p class="testimonial-content">"Saya sudah coba berbagai cara jadi affiliate, tapi hasilnya gitu-gitu aja. Di sini beda! Strateginya jitu, komunitasnya suportif. Penghasilan saya naik 3x lipat!"</p>
+                <div class="testimonial-card slide-in-right interactive-hover">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="testimonial-content">"Awalnya ragu karena merasa gaptek. Tapi ternyata pembelajarannya step-by-step dan ada komunitas yang supportif. Sekarang saya bisa bikin video tutorial sendiri. Terima kasih Langkah Sukses Pintar!"</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://placehold.co/60x60/B8860B/FFFACD?text=RP" alt="Rian P.">
-                        </div>
-                        <div class="author-info">
-                            <h4>Rian P.</h4>
-                            <p>Mahasiswa, Yogyakarta</p>
-                        </div>
+                        <div class="author-avatar"> <img src="https://randomuser.me/api/portraits/women/58.jpg" alt="Ibu Dewi"> </div>
+                        <div class="author-info"> <h4>Dewi K. M.Pd.</h4> <p>Guru SD & Konten Kreator Edukasi</p> </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pricing" id="pricing">
-        <div class="gold-pattern"></div>
+    <section class="pricing" id="harga"> 
         <div class="container">
             <div class="section-title">
-                <h2>Investasi Terbaik Untuk Masa Depan Anda</h2>
-                <p>Pilih paket yang paling sesuai dengan kantong dan target kesuksesan Anda. Mulai dari Rp 99rb!</p>
+                <h2>Investasi Terbaik untuk Karir Pendidik Anda</h2>
+                <p>Dapatkan akses ke semua 46+ e-course dan bonus eksklusif dengan harga spesial yang sangat terjangkau!</p>
             </div>
             <div class="pricing-grid">
-                <div class="pricing-card fade-in">
-                    <h3>Paket CUAN KILAT</h3>
-                    <div class="price">Rp 99.000</div>
+                <div class="pricing-card featured fade-in interactive-hover">
+                    <div class="featured-badge">Penawaran Terbatas!</div>
+                    <h3>Paket Pendidik Unggul</h3>
+                    <div class="price"><span class="currency">Rp</span>99.000</div>
+                    <p style="margin-top:-10px; margin-bottom: 20px; color: var(--lsp-text-secondary); font-size:0.9rem;">Akses Selamanya Sekali Bayar</p>
                     <ul class="pricing-features">
-                        <li>Akses Materi Dasar Affiliate</li>
-                        <li>Grup Diskusi Pemula</li>
-                        <li>Studi Kasus Terbatas</li>
-                        <li>Update Materi Dasar</li>
-                        <li>Cocok Untuk Coba-Coba</li>
+                        <li>Akses ke <strong>46+ E-Course</strong> Pilihan</li>
+                        <li>Materi Video Pembelajaran HD</li>
+                        <li>Modul Praktis & Studi Kasus</li>
+                        <li><strong>GRATIS E-book Eksklusif</strong> (Bonus Langsung!)</li>
+                        <li>Sertifikat Digital Setiap Kursus</li>
+                        <li>Forum Diskusi & Komunitas Pendidik</li>
+                        <li>Update Materi Berkala</li>
+                        <li>Dukungan Instruktur Ahli</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary">Pilih Paket Hemat</a>
-                </div>
-                <div class="pricing-card featured fade-in">
-                    <div class="featured-badge">Paling Laris!</div>
-                    <h3>Paket JAGO AFFILIATE</h3>
-                    <div class="price">Rp 299.000</div>
-                    <ul class="pricing-features">
-                        <li>Semua Materi Dasar & Lanjutan</li>
-                        <li>Grup VIP & Mentor Langsung</li>
-                        <li>Studi Kasus Lengkap & Update</li>
-                        <li>Tools Affiliate Gratis</li>
-                        <li>Strategi Konten Viral</li>
-                        <li>Bonus Materi Rahasia</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">Ambil Paket Jagoan</a>
-                </div>
-                <div class="pricing-card fade-in">
-                    <h3>Paket SULTAN AFFILIATE</h3>
-                    <div class="price">Rp 799.000</div>
-                    <ul class="pricing-features">
-                        <li>Semua Fitur Paket Jago</li>
-                        <li>Konsultasi Privat 1-on-1</li>
-                        <li>Akses Seumur Hidup</li>
-                        <li>Review Akun Affiliate Anda</li>
-                        <li>Jaringan Eksklusif Sultan</li>
-                        <li>Prioritas Fitur Baru</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary">Jadi Sultan Sekarang</a>
+                    <a href="#kontak" class="btn btn-primary">Daftar Sekarang & Dapatkan Bonus!</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq">
+    <section id="faq-lsp"> 
         <div class="container faq-container">
             <div class="section-title">
-                <h2>Masih Ragu? Ini Jawaban Pertanyaan Anda!</h2>
-                <p>Kami mengerti Anda punya banyak pertanyaan. Semoga ini membantu menjawab keraguan Anda.</p>
+                <h2>Pertanyaan Umum (FAQ)</h2>
+                <p>Temukan jawaban atas pertanyaan yang sering diajukan seputar Langkah Sukses Pintar.</p>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Apa itu Langkah Sukses Affiliate? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">
-                    <p>Langkah Sukses Affiliate adalah platform kursus online dan komunitas yang bantu Anda hasilkan uang dari internet sebagai affiliate marketer. Kami sediakan panduan praktis, dari nol sampai bisa.</p>
-                </div>
+                <div class="faq-question">Apa saja yang saya dapatkan dengan Rp 99.000? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer"> <p>Anda mendapatkan akses seumur hidup ke 46+ e-course pilihan, materi video HD, modul praktis, e-book eksklusif gratis, sertifikat digital, forum diskusi, update materi, dan dukungan instruktur.</p> </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Saya pemula, apa bisa ikut? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">
-                    <p>Sangat bisa! Kursus kami dirancang khusus untuk pemula. Bahasa mudah, langkah jelas. Banyak member kami mulai dari nol dan berhasil.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Berapa lama sampai bisa dapat hasil? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">
-                    <p>Hasil tiap orang beda-beda, tergantung usaha dan konsistensi. Ada yang 1 bulan sudah pecah telur, ada yang butuh waktu lebih. Kami ajarkan cara tercepat, tapi kesuksesan ada di tangan Anda.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Apa ada jaminan pasti berhasil? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">
-                    <p>Kami tidak bisa jamin kesuksesan finansial spesifik, karena itu ilegal dan tidak etis. Tapi kami jamin Anda dapat ilmu terbaik, strategi teruji, dan dukungan penuh dari tim kami. Sisanya, ACTION Anda yang menentukan.</p>
-                </div>
+                <div class="faq-question">Apakah platform ini cocok untuk pemula/gaptek? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer"> <p>Sangat cocok! Semua materi diajarkan dari dasar, langkah demi langkah, dengan bahasa yang mudah dipahami. Kami berkomitmen membantu Anda dari NOL sampai mahir.</p> </div>
             </div>
              <div class="faq-item">
-                <div class="faq-question">Materinya bisa diakses kapan saja? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">
-                    <p>Tentu! Setelah Anda bergabung, materi kursus bisa Anda akses kapan saja, di mana saja, seumur hidup (tergantung paket). Belajar jadi lebih fleksibel.</p>
-                </div>
+                <div class="faq-question">Bagaimana cara mendaftar dan melakukan pembayaran? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer"> <p>Anda bisa klik tombol "Daftar Sekarang" di halaman ini, lalu ikuti petunjuknya. Pembayaran bisa dilakukan melalui transfer bank, e-wallet, atau metode pembayaran online lainnya yang aman dan mudah.</p> </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Apakah ada batasan waktu untuk menyelesaikan kursus? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer"> <p>Tidak ada batasan waktu. Anda bisa belajar kapan saja, di mana saja, sesuai dengan kecepatan dan waktu luang Anda. Akses ke platform bersifat seumur hidup.</p> </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Apakah saya akan mendapatkan sertifikat? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer"> <p>Ya, Anda akan mendapatkan sertifikat digital untuk setiap e-course yang berhasil Anda selesaikan. Sertifikat ini dapat menambah portofolio profesional Anda.</p> </div>
             </div>
         </div>
     </section>
+    
+    <div class="popup-overlay" id="discountPopup">
+        <div class="popup-content">
+            <button class="popup-close" id="closePopupBtn" aria-label="Tutup pop-up">×</button>
+            <div class="popup-icon"><i class="fas fa-gift"></i></div>
+            <h2>Penawaran Spesial Untuk Anda!</h2>
+            <p>Daftar hari ini hanya <strong>Rp 99.000</strong> dan dapatkan akses ke <strong>46+ E-Course</strong> plus <strong>GRATIS E-book Eksklusif</strong>! Jangan sampai ketinggalan!</p>
+            <div class="popup-timer" id="popupTimer">Penawaran berakhir dalam: 00:05:59</div>
+            <a href="#harga" class="btn btn-primary" id="popupCtaBtn">Klaim Penawaran Saya!</a>
+        </div>
+    </div>
+    <div id="popupTriggerElement" style="height:1px; background:transparent;"></div>
 
-    <section class="contact" id="contact">
-        <div class="gold-pattern"></div>
+
+    <section class="contact" id="kontak"> 
         <div class="container">
             <div class="section-title">
-                <h2>Siap Ambil Langkah Pertama Menuju Sukses?</h2>
-                <p>Jangan tunda lagi. Hubungi kami jika ada pertanyaan, atau langsung daftar dan mulai perjalanan Anda!</p>
+                <h2>Siap Jadi Pendidik Zaman Now?</h2>
+                <p>Hubungi kami jika ada pertanyaan atau langsung daftar untuk memulai transformasi digital Anda!</p>
             </div>
             <div class="contact-container">
-                <div class="contact-form fade-in">
+                <div class="contact-form-wrapper slide-in-left">
+                    <h3>Kirim Pesan Kepada Kami</h3>
                     <form id="contactForm">
-                        <div class="form-group">
+                        <div class="form-group" style="margin-bottom: 15px;">
                             <label for="name">Nama Lengkap Anda</label>
-                            <input type="text" id="name" name="name" placeholder="Mis: Budi Hartono" required>
+                            <input type="text" id="name" name="name" required placeholder="cth: Budi Santoso">
                         </div>
-                        <div class="form-group">
-                            <label for="email">Alamat Email Aktif</label>
-                            <input type="email" id="email" name="email" placeholder="Mis: budi.sukses@example.com" required>
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="email">Alamat Email Anda</label>
+                            <input type="email" id="email" name="email" required placeholder="cth: budi.s@email.com">
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Nomor WhatsApp (Opsional)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Mis: 081234567890">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Pilih Topik Pertanyaan</label>
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="subject">Subjek Pesan</label>
                             <select id="subject" name="subject">
-                                <option value="daftar">Info Pendaftaran</option>
-                                <option value="materi">Detail Materi Kursus</option>
-                                <option value="teknis">Kendala Teknis</option>
+                                <option value="pertanyaan">Pertanyaan Umum</option>
+                                <option value="pendaftaran">Informasi Pendaftaran</option>
+                                <option value="kerjasama">Kerja Sama</option>
                                 <option value="lainnya">Lainnya</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="margin-bottom: 20px;">
                             <label for="message">Pesan Anda</label>
-                            <textarea id="message" name="message" placeholder="Tulis pertanyaan atau pesan Anda di sini..." required></textarea>
+                            <textarea id="message" name="message" required placeholder="Tuliskan pesan atau pertanyaan Anda di sini..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Kirim Pesan Emas Anda!</button>
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
                     </form>
                 </div>
-                <div class="contact-info fade-in">
-                    <h3>Info Kontak Kami</h3>
+                <div class="contact-info-wrapper slide-in-right">
+                    <h3>Informasi Kontak</h3>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Alamat Sukses</h4>
-                            <p>Jl. Kemenangan No. 1, Jakarta Pusat (Virtual Office)</p>
-                        </div>
+                        <div> <h4>Alamat Kantor</h4> <p>Jl. Pendidikan Maju No. 123, Jakarta, Indonesia</p> </div>
                     </div>
                     <div class="info-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h4>WhatsApp Support</h4>
-                            <p>+62 812-SUKSES-AF (0812-785737-23)</p>
-                        </div>
+                        <i class="fas fa-phone-alt"></i>
+                        <div> <h4>Telepon / WhatsApp</h4> <p>+62 812 3456 7890</p> </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email Bantuan</h4>
-                            <p>support@langkahsuksesaffiliate.com</p>
-                        </div>
+                        <div> <h4>Email</h4> <p>dukungan@langkahsuksespintar.id</p> </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Jam Support</h4>
-                            <p>Senin - Jumat: 09:00 - 17:00 WIB</p>
-                            <p>Sabtu: 09:00 - 13:00 WIB (Slow Respon)</p>
-                        </div>
+                        <div> <h4>Jam Operasional</h4> <p>Senin - Jumat: 08.00 - 17.00 WIB</p> <p>Sabtu: 09.00 - 13.00 WIB</p> </div>
                     </div>
+                    <h4 style="margin-top: 30px; margin-bottom: 10px; font-size: 1.1rem; color: var(--lsp-deep-navy);">Temukan Kami Di:</h4>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="container">
-        <div class="final-cta fade-in">
-            <h2>Tawaran Spesial Ini Akan Segera Berakhir!</h2>
-            <p>Daftar Paket JAGO AFFILIATE sekarang, dapatkan diskon 50% + Bonus Ebook "Rahasia Closing Cepat"! Hanya untuk 50 pendaftar tercepat hari ini!</p>
+    <div class="container"> 
+        <div class="final-cta fade-in"> 
+            <i class="fas fa-rocket" style="font-size:4rem; color: var(--lsp-soft-cyan); margin-bottom:1rem; display:block;"></i>
+            <h2>Jangan Tunda Lagi, Ambil Langkah Pertama Anda!</h2>
+            <p>Kuota terbatas untuk penawaran spesial Rp 99.000 + Bonus E-book. Jadilah pelopor perubahan positif di lingkungan mengajar Anda sekarang juga!</p>
             <div class="countdown">
-                <div class="countdown-item">
-                    <div class="countdown-number" id="days">00</div>
-                    <div class="countdown-label">Hari</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="hours">00</div>
-                    <div class="countdown-label">Jam</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="minutes">00</div>
-                    <div class="countdown-label">Menit</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="seconds">00</div>
-                    <div class="countdown-label">Detik</div>
-                </div>
+                <div class="countdown-item"> <div class="countdown-number" id="days">03</div> <div class="countdown-label">Hari</div> </div>
+                <div class="countdown-item"> <div class="countdown-number" id="hours">10</div> <div class="countdown-label">Jam</div> </div>
+                <div class="countdown-item"> <div class="countdown-number" id="minutes">30</div> <div class="countdown-label">Menit</div> </div>
+                <div class="countdown-item"> <div class="countdown-number" id="seconds">00</div> <div class="countdown-label">Detik</div> </div>
             </div>
             <div class="cta-buttons">
-                <a href="#pricing" class="btn btn-primary"><i class="fas fa-tags"></i> Klaim Diskon Sekarang!</a>
-                <a href="https://wa.me/6281278573723?text=Halo%20Admin%20Langkah%20Sukses%20Affiliate,%20saya%20mau%20tanya%20tentang%20promo%20spesial." class="btn btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> Tanya Promo via WA</a>
+                <a href="#harga" class="btn btn-primary"><i class="fas fa-check-circle"></i> Saya Mau Jadi Pendidik Zaman Now!</a>
+                <a href="#faq-lsp" class="btn btn-secondary"><i class="fas fa-info-circle"></i> Pelajari Lebih Detail</a>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="gold-pattern"></div>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-about">
-                    <a href="#" class="footer-logo"><i class="fas fa-arrow-trend-up"></i>Langkah Sukses</a>
-                    <p>Platform edukasi affiliate marketing terdepan yang siap mengantar Anda menuju kebebasan finansial. Mulai langkah Anda bersama kami!</p>
+                    <a href="#" class="footer-logo"><i class="fas fa-graduation-cap"></i>Langkah Sukses Pintar</a>
+                    <p>Memberdayakan pendidik Indonesia melalui platform pembelajaran digital yang inovatif, praktis, dan terjangkau.</p>
                     <div class="footer-social">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
                     <h3>Navigasi Cepat</h3>
                     <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#features">Mengapa Kami?</a></li>
-                        <li><a href="#courses">Kursus</a></li>
-                        <li><a href="#pricing">Harga</a></li>
-                        <li><a href="#testimonials">Testimoni</a></li>
+                        <li><a href="#fitur">Fitur Unggulan</a></li>
+                        <li><a href="#platform">Platform Kami</a></li>
+                        <li><a href="#harga">Harga & Paket</a></li>
+                        <li><a href="#testimoni">Testimoni</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h3>Sumber Daya</h3>
+                    <h3>Dukungan</h3>
                     <ul>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#">Blog Inspirasi</a></li>
-                        <li><a href="#">Studi Kasus</a></li>
-                        <li><a href="#">Tools Gratis</a></li>
-                        <li><a href="#contact">Hubungi Kami</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Legal & Kebijakan</h3>
-                    <ul>
+                        <li><a href="#kontak">Hubungi Kami</a></li>
+                        <li><a href="#faq-lsp">FAQ</a></li>
                         <li><a href="#">Kebijakan Privasi</a></li>
                         <li><a href="#">Syarat & Ketentuan</a></li>
-                        <li><a href="#">Disclaimer Pendapatan</a></li>
-                        <li><a href="#">Affiliate Agreement</a></li>
                     </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Alamat Kami</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.6;">
+                        Jl. Pendidikan Maju No. 123<br>
+                        Jakarta Pusat, DKI Jakarta<br>
+                        Indonesia, 10110
+                    </p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; <span id="year"></span> Langkah Sukses Affiliate. Semua Hak Dilindungi. Dibuat dengan <i class="fas fa-heart"></i> untuk Kesuksesan Anda.</p>
+                <p>&copy; <span id="year"></span> Langkah Sukses Pintar. Hak Cipta Dilindungi. Dibuat dengan <i class="fas fa-heart"></i> untuk Pendidik Indonesia.</p>
             </div>
         </div>
     </footer>
 
     <div class="floating-btns">
-        <a href="https://wa.me/6281278573723?text=Halo%20Admin%20Langkah%20Sukses%20Affiliate,%20saya%20mau%20bertanya..." target="_blank" class="floating-btn whatsapp-btn" aria-label="Chat WhatsApp">
+        <a href="https://wa.me/6281234567890?text=Halo%20Langkah%20Sukses%20Pintar,%20saya%20tertarik%20dengan%20program%20Anda." target="_blank" class="floating-btn whatsapp-btn" aria-label="Chat di WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <div class="floating-btn video-btn" id="videoBtn" aria-label="Tonton Video Perkenalan">
+        <div class="floating-btn video-btn" id="videoBtn" aria-label="Putar Video Demo">
             <i class="fas fa-play"></i>
         </div>
     </div>
 
     <div class="modal" id="videoModal">
         <div class="modal-content">
-            <span class="close-modal" id="closeVideoModal" aria-label="Tutup Modal Video">×</span>
+            <span class="close-modal" id="closeVideoModal" aria-label="Tutup modal video">×</span>
             <div class="video-container">
-                <iframe id="videoFrame" src="" title="Video Perkenalan Langkah Sukses Affiliate" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="videoFrame" src="" title="Video Demo Langkah Sukses Pintar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -2200,291 +1719,312 @@
         // Initialize Hero Swiper
         var heroSwiper = new Swiper('.hero-swiper-container', {
             loop: true,
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true
-            },
-            autoplay: {
-                delay: 5500, // Slightly longer for readability
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.hero-swiper-container .swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.hero-swiper-container .swiper-button-next',
-                prevEl: '.hero-swiper-container .swiper-button-prev',
-            },
+            effect: 'fade', // Or 'slide', 'cube', 'coverflow', 'flip'
+            fadeEffect: { crossFade: true },
+            autoplay: { delay: 6000, disableOnInteraction: false },
+            pagination: { el: '.hero-swiper-container .swiper-pagination', clickable: true },
+            navigation: { nextEl: '.hero-swiper-container .swiper-button-next', prevEl: '.hero-swiper-container .swiper-button-prev' },
         });
 
-        // Initialize Link Bio Swiper
-        var linkBioSwiper = new Swiper('.link-bio-swiper', {
+        // Initialize Platform Showcase Swiper 
+        var platformSwiper = new Swiper('.platform-swiper', { 
             loop: true,
-            autoplay: {
-                delay: 6500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.link-bio-swiper .swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.link-bio-swiper .swiper-button-next',
-                prevEl: '.link-bio-swiper .swiper-button-prev',
-            },
+            autoplay: { delay: 7000, disableOnInteraction: false },
             slidesPerView: 1,
             spaceBetween: 30,
+            pagination: { el: '.platform-swiper .swiper-pagination', clickable: true },
+            navigation: { nextEl: '.platform-swiper .swiper-button-next', prevEl: '.platform-swiper .swiper-button-prev' },
         });
 
         // Mobile Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-        const headerElement = document.getElementById('header'); 
+        const headerElement = document.getElementById('header');
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const headerHeight = headerElement.offsetHeight;
-            navLinks.style.top = headerHeight + 'px';
-            navLinks.style.height = `calc(100vh - ${headerHeight}px)`;
+        if (hamburger && navLinks && headerElement) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const headerHeight = headerElement.offsetHeight;
+                navLinks.style.top = headerHeight + 'px';
+                navLinks.style.height = `calc(100vh - ${headerHeight}px)`;
+                hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
 
-            hamburger.innerHTML = navLinks.classList.contains('active') ?
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            document.querySelectorAll('#navLinks a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+        }
+        
+        // Sticky Header
+        if (headerElement) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 70) { 
+                    headerElement.classList.add('scrolled');
+                } else {
+                    headerElement.classList.remove('scrolled');
                 }
             });
-        });
-
-        // Sticky Header
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 80) { // Adjusted scroll threshold
-                headerElement.classList.add('scrolled');
-            } else {
-                headerElement.classList.remove('scrolled');
-            }
-        });
+        }
 
         // Active Link Highlighting
-        const sections = document.querySelectorAll('section[id]'); // Ensure sections have IDs
-        const navItems = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section[id], .hero[id]'); 
+        const navItems = document.querySelectorAll('#navLinks a');
 
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const headerHeight = headerElement.offsetHeight;
+        if (sections.length > 0 && navItems.length > 0 && headerElement) {
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const headerHeight = headerElement.offsetHeight;
 
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= (sectionTop - headerHeight - 70)) { // Adjusted offset
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href') === `#${current}`) {
-                    item.classList.add('active');
-                }
-            });
-            
-            if (!current && window.pageYOffset < sections[0].offsetTop - headerHeight - 70) {
-                const homeLink = document.querySelector('.nav-links a[href="#home"]'); 
-                if (homeLink) homeLink.classList.add('active');
-                else if(navItems.length > 0 && navItems[0].getAttribute('href').startsWith('#')) {
-                     // Fallback to the first nav item if #home is not explicitly present
-                    const firstVisibleSectionId = navItems[0].getAttribute('href').substring(1);
-                    const firstVisibleSection = document.getElementById(firstVisibleSectionId);
-                    if(firstVisibleSection && window.pageYOffset < firstVisibleSection.offsetTop - headerHeight - 70) {
-                        navItems[0].classList.add('active');
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= (sectionTop - headerHeight - 70)) { 
+                        current = section.getAttribute('id');
                     }
+                });
+                
+                if (window.pageYOffset < sections[0].offsetTop - headerHeight - 70 && sections[0].getAttribute('id') === 'home') {
+                     current = "home";
                 }
-            }
-        });
+
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === `#${current}`) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        }
 
 
         // FAQ Accordion
         const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                faqItems.forEach(otherItem => {
-                    if (otherItem.classList.contains('active')) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-                if (!isActive) {
-                    item.classList.add('active');
+        if (faqItems.length > 0) {
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                if (question) {
+                    question.addEventListener('click', () => {
+                        const currentlyActive = document.querySelector('.faq-item.active');
+                        if (currentlyActive && currentlyActive !== item) {
+                            currentlyActive.classList.remove('active');
+                        }
+                        item.classList.toggle('active');
+                    });
                 }
             });
-        });
+        }
 
         // Video Modal
         const videoBtn = document.getElementById('videoBtn');
         const videoModal = document.getElementById('videoModal');
-        const closeModalBtn = document.getElementById('closeVideoModal');
+        const closeVideoModalBtn = document.getElementById('closeVideoModal');
         const videoFrame = document.getElementById('videoFrame');
-        const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ"; // Replace with your actual YouTube Video ID
+        // Ganti dengan URL video demo Anda (misalnya dari YouTube atau Vimeo)
+        const promoVideoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ"; // Contoh URL
 
-        if (videoBtn && videoModal && closeModalBtn && videoFrame) {
+        if(videoBtn && videoModal && closeVideoModalBtn && videoFrame) {
             videoBtn.addEventListener('click', () => {
                 videoModal.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
-                videoFrame.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`; 
+                videoFrame.src = promoVideoUrl;
             });
 
-            closeModalBtn.addEventListener('click', () => {
+            function closeVideoPlayer() {
                 videoModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
                 videoFrame.src = ""; 
-            });
+            }
 
+            closeVideoModalBtn.addEventListener('click', closeVideoPlayer);
             videoModal.addEventListener('click', (e) => {
-                if (e.target === videoModal) { 
-                    videoModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                    videoFrame.src = "";
-                }
+                if (e.target === videoModal) closeVideoPlayer();
             });
         }
 
         // Countdown Timer
         function updateCountdown() {
-            const countdownElements = {
-                days: document.getElementById('days'),
-                hours: document.getElementById('hours'),
-                minutes: document.getElementById('minutes'),
-                seconds: document.getElementById('seconds')
-            };
-
-            // Ensure all elements exist before proceeding
-            if (!Object.values(countdownElements).every(el => el !== null)) {
-                // console.warn("One or more countdown elements not found. Timer will not run.");
-                return;
-            }
-
+            const now = new Date();
             if (!window.countdownTargetDate) {
-                 // Set target to end of current day for demo, e.g., 23:59:59
-                 let target = new Date();
-                 target.setHours(23, 59, 59, 0);
-                 // If current time is past today's 23:59:59, set it for tomorrow's end.
-                 if (new Date() > target) {
-                    target.setDate(target.getDate() + 1);
-                 }
-                 window.countdownTargetDate = target;
+                 // Set target: 3 hari, 10 jam, 30 menit dari sekarang
+                 window.countdownTargetDate = new Date(now.getTime() + (0 * 24 * 60 * 60 * 1000) + (0 * 60 * 60 * 1000) + (5 * 60 * 1000));
             }
             const target = window.countdownTargetDate;
-            const now = new Date();
             const diff = target - now;
 
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return; 
+
             if (diff <= 0) {
-                countdownElements.days.textContent = '00';
-                countdownElements.hours.textContent = '00';
-                countdownElements.minutes.textContent = '00';
-                countdownElements.seconds.textContent = '00';
+                daysEl.textContent = '00'; hoursEl.textContent = '00';
+                minutesEl.textContent = '00'; secondsEl.textContent = '00';
+                // Bisa tambahkan logika lain jika countdown selesai, misal ubah teks CTA
+                const finalCtaButton = document.querySelector('.final-cta .btn-primary');
+                if (finalCtaButton) {
+                    finalCtaButton.textContent = "Maaf Penawaran Berakhir";
+                    finalCtaButton.style.opacity = "0.7";
+                    finalCtaButton.style.pointerEvents = "none";
+                }
                 return;
             }
-
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            countdownElements.days.textContent = days.toString().padStart(2, '0');
-            countdownElements.hours.textContent = hours.toString().padStart(2, '0');
-            countdownElements.minutes.textContent = minutes.toString().padStart(2, '0');
-            countdownElements.seconds.textContent = seconds.toString().padStart(2, '0');
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+            daysEl.textContent = d.toString().padStart(2, '0');
+            hoursEl.textContent = h.toString().padStart(2, '0');
+            minutesEl.textContent = m.toString().padStart(2, '0');
+            secondsEl.textContent = s.toString().padStart(2, '0');
         }
-        // Check if countdown elements exist before starting interval
-        if (document.getElementById('days')) {
-            setInterval(updateCountdown, 1000);
-            updateCountdown(); 
-        }
-
+        const countdownTimerInterval = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
 
         // Current Year in Footer
         const yearEl = document.getElementById('year');
         if(yearEl) yearEl.textContent = new Date().getFullYear();
 
-        // Scroll Animations
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const scrollObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Optional: unobserve after animation
-                }
-            });
-        }, { threshold: 0.1 }); // Trigger when 10% of element is visible
-
-        fadeElements.forEach(element => {
-            scrollObserver.observe(element);
-        });
-
-
-        // Tab Slider for Creators Section
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const tabId = btn.getAttribute('data-tab');
-
-                tabBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                tabContents.forEach(content => {
-                    content.classList.remove('active');
-                    if (content.id === tabId) {
-                        content.classList.add('active');
+        // Scroll Animations (Fade-in, Slide-in)
+        const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+        if (animatedElements.length > 0) {
+            const animationObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
                     }
                 });
+            }, { threshold: 0.1 }); 
+
+            animatedElements.forEach(el => {
+                animationObserver.observe(el);
             });
-        });
+        }
+        
+        // Tab Slider for Community Section
+        const tabBtns = document.querySelectorAll('.community-section .tab-btn');
+        const tabContents = document.querySelectorAll('.community-section .tab-content');
 
-        // Disable right-click (already in body tag via oncontextmenu)
-        // document.addEventListener('contextmenu', function(e) {
-        //     e.preventDefault();
-        // }); // This is redundant if oncontextmenu="return false;" is on body
+        if (tabBtns.length > 0 && tabContents.length > 0) {
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === tabId) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
+            });
+        }
 
-        // Form submission (basic example, prevent default and log)
+        // Form submission (basic example)
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const formData = new FormData(contactForm);
-                const data = {};
-                formData.forEach((value, key) => (data[key] = value));
-                console.log('Form submitted:', data);
-                // Replace alert with a more styled message box if possible
-                alert('Pesan Anda telah terkirim (simulasi). Cek console untuk data.');
+                const data = Object.fromEntries(formData.entries());
+                console.log('Formulir Terkirim:', data);
+                // Ganti alert dengan notifikasi yang lebih modern jika memungkinkan
+                alert('Terima kasih! Pesan Anda telah terkirim (simulasi). Kami akan segera menghubungi Anda.');
                 contactForm.reset();
             });
         }
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    const headerOffset = document.getElementById('header').offsetHeight || 80;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        // Pop-up Discount Modal Logic
+        const discountPopup = document.getElementById('discountPopup');
+        const closePopupBtn = document.getElementById('closePopupBtn');
+        const popupCtaBtn = document.getElementById('popupCtaBtn');
+        const popupTriggerElement = document.getElementById('popupTriggerElement');
+        let popupShownThisSession = sessionStorage.getItem('lspPopupShown');
 
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
-                }
+        const showDiscountPopup = () => {
+            if (!popupShownThisSession && discountPopup) {
+                discountPopup.style.display = 'flex';
+                sessionStorage.setItem('lspPopupShown', 'true');
+                popupShownThisSession = 'true';
+                startPopupTimer(0 * 3600 + 5 * 60 + 59); // 0j 05m 59d
+            }
+        };
+
+        const hideDiscountPopup = () => {
+            if(discountPopup) {
+                discountPopup.style.animation = 'popOut 0.4s ease-out forwards';
+                 setTimeout(() => {
+                    discountPopup.style.display = 'none';
+                    discountPopup.style.animation = ''; 
+                }, 400);
+            }
+        };
+        
+        if(popupTriggerElement && discountPopup) { // Pastikan discountPopup ada
+            const popupObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(showDiscountPopup, 2500); // Tunda sedikit
+                        popupObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.8 }); 
+            popupObserver.observe(popupTriggerElement);
+        }
+
+        if(closePopupBtn) closePopupBtn.addEventListener('click', hideDiscountPopup);
+        if(popupCtaBtn) {
+             popupCtaBtn.addEventListener('click', () => {
+                hideDiscountPopup();
+                const pricingSection = document.getElementById('harga');
+                if(pricingSection) pricingSection.scrollIntoView({ behavior: 'smooth' });
             });
-        });
+        }
+        if(discountPopup) {
+            discountPopup.addEventListener('click', (e) => {
+                if (e.target === discountPopup) hideDiscountPopup(); 
+            });
+        }
+        
+        // Popup Timer Logic
+        let popupTimerInterval;
+        function startPopupTimer(durationInSeconds) {
+            const timerDisplay = document.getElementById('popupTimer');
+            if (!timerDisplay) return;
 
+            let timer = durationInSeconds;
+            clearInterval(popupTimerInterval); 
+
+            popupTimerInterval = setInterval(() => {
+                let hours = parseInt(timer / 3600, 10);
+                let minutes = parseInt((timer % 3600) / 60, 10);
+                let seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                timerDisplay.textContent = `Penawaran berakhir dalam: ${hours}:${minutes}:${seconds}`;
+
+                if (--timer < 0) {
+                    clearInterval(popupTimerInterval);
+                    timerDisplay.textContent = "Maaf, Penawaran Telah Berakhir!";
+                    if(popupCtaBtn) {
+                        popupCtaBtn.disabled = true;
+                        popupCtaBtn.textContent = "Penawaran Berakhir";
+                        popupCtaBtn.style.backgroundColor = "var(--lsp-text-light)";
+                        popupCtaBtn.style.cursor = "not-allowed";
+                    }
+                }
+            }, 1000);
+        }
     </script>
 </body>
 </html>
